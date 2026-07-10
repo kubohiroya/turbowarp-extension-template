@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
-    "@kubohiroya/vite-plugin-turbowarp-extension": "github:kubohiroya/vite-plugin-turbowarp-extension#44a52a93fd1f7d9338c2b7acbf5ea5d3ebac90fc",
+    "@kubohiroya/vite-plugin-turbowarp-extension": "github:kubohiroya/vite-plugin-turbowarp-extension#a96b1ad92a5b9954d99c68b5e4a318c0722ec9e6",
     "@types/node": "^24.10.1",
     "eslint": "^9.39.1",
     "typescript": "^5.9.3",
