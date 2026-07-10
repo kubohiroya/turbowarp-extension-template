@@ -4,12 +4,12 @@ export class ExampleExtension implements TurboWarpExtension {
   public getInfo(): Record<string, unknown> {
     return {
       id: extensionConfig.id,
-      name: extensionConfig.name,
+      name: Scratch.translate(extensionConfig.name),
       blocks: [
         {
           opcode: 'hello',
           blockType: Scratch.BlockType.REPORTER,
-          text: 'hello [NAME]',
+          text: Scratch.translate('hello [NAME]'),
           arguments: {
             NAME: {
               type: Scratch.ArgumentType.STRING,
@@ -22,6 +22,12 @@ export class ExampleExtension implements TurboWarpExtension {
   }
 
   public hello(args: {NAME: unknown}): string {
-    return `Hello, ${Scratch.Cast.toString(args.NAME)}!`;
+    return Scratch.translate(
+      {
+        default: 'Hello, {name}!',
+        description: '{name} is replaced with the value supplied to the block.'
+      },
+      {name: Scratch.Cast.toString(args.NAME)}
+    );
   }
 }
