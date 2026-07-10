@@ -1,23 +1,14 @@
 import {extensionConfig} from './config';
+import definitions from './block-definitions.json';
+
+type BlockDefinition = (typeof definitions.blocks)[number];
 
 export class ExampleExtension implements TurboWarpExtension {
   public getInfo(): Record<string, unknown> {
     return {
       id: extensionConfig.id,
-      name: Scratch.translate(extensionConfig.name),
-      blocks: [
-        {
-          opcode: 'hello',
-          blockType: Scratch.BlockType.REPORTER,
-          text: Scratch.translate('hello [NAME]'),
-          arguments: {
-            NAME: {
-              type: Scratch.ArgumentType.STRING,
-              defaultValue: 'world'
-            }
-          }
-        }
-      ]
+      name: Scratch.translate(definitions.extensionName),
+      blocks: definitions.blocks.map((block) => this.toScratchBlock(block))
     };
   }
 
@@ -29,5 +20,22 @@ export class ExampleExtension implements TurboWarpExtension {
       },
       {name: Scratch.Cast.toString(args.NAME)}
     );
+  }
+
+  private toScratchBlock(block: BlockDefinition): Record<string, unknown> {
+    return {
+      opcode: block.opcode,
+      blockType: Scratch.BlockType[block.blockType],
+      text: Scratch.translate(block.text),
+      arguments: Object.fromEntries(
+        Object.entries(block.arguments).map(([name, argument]) => [
+          name,
+          {
+            type: Scratch.ArgumentType[argument.type],
+            defaultValue: argument.defaultValue
+          }
+        ])
+      )
+    };
   }
 }
