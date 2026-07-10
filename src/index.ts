@@ -1,12 +1,8 @@
-import {extensionConfig} from './config';
-import {ExampleExtension} from './extension';
+import {extensionConfig} from './config.js';
+import {ExampleExtension} from './extension.js';
 
-(function registerExtension(ScratchApi: ScratchApi): void {
-  'use strict';
+if (extensionConfig.unsandboxed && !Scratch.extensions.unsandboxed) {
+  throw new Error(`${extensionConfig.name} must run unsandboxed.`);
+}
 
-  if (extensionConfig.unsandboxed && !ScratchApi.extensions.unsandboxed) {
-    throw new Error(`${extensionConfig.name} must run unsandboxed.`);
-  }
-
-  ScratchApi.extensions.register(new ExampleExtension());
-})(Scratch);
+Scratch.extensions.register(new ExampleExtension());
