@@ -1,14 +1,30 @@
 import {extensionConfig} from './config';
 import definitions from './block-definitions.json';
 
-type BlockDefinition = (typeof definitions.blocks)[number];
+type BlockTypeName = 'REPORTER';
+type ArgumentTypeName = 'STRING';
+
+interface DefinitionArgument {
+  type: ArgumentTypeName;
+  defaultValue: string;
+}
+
+interface BlockDefinition {
+  opcode: string;
+  blockType: BlockTypeName;
+  text: string;
+  description: string;
+  arguments: Record<string, DefinitionArgument>;
+}
+
+const blockDefinitions = definitions.blocks as readonly BlockDefinition[];
 
 export class ExampleExtension implements TurboWarpExtension {
   public getInfo(): Record<string, unknown> {
     return {
       id: extensionConfig.id,
       name: Scratch.translate(definitions.extensionName),
-      blocks: definitions.blocks.map((block) => this.toScratchBlock(block))
+      blocks: blockDefinitions.map((block) => this.toScratchBlock(block))
     };
   }
 
