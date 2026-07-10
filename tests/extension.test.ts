@@ -1,5 +1,5 @@
-import {beforeEach, describe, expect, it, vi} from 'vitest';
-import {ExampleExtension} from '../src/extension';
+import {afterEach, beforeEach, describe, expect, it, vi} from 'vitest';
+import {ExampleExtension} from '../src/extension.js';
 
 beforeEach(() => {
   vi.stubGlobal('Scratch', {
@@ -9,6 +9,10 @@ beforeEach(() => {
       toString: (value: unknown) => String(value)
     }
   });
+});
+
+afterEach(() => {
+  vi.unstubAllGlobals();
 });
 
 describe('ExampleExtension', () => {
