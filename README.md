@@ -74,7 +74,7 @@ npm run docs
 
 ## Development dependency
 
-Until `@kubohiroya/vite-plugin-turbowarp-extension` is published to npm, this template pins a tested Git commit of the plugin. Replace the Git dependency with a normal semantic version after publication.
+This template pins a tested, published version of `@kubohiroya/vite-plugin-turbowarp-extension` for reproducible builds. Update the pinned version intentionally after validating each new release.
 
 ## License
 
