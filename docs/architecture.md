@@ -1,5 +1,7 @@
 # Architecture
 
+[日本語](architecture.ja.md)
+
 ## Build outputs
 
 The project keeps runtime behavior and compatibility metadata separate while generating both from
