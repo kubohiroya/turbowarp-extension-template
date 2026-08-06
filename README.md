@@ -1,5 +1,7 @@
 # TurboWarp Extension Template
 
+[日本語](README.ja.md)
+
 A reusable TypeScript template for developing, testing, building, and releasing TurboWarp extensions with Vite.
 
 ## Build workflow
