@@ -24,6 +24,8 @@ export class ExampleExtension implements TurboWarpExtension {
     return {
       id: extensionConfig.id,
       name: Scratch.translate(definitions.extensionName),
+      docsURI: extensionConfig.docsURI,
+      blockIconURI: extensionConfig.blockIconURI,
       blocks: blockDefinitions.map((block) => this.toScratchBlock(block))
     };
   }
