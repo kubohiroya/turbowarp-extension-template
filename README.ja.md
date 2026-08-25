@@ -2,94 +2,110 @@
 
 [English](README.md)
 
-Viteを使ってTurboWarp拡張機能を開発、テスト、ビルド、リリースするための再利用可能なTypeScriptテンプレートです。
+ViteでTurboWarp拡張機能を開発、テスト、ビルド、リリースするための再利用可能なTypeScriptテンプレートです。
 
-## ビルドの流れ
+## 利用者ガイド
+
+このテンプレートからリポジトリを作成し、packageと拡張機能metadataを置き換え、`src/extension.ts`でブロックを実装し、生成済みartifactをコミットします。
+
+参照用にtemplate packageを使う場合はversionを固定します。
+
+```bash
+pnpm add --save-exact @kubohiroya/turbowarp-extension-template@0.2.0
+```
+
+## できること
+
+- TurboWarp互換の単一JavaScript拡張ファイルをビルドします。
+- 決定的な`dist/extension-manifest.json` API契約を出力します。
+- `src/block-definitions.json`からREADMEのブロック参照を生成します。
+- source、document、生成済み`dist/`、repository policy、npm package内容を一括検査します。
+
+## 要件と安全性
+
+- Node.js 22以上
+- Corepack経由のpnpm
+- `unsandboxed: true`を設定した拡張機能ではTurboWarpのunsandboxed extension option
+
+信頼できる生成済み拡張コードだけを読み込んでください。unsandboxed extensionはブラウザページへアクセスできます。
+
+## インストール
+
+```bash
+corepack enable
+pnpm install --frozen-lockfile
+```
+
+## クイックスタート
+
+1. このテンプレートからリポジトリを作成します。
+2. `package.json` metadataと`repo-policy.json`を更新します。
+3. `src/config.ts`を編集します。
+4. `src/block-definitions.json`にブロックを定義します。
+5. `src/extension.ts`に実行時の動作を実装します。
+6. `pnpm run docs`を実行します。
+7. `pnpm run check`を実行します。
+
+開発中に継続ビルドする場合:
+
+```bash
+pnpm run dev
+```
+
+## ブロック参照
+
+### `hello [NAME]`
+
+指定された名前へのローカライズ可能な挨拶を返します。
+
+| Property | Value |
+|---|---|
+| Type | Reporter |
+| Opcode | `hello` |
+| `NAME` | String, default: `world` |
+
+## 重要な動作
 
 ```text
-TypeScriptソース
+TypeScript source
   -> Vite
   -> vite-plugin-turbowarp-extension
   -> dist/<extension-name>.js
 
-拡張機能設定 + ブロック定義
-  -> extension manifestプラグイン
+Extension config + block definitions
+  -> extension manifest plugin
   -> dist/extension-manifest.json
 ```
 
-生成されるJavaScriptは、Extension Galleryメタデータと標準の`(function (Scratch) { ... })(Scratch);`ラッパーを含む、単一の非minify TurboWarp拡張ファイルです。
+生成されるJavaScriptは、Extension Gallery metadataと標準の`(function (Scratch) { ... })(Scratch);` wrapperを持つ、単一の非minify TurboWarp拡張ファイルです。
 
-## サンプルブロック
+各ビルドは`formatVersion: 1`の`dist/extension-manifest.json`を出力します。このファイルには、拡張機能ID、ブロックopcodeと種類、引数IDと種類、メニュー参照が決定的な順序で記録されます。`sb3-toolchain`のようなツールは、埋め込み拡張機能の更新やID移行前にこの契約を比較できます。v1契約については[アーキテクチャ文書](docs/architecture.ja.md)と[JSON Schema](schemas/extension-manifest.schema.json)を参照してください。
 
-### `hello [NAME]`
+## 互換性
 
-指定した名前を使って、ローカライズされた挨拶を返します。
+canonical READMEは`README.md`です。日本語ドキュメントは`README.ja.md`を使います。新規リポジトリでは`README_ja.md`を作成しません。
 
-| 項目 | 値 |
-|---|---|
-| 種類 | Reporter |
-| Opcode | `hello` |
-| `NAME` | String、既定値: `world` |
+リポジトリ固有の差分は`repo-policy.json`に記録します。upstream fork、mixed-license content、legacy package name、third-party bundleは、検査を弱めるのではなくpolicy例外として表現します。
 
-## はじめに
-
-1. このテンプレートからリポジトリを作成します。
-2. `package.json`のパッケージ名を更新します。
-3. `src/config.ts`のメタデータを編集します。
-4. `src/block-definitions.json`にブロックを定義します。
-5. `src/extension.ts`に実行時の動作を実装します。
-6. ブロック定義を変更したら`npm run docs`を実行します。
-7. テストと手書きのドキュメントを更新します。
+## 開発
 
 ```bash
-npm install
-npm run check
+pnpm run check
 ```
 
-開発中に継続して再ビルドする場合:
+このcheckは型検査、lint、test、生成README検証、`dist/`再現性、repository policy検証、npm package dry-runを実行します。
+
+## リリース
+
+`package.json`をversionの正本にします。公開前に次を実行します。
 
 ```bash
-npm run dev
+pnpm run check
+npm pack --dry-run --ignore-scripts
 ```
 
-## プロジェクト構成
-
-- `src/config.ts`: 拡張機能のメタデータ
-- `src/block-definitions.json`: 拡張機能とREADME生成の両方で使う正規のブロックメタデータ
-- `src/extension.ts`: 拡張機能の実装
-- `src/extension-manifest.ts`: 正規のmanifest生成処理とVite出力プラグイン
-- `src/index.ts`: 拡張機能を登録するエントリーポイント
-- `src/globals.d.ts`: プロジェクトが使うScratch APIの型宣言
-- `schemas/extension-manifest.schema.json`: 生成されるAPI契約のJSON Schema
-- `scripts/generate-readme.mjs`: READMEの自動生成ブロック節を更新するスクリプト
-- `tests/`: ユニットテスト
-- `vite.config.ts`: TurboWarp互換のViteビルド設定
-- `dist/`: リポジトリで追跡するTurboWarp JavaScriptと拡張機能API manifest
-
-## 拡張機能API manifest
-
-各ビルドは`formatVersion: 1`の`dist/extension-manifest.json`を出力します。このファイルには、拡張機能ID、ブロックのopcodeと種類、引数のIDと種類、メニュー参照が決定的な順序で記録されます。`sb3-toolchain`のようなツールは、埋め込まれた拡張機能の更新やID移行の前に、この契約を比較できます。v1契約については[アーキテクチャ文書](docs/architecture.ja.md)と[JSON Schema](schemas/extension-manifest.schema.json)を参照してください。
-
-実行時コードまたはブロックメタデータを変更したら、追跡されているリリース成果物を再生成して検証します。
-
-```bash
-npm run check:dist
-```
-
-## 生成ドキュメント
-
-ブロックのドキュメントを再生成するには次を実行します。
-
-```bash
-npm run docs
-```
-
-`npm run check`は`docs:check`も実行します。`src/block-definitions.json`に対して`README.md`が古い場合、検証は失敗します。英語READMEが生成元に追従したら、この日本語版のサンプルブロック節も同じ意味になるように更新してください。
-
-## 開発依存関係
-
-再現可能なビルドのため、このテンプレートは検証済みで公開済みの`@kubohiroya/vite-plugin-turbowarp-extension`を固定バージョンで指定します。新しいリリースを検証した後、意図的に固定バージョンを更新してください。
+release artifactには`dist/example-extension.js`、`dist/extension-manifest.json`、`README.md`、`README.ja.md`、`LICENSE`を含めます。
 
 ## ライセンス
 
-MPL-2.0
+SPDX-License-Identifier: MPL-2.0
