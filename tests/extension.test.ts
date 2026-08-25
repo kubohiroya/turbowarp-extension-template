@@ -36,4 +36,10 @@ describe('ExampleExtension', () => {
     expect(info.name).toBe('Example Extension');
     expect(info.blocks[0]?.text).toBe('hello [NAME]');
   });
+
+  it('publishes documentation and a self-contained SVG block icon', () => {
+    const info = new ExampleExtension().getInfo() as {docsURI: string; blockIconURI: string};
+    expect(info.docsURI).toBe('https://kubohiroya.github.io/turbowarp-extension-template/');
+    expect(info.blockIconURI).toMatch(/^data:image\/svg\+xml;base64,/);
+  });
 });
