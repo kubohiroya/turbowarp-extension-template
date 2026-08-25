@@ -27,7 +27,7 @@ process.stdout.write('Repository policy is aligned.\n');
 
 function checkPolicy() {
   if (policy.schemaVersion !== 1) errors.push('repo-policy.json schemaVersion must be 1');
-  if (policy.productName !== 'TurboWarp Extension Template') {
+  if (policy.productName !== 'TurboWarp-Extension-Template') {
     errors.push('repo-policy.json productName must match README.md H1');
   }
   if (policy.licensePolicy !== 'mpl-2.0') {
@@ -97,7 +97,7 @@ function checkReadmes() {
     errors.push('README.md must include a version-pinned package example');
   }
   if (!readme.includes('MPL-2.0')) errors.push('README.md License section must include MPL-2.0');
-  if (!readmeJa.startsWith('# TurboWarp Extension Template\n')) {
+  if (!readmeJa.startsWith('# TurboWarp-Extension-Template\n')) {
     errors.push('README.ja.md must mirror the product H1');
   }
 }
