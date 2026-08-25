@@ -1,5 +1,5 @@
 {
-  "extensionName": "Example Extension",
+  "extensionName": "TurboWarp-Example-Extension",
   "blocks": [
     {
       "opcode": "hello",
