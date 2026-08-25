@@ -33,7 +33,7 @@ describe('ExampleExtension', () => {
 
   it('uses localizable extension and block text', () => {
     const info = new ExampleExtension().getInfo() as {name: string; blocks: Array<{text: string}>};
-    expect(info.name).toBe('Example Extension');
+    expect(info.name).toBe('TurboWarp-Example-Extension');
     expect(info.blocks[0]?.text).toBe('hello [NAME]');
   });
 
