@@ -1,8 +1,43 @@
 {
   "name": "@kubohiroya/turbowarp-extension-template",
   "version": "0.2.0",
+  "description": "A reusable TypeScript template for developing TurboWarp extensions with Vite.",
   "author": "Hiroya Kubo <hiroya@cuc.ac.jp>",
+  "license": "MPL-2.0",
+  "homepage": "https://github.com/kubohiroya/turbowarp-extension-template#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kubohiroya/turbowarp-extension-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kubohiroya/turbowarp-extension-template/issues"
+  },
+  "keywords": [
+    "turbowarp",
+    "scratch",
+    "extension",
+    "template",
+    "vite",
+    "typescript"
+  ],
   "type": "module",
+  "files": [
+    "dist/",
+    "docs/",
+    "schemas/",
+    "src/",
+    "README.md",
+    "README.ja.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "packageManager": "pnpm@11.11.0",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "dev": "vite build --watch",
     "typecheck": "tsc --noEmit",
@@ -10,9 +45,11 @@
     "lint": "eslint src tests vite.config.ts",
     "test": "vitest run",
     "docs": "node scripts/generate-readme.mjs",
-    "docs:check": "npm run docs && git diff --exit-code -- README.md",
-    "check": "npm run typecheck && npm run lint && npm run test && npm run docs:check && npm run check:dist",
-    "check:dist": "npm run build && node scripts/check-dist.mjs"
+    "docs:check": "pnpm run docs && git diff --exit-code -- README.md",
+    "repo:check": "node scripts/check-repo.mjs",
+    "pack:check": "npm pack --dry-run --ignore-scripts",
+    "check": "pnpm run typecheck && pnpm run lint && pnpm run test && pnpm run docs:check && pnpm run check:dist && pnpm run repo:check && pnpm run pack:check",
+    "check:dist": "pnpm run build && node scripts/check-dist.mjs"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.5",
