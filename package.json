@@ -26,6 +26,7 @@
     "docs/",
     "schemas/",
     "src/",
+    "templates/",
     "README.md",
     "README.ja.md",
     "LICENSE"
@@ -46,6 +47,7 @@
     "test": "vitest run",
     "docs": "node scripts/generate-readme.mjs",
     "docs:check": "pnpm run docs && git diff --exit-code -- README.md",
+    "template:readme": "node scripts/apply-readme-template.mjs",
     "repo:check": "node scripts/check-repo.mjs",
     "pack:check": "npm pack --dry-run --ignore-scripts",
     "check": "pnpm run typecheck && pnpm run lint && pnpm run test && pnpm run docs:check && pnpm run check:dist && pnpm run repo:check && pnpm run pack:check",
