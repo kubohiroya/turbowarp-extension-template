@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "productName": "TurboWarp Extension Template",
+  "productName": "TurboWarp-Extension-Template",
   "packageType": "extension-template",
   "licensePolicy": "mpl-2.0",
   "readmeLanguages": ["en", "ja"],

@@ -1,4 +1,4 @@
-# TurboWarp Extension Template
+# TurboWarp-Extension-Template
 
 [日本語](README.ja.md)
 
