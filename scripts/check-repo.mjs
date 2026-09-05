@@ -52,8 +52,8 @@ function checkPackageMetadata() {
   if (!packageMetadata.packageManager?.startsWith('pnpm@')) {
     errors.push('package.json packageManager must pin pnpm exactly');
   }
-  if (packageMetadata.engines?.node !== '>=22') {
-    errors.push('package.json engines.node must be >=22');
+  if (packageMetadata.engines?.node !== '>=22.12.0') {
+    errors.push('package.json engines.node must be >=22.12.0');
   }
   if (packageMetadata.repository?.url !== 'git+https://github.com/kubohiroya/turbowarp-extension-template.git') {
     errors.push('package.json repository.url must point to the current repository');
