@@ -12,8 +12,8 @@ importers:
         specifier: ^9.39.5
         version: 9.39.5
       '@kubohiroya/vite-plugin-turbowarp-extension':
-        specifier: 0.1.1
-        version: 0.1.1(vite@7.3.6(@types/node@24.13.3))
+        specifier: 0.2.0
+        version: 0.2.0(vite@7.3.6(@types/node@24.13.3))
       '@types/node':
         specifier: ^24.13.3
         version: 24.13.3
@@ -252,8 +252,8 @@ packages:
   '@jridgewell/sourcemap-codec@1.5.5':
     resolution: {integrity: sha512-cYQ9310grqxueWbl+WuIUIaiUaDcj7WOq5fVhEljNVgRfOUhY9fy2zTvfoqWsnebh8Sl70VScFbICvJnLKB0Og==}
 
-  '@kubohiroya/vite-plugin-turbowarp-extension@0.1.1':
-    resolution: {integrity: sha512-6lOlSnfOcKeGwI8SpWQMC6Vz153WIit+1fVxhowy2YdgqC5tP96Zmzkn+Q+4JlJVRsFo89jrp7ifqJcWL56svg==}
+  '@kubohiroya/vite-plugin-turbowarp-extension@0.2.0':
+    resolution: {integrity: sha512-FoqU2F1q/MYPcQ8HtTTDSxbeNJ5YtYEtCRYyM6/54LL8TP2l5QQlt6mBevKEdsdSQXoHNBKD+rZSIpjf1EGYEQ==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       vite: '>=6.0.0'
@@ -619,6 +619,7 @@ packages:
   eslint@9.39.5:
     resolution: {integrity: sha512-DgZS62aPLXKlnxILS/AYCoRvHaZeXceIzlXPkkGGzJWSow1aEk0lbTlxUSlyjC8jcaKxAdOnTDz+o1JFSBsyjw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
     peerDependencies:
       jiti: '*'
@@ -1157,7 +1158,7 @@ snapshots:
 
   '@jridgewell/sourcemap-codec@1.5.5': {}
 
-  '@kubohiroya/vite-plugin-turbowarp-extension@0.1.1(vite@7.3.6(@types/node@24.13.3))':
+  '@kubohiroya/vite-plugin-turbowarp-extension@0.2.0(vite@7.3.6(@types/node@24.13.3))':
     dependencies:
       acorn: 8.18.0
       vite: 7.3.6(@types/node@24.13.3)
