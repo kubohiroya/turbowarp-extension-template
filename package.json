@@ -43,7 +43,7 @@
     "dev": "vite build --watch",
     "typecheck": "tsc --noEmit",
     "build": "vite build",
-    "lint": "eslint src tests vite.config.ts",
+    "lint": "eslint src tests scripts vite.config.ts",
     "test": "vitest run",
     "docs": "node scripts/generate-readme.ts",
     "docs:check": "pnpm run docs && git diff --exit-code -- README.md",
