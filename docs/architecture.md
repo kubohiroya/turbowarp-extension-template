@@ -22,8 +22,12 @@ single-output validation and adds the manifest only after the TurboWarp bundle i
 
 ## Extension API manifest v1
 
-`schemas/extension-manifest.schema.json` is the normative JSON Schema. `formatVersion` is `1` and
-must change when an incompatible manifest shape is introduced.
+[`@kubohiroya/turbowarp-extension-manifest`](https://github.com/kubohiroya/turbowarp-extension-manifest)
+owns this contract: its `schemas/extension-manifest.schema.json` is the normative JSON Schema, and its
+`createExtensionManifest` is the only generator. `formatVersion` is `1` and must change there when an
+incompatible manifest shape is introduced. This template pins that package exactly rather than
+carrying its own copy, so a repository created from the template inherits one contract instead of a
+copy that can drift.
 
 The v1 contract contains:
 
