@@ -9,10 +9,13 @@ This implements [Issue #21](https://github.com/kubohiroya/turbowarp-extension-te
 
 Build the JSON/YAML implementation of [turbowarp-block-editor #1](https://github.com/kubohiroya/turbowarp-block-editor/issues/1)
 before building [scratch-gui #1](https://github.com/kubohiroya/scratch-gui/issues/1).
-The shared package is currently private, version `0.0.0`. Use a build whose `createSchemaEditor()` handles `format`;
+The package remains private on npm, version `0.0.0`. The JSON/YAML sources are merged into main via [API PR #4](https://github.com/kubohiroya/turbowarp-block-editor/pull/4).
+Check out and build API commit `2f45521fdac9bd3759525d6a50369ebdb355805a`.
+[GUI PR #5](https://github.com/kubohiroya/scratch-gui/pull/5) pins this commit in both ordinary CI and Pages builds.
+Use a build whose `createSchemaEditor()` handles `format`;
 the old JSON-only implementation ignores that property. The webpack 4 GUI must include `yaml` in its RJSF Babel rule.
 An `apiVersion: 1` match alone does not establish YAML support. Test the host/GUI combination and pin compatible versions when published.
-The [validation record](block-editors-validation.ja.md) identifies the current local combination.
+The [validation record](block-editors-validation.ja.md) identifies the source revisions and initial local combination.
 
 Start the modified GUI with `blockEditorDialogs=1` and load `dist/example-extension.js` with the **run without sandbox** option.
 The startup flag remains OFF by default in `scratch-gui/src/lib/tw-feature-flags.js`; no second flag is added.

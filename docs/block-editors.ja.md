@@ -9,10 +9,12 @@
 
 先に[turbowarp-block-editor #1](https://github.com/kubohiroya/turbowarp-block-editor/issues/1)のJSON/YAML対応をビルドし、
 [scratch-gui #1](https://github.com/kubohiroya/scratch-gui/issues/1)のGUIへ接続します。
-共通パッケージは現在未公開の`0.0.0`です。`createSchemaEditor()`が`format`を処理する版を使ってください。
+共通パッケージはnpm未公開の`0.0.0`です。JSON/YAML対応ソースは[共通API PR #4](https://github.com/kubohiroya/turbowarp-block-editor/pull/4)としてmainへ統合済みです。
+検証した共通APIコミット`2f45521fdac9bd3759525d6a50369ebdb355805a`をcheckoutしてビルドしてください。
+対応する[GUI PR #5](https://github.com/kubohiroya/scratch-gui/pull/5)は、通常CIとPagesの両方でこのコミットを参照します。
 JSON専用の旧版は`format`を無視するため、YAMLには使用できません。
 `apiVersion: 1`の一致だけではYAML対応を判定できません。対応する共通API・GUIの組合せを結合テストし、
-公開後は検証済みの依存版を固定してください。現在のローカル対応版は[検証記録](block-editors-validation.ja.md)で識別します。
+npm公開後は検証済みの依存版を固定してください。対応するソースと初回ローカル検証の組合せは[検証記録](block-editors-validation.ja.md)で識別します。
 webpack 4のGUIでは、既存のRJSF用Babel変換対象に`yaml`も含めて再ビルドします。
 
 GUIのURLへ`blockEditorDialogs=1`を付け、`dist/example-extension.js`をカスタム拡張として

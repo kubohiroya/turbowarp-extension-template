@@ -1,7 +1,17 @@
 # Issue #21の検証記録
 
 日付: 2026-10-18（日本時間）。対象: [テンプレート #21](https://github.com/kubohiroya/turbowarp-extension-template/issues/21)。
-外部公開前のローカル実装・検証の記録です。
+初回ローカル実装・検証と、公開後のCI統合確認を記録しています。
+
+## CI統合時の対応版
+
+- 共通API基盤: [PR #3](https://github.com/kubohiroya/turbowarp-block-editor/pull/3)。CI追加後の型検査・ビルド・29テストが成功し、mainへ統合済み。
+- JSON/YAML対応: [PR #4](https://github.com/kubohiroya/turbowarp-block-editor/pull/4)。型検査・ビルド・38テストが成功し、mainへ統合済み。対応コミットは`2f45521fdac9bd3759525d6a50369ebdb355805a`。
+- GUI基盤: [PR #3](https://github.com/kubohiroya/scratch-gui/pull/3)。共通APIの固定取得と専用エディター17テストをCIへ接続し、成功確認後にdevelopへ統合済み。
+- GUIのYAML対応: [PR #5](https://github.com/kubohiroya/scratch-gui/pull/5)。検証対象headは`86f5b75d9b8077224dcc1dde098328172dbe5b51`。通常CIとPagesの両方で上記のマージ済み共通APIを固定参照。
+
+共通APIはソースを公開済みですが、npmパッケージは実験的な未公開`0.0.0`を維持しています。
+以降のブランチ名・ハッシュ・未pushの記述は初回ローカル検証時点の記録です。
 
 ## ブランチと依存順序
 
