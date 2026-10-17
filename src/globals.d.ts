@@ -8,6 +8,9 @@ interface ScratchTranslate {
 }
 
 interface ScratchApi {
+  gui?: {
+    readonly blockEditors?: import('./block-editors.js').SchemaBlockEditorApi;
+  };
   extensions: {
     unsandboxed: boolean;
     register(extension: TurboWarpExtension): void;

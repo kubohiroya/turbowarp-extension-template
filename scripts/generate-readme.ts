@@ -68,7 +68,7 @@ function titleCase(value: string): string {
 }
 
 function formatDefault(value: BlockArgument['defaultValue']): string {
-  return String(value).replaceAll('\\', '\\\\').replaceAll('\n', '\\n').replaceAll('`', '\\`');
+  return String(value).replaceAll('\\', '\\\\').replaceAll('\n', '\\n').replaceAll('`', '\\`').replaceAll('|', '\\|');
 }
 
 function escapeRegExp(value: string): string {

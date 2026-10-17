@@ -1,5 +1,6 @@
 import {extensionConfig} from './config';
 import definitions from './block-definitions.json';
+import {registerBlockEditors} from './block-editors.js';
 
 type BlockTypeName = 'REPORTER';
 type ArgumentTypeName = 'STRING';
@@ -20,6 +21,17 @@ interface BlockDefinition {
 const blockDefinitions = definitions.blocks as readonly BlockDefinition[];
 
 export class ExampleExtension implements TurboWarpExtension {
+  private unregisterBlockEditors: () => void = () => {};
+
+  public initializeBlockEditors(): void {
+    this.unregisterBlockEditors();
+    this.unregisterBlockEditors = registerBlockEditors(Scratch);
+  }
+
+  public dispose(): void {
+    this.unregisterBlockEditors();
+  }
+
   public getInfo(): Record<string, unknown> {
     return {
       id: extensionConfig.id,
@@ -38,6 +50,14 @@ export class ExampleExtension implements TurboWarpExtension {
       },
       {name: Scratch.Cast.toString(args.NAME)}
     );
+  }
+
+  public sceneJson(args: {SOURCE: unknown}): string {
+    return Scratch.Cast.toString(args.SOURCE);
+  }
+
+  public noteYaml(args: {SOURCE: unknown}): string {
+    return Scratch.Cast.toString(args.SOURCE);
   }
 
   private toScratchBlock(block: BlockDefinition): Record<string, unknown> {

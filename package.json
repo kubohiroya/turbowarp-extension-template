@@ -24,7 +24,8 @@
   "files": [
     "dist/",
     "docs/",
-      "src/",
+    "src/",
+    "schemas/",
     "templates/",
     "README.md",
     "README.ja.md",
@@ -44,6 +45,7 @@
     "build": "vite build",
     "lint": "eslint src tests scripts vite.config.ts eslint.config.ts",
     "test": "vitest run",
+    "test:block-editor-host": "node --test tests/host-contract.integration.mjs",
     "docs": "node scripts/generate-readme.ts",
     "docs:check": "pnpm run docs && git diff --exit-code -- README.md",
     "template:readme": "node scripts/apply-readme-template.ts",
