@@ -11,6 +11,26 @@
           "type": "STRING"
         }
       ]
+    },
+    {
+      "opcode": "noteYaml",
+      "blockType": "REPORTER",
+      "arguments": [
+        {
+          "id": "SOURCE",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "opcode": "sceneJson",
+      "blockType": "REPORTER",
+      "arguments": [
+        {
+          "id": "SOURCE",
+          "type": "STRING"
+        }
+      ]
     }
   ],
   "menus": []

@@ -1,0 +1,7 @@
+# The form must not parse this source as JSON.
+title: 'メモ「春」 & "note"'
+body: |
+  一行目の "引用"
+  二行目
+metadata:
+  keep: true

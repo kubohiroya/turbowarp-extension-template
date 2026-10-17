@@ -66,6 +66,26 @@ Returns a localized greeting for the supplied name.
 | Opcode | `hello` |
 | `NAME` | String, default: `world` |
 
+### `scene JSON [SOURCE]`
+
+Returns the JSON source unchanged; a compatible GUI can edit its scene properties.
+
+| Property | Value |
+|---|---|
+| Type | Reporter |
+| Opcode | `sceneJson` |
+| `SOURCE` | String, default: `{"title":"最初のシーン","duration":3}` |
+
+### `note YAML [SOURCE]`
+
+Returns the YAML source unchanged; a compatible GUI can edit its note properties.
+
+| Property | Value |
+|---|---|
+| Type | Reporter |
+| Opcode | `noteYaml` |
+| `SOURCE` | String, default: `title: 'メモ「春」'\nbody: \|\n  一行目の "引用"\n  二行目\n` |
+
 <!-- END GENERATED BLOCKS -->
 
 ## Important behavior
@@ -86,6 +106,10 @@ The generated JavaScript is a single, non-minified TurboWarp extension file with
 Each build emits `dist/extension-manifest.json` with `formatVersion: 1`. It records the extension ID, block opcodes and types, argument IDs and types, and menu references in a deterministic order. Tools such as `sb3-toolchain` can compare this contract before updating an embedded extension or migrating its ID. See [the architecture document](docs/architecture.md) and the [JSON Schema](schemas/extension-manifest.schema.json) for the v1 contract.
 
 ## Compatibility
+
+See the [block editor guide](docs/block-editors.md) for JSON/YAML samples that generate forms from JSON Schema.
+Use a compatible modified GUI with `blockEditorDialogs=1` and load the extension without its sandbox. The flag remains OFF by default.
+Ordinary registration and execution also work in stock TurboWarp or when the editor API is unavailable.
 
 The canonical README is `README.md`. Japanese documentation uses `README.ja.md`; new repositories should not create `README_ja.md`.
 
