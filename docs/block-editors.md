@@ -7,15 +7,17 @@ This implements [Issue #21](https://github.com/kubohiroya/turbowarp-extension-te
 
 ## Host prerequisites
 
-Build the JSON/YAML implementation of [turbowarp-block-editor #1](https://github.com/kubohiroya/turbowarp-block-editor/issues/1)
-before building [scratch-gui #1](https://github.com/kubohiroya/scratch-gui/issues/1).
-The package remains private on npm, version `0.0.0`. The JSON/YAML sources are merged into main via [API PR #4](https://github.com/kubohiroya/turbowarp-block-editor/pull/4).
-Check out and build API commit `2f45521fdac9bd3759525d6a50369ebdb355805a`.
-[GUI PR #5](https://github.com/kubohiroya/scratch-gui/pull/5) pins this commit in both ordinary CI and Pages builds.
+The shared host is [turbowarp-extension-data-editor](https://github.com/kubohiroya/turbowarp-extension-data-editor).
+[scratch-gui develop](https://github.com/kubohiroya/scratch-gui/blob/develop/package.json) and the
+[published GUI](https://kubohiroya.github.io/scratch-gui/) use the npm release
+`@kubohiroya/turbowarp-extension-data-editor@0.1.0`, built from source commit
+`9e041e5278a1ea70146a76c10732d1401955a12a`. Ordinary GUI builds do not need a shared-repository checkout or local link.
 Use a build whose `createSchemaEditor()` handles `format`;
-the old JSON-only implementation ignores that property. The webpack 4 GUI must include `yaml` in its RJSF Babel rule.
-An `apiVersion: 1` match alone does not establish YAML support. Test the host/GUI combination and pin compatible versions when published.
-The [validation record](block-editors-validation.ja.md) identifies the source revisions and initial local combination.
+the old JSON-only implementation ignores that property.
+An `apiVersion: 1` match alone does not establish YAML support. Test the host/GUI combination and pin compatible published versions.
+Use the configuration API from the shared package's `/webpack4` entry, as described in its
+[webpack 4 guide](https://github.com/kubohiroya/turbowarp-extension-data-editor/blob/9e041e5278a1ea70146a76c10732d1401955a12a/docs/webpack4.md).
+The [validation record](block-editors-validation.ja.md) distinguishes the current release from historical source combinations.
 
 Start the modified GUI with `blockEditorDialogs=1` and load `dist/example-extension.js` with the **run without sandbox** option.
 The startup flag remains OFF by default in `scratch-gui/src/lib/tw-feature-flags.js`; no second flag is added.
@@ -181,12 +183,18 @@ pnpm run typecheck
 pnpm exec vitest run tests/block-editors.test.ts tests/extension.test.ts tests/extension-manifest.test.ts
 pnpm exec eslint src tests/block-editors.test.ts
 pnpm run build
-BLOCK_EDITOR_PACKAGE_DIR=../turbowarp-block-editor pnpm run test:block-editor-host
+npm install --prefix /tmp/turbowarp-extension-data-editor-host --no-save --ignore-scripts \
+  @kubohiroya/turbowarp-extension-data-editor@0.1.0 react@16.14.0 react-dom@16.14.0
+BLOCK_EDITOR_PACKAGE_DIR=/tmp/turbowarp-extension-data-editor-host/node_modules/@kubohiroya/turbowarp-extension-data-editor \
+  pnpm run test:block-editor-host
 pnpm run docs
 npm pack --dry-run --ignore-scripts
 ```
 
-The opt-in contract test uses the built shared package and actual extension bundle.
+The opt-in contract test uses that npm distribution and the actual extension bundle.
+The `/rjsf` entry requires React and ReactDOM peers, so the isolated install explicitly uses the GUI's 16.14.0 versions.
+`BLOCK_EDITOR_PACKAGE_DIR` points to the installed package directory; its existing name is retained for compatibility.
+To check a development build, point the same variable at a built checkout such as `../turbowarp-extension-data-editor` instead.
 It also registers the same scene schema with only `format` changed, checking validation and persistence in both formats.
 Host codec/schema tests additionally cover RJSF input, cancellation and asynchronous validation.
 In a browser, check icon entry, invalid Save, successful Save, Cancel and one-step Undo/Redo for both formats.
