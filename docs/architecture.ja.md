@@ -7,8 +7,8 @@
 このテンプレートは実行時の動作とビルド基盤を分離します。
 
 - `src/config.ts`は拡張機能metadata、`src/block-definitions.json`はブロック定義と参照文面の正本です。
-- `src/extension.ts`は実行時の動作、`src/index.ts`は登録とライフサイクルの接続、`src/globals.d.ts`はScratch境界の型宣言を担当します。
-- `src/block-editors.ts`と`schemas/`は任意のJSON/YAML編集サンプルです。対応する編集APIがなくても通常実行を維持します。
+- `src/extension.ts`は実行時の動作、`src/index.ts`は登録、`src/globals.d.ts`はScratch境界の型宣言を担当します。
+- ブロック編集のサンプルとテストは共通エディタが所有し、Templateには編集依存・Schema・登録・専用公開APIを搭載しません。対応する編集APIがなくても通常実行を維持します。
 - `vite.config.ts`はJavaScript出力を拡張機能プラグインへ、API metadataをmanifestプラグインへ委譲します。
 - `scripts/`は文書生成、repository policyと生成物の差分検査を担当し、`tests/`は動作と互換性契約を検証します。
 - GitHub Actionsは`package.json`の検査を実行し、文書用workflowは`docs/`をPagesへ配信します。

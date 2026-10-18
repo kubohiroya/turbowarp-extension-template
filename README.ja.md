@@ -64,16 +64,6 @@ pnpm run dev
 | Opcode | `hello` |
 | `NAME` | String, default: `world` |
 
-### `scene JSON [SOURCE]`
-
-JSON文字列をそのまま返します。対応GUIではtitleとdurationをSchemaフォームで編集できます。
-Opcodeは`sceneJson`、保存先は文字列引数`SOURCE`です。
-
-### `note YAML [SOURCE]`
-
-YAML文字列をそのまま返します。対応GUIではtitleと複数行bodyを別のSchemaで編集できます。
-Opcodeは`noteYaml`、保存先は文字列引数`SOURCE`です。
-
 ## 重要な動作
 
 ```text
@@ -89,13 +79,11 @@ Extension config + block definitions
 
 生成されるJavaScriptは、Extension Gallery metadataと標準の`(function (Scratch) { ... })(Scratch);` wrapperを持つ、単一の非minify TurboWarp拡張ファイルです。
 
-各ビルドは`formatVersion: 1`の`dist/extension-manifest.json`を出力します。このファイルには、拡張機能ID、ブロックopcodeと種類、引数IDと種類、メニュー参照が決定的な順序で記録されます。`sb3-toolchain`のようなツールは、埋め込み拡張機能の更新やID移行前にこの契約を比較できます。v1契約については[アーキテクチャ文書](docs/architecture.ja.md)と[JSON Schema](schemas/extension-manifest.schema.json)を参照してください。
+各ビルドは`formatVersion: 1`の`dist/extension-manifest.json`を出力します。このファイルには、拡張機能ID、ブロックopcodeと種類、引数IDと種類、メニュー参照が決定的な順序で記録されます。`sb3-toolchain`のようなツールは、埋め込み拡張機能の更新やID移行前にこの契約を比較できます。v1契約については[アーキテクチャ文書](docs/architecture.ja.md)と[JSON Schema](https://github.com/kubohiroya/turbowarp-extension-manifest/blob/main/schemas/extension-manifest.schema.json)を参照してください。
 
 ## 互換性
 
-JSON Schemaから専用フォームを生成するJSON/YAMLサンプルは、[ブロック編集ガイド](docs/block-editors.ja.md)を参照してください。
-対応GUIで`blockEditorDialogs=1`を設定し、拡張をunsandboxedで読み込みます。フラグは既定OFFです。
-通常のTurboWarpやAPI不在でも通常のブロック登録・実行は継続します。
+ブロック編集は任意の追加機能です。Templateはデータ編集のサンプルブロック・専用Schema・専用公開APIを標準搭載しません。必要な拡張だけが[導入ガイド](docs/block-editors.ja.md)に従って追加してください。撤去した旧APIへの影響は[移行文書](docs/template-examples-migration.ja.md)を参照してください。
 
 canonical READMEは`README.md`です。日本語ドキュメントは`README.ja.md`を使います。新規リポジトリでは`README_ja.md`を作成しません。
 

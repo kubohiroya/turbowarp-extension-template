@@ -43,3 +43,14 @@ describe('ExampleExtension', () => {
     expect(info.blockIconURI).toMatch(/^data:image\/svg\+xml;base64,/);
   });
 });
+
+
+it.each([false, true])('registers the minimal extension with GUI available = %s', async available => {
+  vi.resetModules();
+  const register = vi.fn();
+  const gui = Object.defineProperty({}, 'blockEditors', {get() { throw new Error('Template must not access editor registration.'); }});
+  vi.stubGlobal('Scratch', {extensions: {unsandboxed: false, register}, ...(available ? {gui} : {})});
+  await import('../src/index.js');
+  expect(register).toHaveBeenCalledOnce();
+  expect(register.mock.calls[0]?.[0]).toBeInstanceOf((await import('../src/extension.js')).ExampleExtension);
+});
