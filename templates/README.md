@@ -196,3 +196,13 @@ site and `blockIconURI` remains a `data:image/svg+xml;base64,...` URI.
 
 Third-party components, when present, are listed in
 [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
+
+## Required Pages and block documentation
+
+Repositories derived from this template must enable an unset Pages site through
+the GitHub API (`POST /repos/{owner}/{repo}/pages`, `{"build_type":"workflow"}`),
+prepare and publish documentation covering every registered block, and point
+`getInfo().docsURI` at it. Include stable `#block-<opcode>` links for each block.
+Verify the actual published URL, content, links, and deployment commit; Pages
+configuration alone is insufficient. Perform remote changes only within explicit
+authorization. See [the required procedure](docs/github-pages-setup.ja.md).

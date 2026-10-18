@@ -9,8 +9,17 @@
     code{background:#f3f3f3;padding:.1em .3em;border-radius:.25em}
     pre{background:#f6f8fa;padding:1rem;overflow:auto;border-radius:.5rem}
   </style>
+<style id="block-reference-style">
+#extension-block-reference{max-width:72rem;margin:2rem auto;padding:1rem;line-height:1.6;overflow-wrap:anywhere}
+#extension-block-reference .block-reference-entry{display:block;scroll-margin-top:6rem;margin:2rem 0;padding:1rem;border:1px solid currentColor;border-radius:.5rem}
+#extension-block-reference .block-reference-table{overflow-x:auto}
+#extension-block-reference table{border-collapse:collapse;width:100%}
+#extension-block-reference th,#extension-block-reference td{text-align:left;vertical-align:top;border:1px solid currentColor;padding:.5rem}
+#extension-block-reference code{white-space:pre-wrap}
+#extension-block-reference a:focus-visible{outline:3px solid currentColor;outline-offset:3px}
+</style>
 </head>
-<body>
+<body><p lang="en" class="complete-block-reference-link"><a href="#extension-block-reference">Complete block reference (3 blocks)</a></p>
   <h1>Example Extension</h1>
   <p>This is the English user documentation published with the TurboWarp Extension Template.</p>
 
@@ -24,5 +33,21 @@
 
   <h2>Development</h2>
   <p>See the repository README and architecture documentation for build, test, release, and compatibility details.</p>
+<!-- BEGIN COMPLETE BLOCK REFERENCE -->
+<section lang="en" id="extension-block-reference" aria-labelledby="block-reference-title">
+<h2 id="block-reference-title">TurboWarp-Example-Extension: complete block reference</h2>
+<p>All 3 blocks are documented below, including compatibility blocks and blocks available through optional features. Select a block to read its behavior, arguments, default values, and menu choices. Each block has a permanent link.</p>
+<nav aria-label="Block reference"><ul><li><a href="#block-hello"><code>hello [NAME]</code></a></li>
+<li><a href="#block-sceneJson"><code>scene JSON [SOURCE]</code></a></li>
+<li><a href="#block-noteYaml"><code>note YAML [SOURCE]</code></a></li>
+</ul></nav>
+<article id="block-hello" class="block-reference-entry"><h3><code>hello [NAME]</code></h3><p>Returns a localized greeting for the supplied name.</p><p>Block type: REPORTER. Opcode: <code>hello</code>. <a href="#block-hello">Permanent link</a></p><div class="block-reference-table"><table><thead><tr><th>Argument</th><th>Type</th><th>Default value</th><th>Menu choices</th></tr></thead><tbody><tr><th scope="row"><code>NAME</code></th><td>STRING</td><td><code>world</code></td><td></td></tr></tbody></table></div></article><article id="block-sceneJson" class="block-reference-entry"><h3><code>scene JSON [SOURCE]</code></h3><p>Returns the JSON source unchanged; a compatible GUI can edit its scene properties.</p><p>Block type: REPORTER. Opcode: <code>sceneJson</code>. <a href="#block-sceneJson">Permanent link</a></p><div class="block-reference-table"><table><thead><tr><th>Argument</th><th>Type</th><th>Default value</th><th>Menu choices</th></tr></thead><tbody><tr><th scope="row"><code>SOURCE</code></th><td>STRING</td><td><code>{&quot;title&quot;:&quot;最初のシーン&quot;,&quot;duration&quot;:3}</code></td><td></td></tr></tbody></table></div></article><article id="block-noteYaml" class="block-reference-entry"><h3><code>note YAML [SOURCE]</code></h3><p>Returns the YAML source unchanged; a compatible GUI can edit its note properties.</p><p>Block type: REPORTER. Opcode: <code>noteYaml</code>. <a href="#block-noteYaml">Permanent link</a></p><div class="block-reference-table"><table><thead><tr><th>Argument</th><th>Type</th><th>Default value</th><th>Menu choices</th></tr></thead><tbody><tr><th scope="row"><code>SOURCE</code></th><td>STRING</td><td><code>title: &#x27;メモ「春」&#x27;
+body: |
+  一行目の &quot;引用&quot;
+  二行目
+</code></td><td></td></tr></tbody></table></div></article>
+<p><a href="https://github.com/kubohiroya/turbowarp-extension-template/blob/main/README.md">Repository guide and examples</a></p>
+</section>
+<!-- END COMPLETE BLOCK REFERENCE -->
 </body>
 </html>

@@ -61,3 +61,18 @@ checks for a small change can remain focused; run the complete check before a re
 
 Consult the [architecture](docs/architecture.md), [style guide](STYLE_GUIDE.md), and
 [design principles](DESIGN_PRINCIPLES.md) when choosing where a change belongs.
+
+## Required GitHub Pages documentation
+
+Every extension derived from this template must have GitHub Pages enabled. When
+the site is unset, configure it through the Pages API with `build_type: workflow`;
+do not leave it as a manual setup reminder. Preserve an existing publishing source.
+Prepare and publish documentation for every registered block, including hidden
+compatibility blocks and optional blocks, with stable `#block-<opcode>` anchors.
+The extension's standard `getInfo().docsURI` must open that published documentation.
+Verify the actual URL, content, block coverage, links, and deployment commit after
+publishing. Site configuration alone does not complete this requirement.
+
+Remote settings and publication require explicit authorization for the target and
+operation. Follow the [required Pages procedure](docs/github-pages-setup.ja.md) for
+API checks, validation, deployment, evidence retention, and rollback.

@@ -181,3 +181,12 @@ release consistency checkでは、exact-version README／CDN例に加え、`docs
 
 third-party componentを含む場合は
 [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md)に記載します。
+
+## Pages・ブロック文書の必須条件
+
+未設定のPagesはGitHub APIの`POST /repos/{owner}/{repo}/pages`、
+`{"build_type":"workflow"}`で必ず有効化します。全登録ブロックの説明と
+`#block-<opcode>`の固定アンカーを用意して公開し、`getInfo().docsURI`を
+その公開文書に結びつけます。設定だけで完了とせず、実URL・本文・リンク・
+公開commitまで確認します。外部操作は対象・操作への明示承認の範囲で実施します。
+[必須手順](docs/github-pages-setup.ja.md)を参照してください。
