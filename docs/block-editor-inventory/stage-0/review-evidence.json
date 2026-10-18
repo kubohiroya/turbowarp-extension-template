@@ -1,0 +1,139 @@
+{
+  "aframe": [
+    {
+      "input": {
+        "id": ""
+      },
+      "runtimeAccepted": true,
+      "publishedSchemaAccepted": false
+    },
+    {
+      "input": {
+        "classes": [
+          "actor",
+          "actor"
+        ]
+      },
+      "runtimeAccepted": true,
+      "publishedSchemaAccepted": false
+    },
+    {
+      "input": {
+        "attributes": {
+          "position": [
+            0,
+            1,
+            2
+          ]
+        }
+      },
+      "runtimeAccepted": true,
+      "publishedSchemaAccepted": false
+    },
+    {
+      "input": {
+        "data": {
+          "custom": {
+            "v": 1
+          }
+        }
+      },
+      "runtimeAccepted": true,
+      "publishedSchemaAccepted": false
+    },
+    {
+      "input": {
+        "children": [
+          {
+            "id": "",
+            "class": [
+              "a",
+              "a"
+            ]
+          }
+        ]
+      },
+      "runtimeAccepted": true,
+      "publishedSchemaAccepted": false
+    },
+    {
+      "input": [],
+      "runtimeAccepted": false,
+      "publishedSchemaAccepted": false
+    },
+    {
+      "input": {
+        "unknown": 1
+      },
+      "runtimeAccepted": false,
+      "publishedSchemaAccepted": false
+    },
+    {
+      "input": {
+        "children": {}
+      },
+      "runtimeAccepted": false,
+      "publishedSchemaAccepted": false
+    },
+    {
+      "input": {
+        "attributes": {
+          " ": 1
+        }
+      },
+      "runtimeAccepted": false,
+      "publishedSchemaAccepted": true
+    }
+  ],
+  "loadingCostumes": [
+    {
+      "repository": "turbowarp-asset-manager",
+      "input": "a,a,b",
+      "logicalList": [
+        "a",
+        "b"
+      ],
+      "second": "b"
+    },
+    {
+      "repository": "turbowarp-asset-manager",
+      "input": " b , a , b, ,",
+      "logicalList": [
+        "b",
+        "a"
+      ],
+      "second": "a"
+    },
+    {
+      "repository": "turbowarp-asset-manager",
+      "input": "",
+      "logicalList": [],
+      "second": ""
+    },
+    {
+      "repository": "turbowarp-asset-cache",
+      "input": "a,a,b",
+      "logicalList": [
+        "a",
+        "b"
+      ],
+      "second": "b"
+    },
+    {
+      "repository": "turbowarp-asset-cache",
+      "input": " b , a , b, ,",
+      "logicalList": [
+        "b",
+        "a"
+      ],
+      "second": "a"
+    },
+    {
+      "repository": "turbowarp-asset-cache",
+      "input": "",
+      "logicalList": [],
+      "second": ""
+    }
+  ],
+  "method": "現行ソースの純粋なメソッド/normalizeName/TEMPLATE_NODE_KEYSのみをTypeScript ASTから抽出して隔離vm内で評価。拡張のimport/constructor/DOM/通信/機器起動は行わない。提案codec/UIは未実装のため実行対象外。"
+}
