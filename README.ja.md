@@ -103,6 +103,8 @@ canonical READMEは`README.md`です。日本語ドキュメントは`README.ja.
 
 ## 開発
 
+開発手順と規約は、英語の[貢献ガイド](CONTRIBUTING.md)・[スタイルガイド](STYLE_GUIDE.md)・[設計原則](DESIGN_PRINCIPLES.md)を参照してください。
+
 ```bash
 pnpm run check
 ```

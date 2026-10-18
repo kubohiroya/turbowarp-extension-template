@@ -2,6 +2,28 @@
 
 [日本語](architecture.ja.md)
 
+## Project layers and boundaries
+
+The template separates runtime behavior from build infrastructure:
+
+- `src/config.ts` defines extension metadata, and `src/block-definitions.json`
+  defines canonical blocks and reference text.
+- `src/extension.ts` implements runtime behavior; `src/index.ts` handles registration
+  and lifecycle wiring, and `src/globals.d.ts` declares the Scratch boundary.
+- `src/block-editors.ts` and `schemas/` provide optional JSON/YAML editor examples.
+  Ordinary execution remains available without a compatible editor API.
+- `vite.config.ts` delegates JavaScript output to the extension plugin and API
+  metadata to the manifest plugin.
+- `scripts/` generates documentation and checks repository policy and build drift.
+  `tests/` verifies behavior and compatibility contracts.
+- GitHub Actions runs the checks in `package.json`; the documentation workflow
+  publishes `docs/` to Pages.
+
+Reusable structure and small examples belong in the template. Domain-specific APIs,
+assets, and behavior belong in repositories created from it. See the
+[contribution workflow](../CONTRIBUTING.md), [style guide](../STYLE_GUIDE.md), and
+[design principles](../DESIGN_PRINCIPLES.md).
+
 ## Build outputs
 
 The project keeps runtime behavior and compatibility metadata separate while generating both from
@@ -16,6 +38,10 @@ src/config.ts + src/block-definitions.json
   -> extension-api-manifest Vite plugin
   -> dist/extension-manifest.json
 ```
+
+The JavaScript bundle is readable and non-minified, with TurboWarp metadata, one
+registration call, no runtime imports or exports, and the standard
+`(function (Scratch) { ... })(Scratch);` wrapper. The manifest is a separate artifact.
 
 The manifest plugin runs in Vite's post-build phase. This preserves the JavaScript plugin's
 single-output validation and adds the manifest only after the TurboWarp bundle is complete.

@@ -117,6 +117,9 @@ Repository-level differences belong in `repo-policy.json`. Use policy exceptions
 
 ## Development
 
+See the [contribution guide](CONTRIBUTING.md), [style guide](STYLE_GUIDE.md), and
+[design principles](DESIGN_PRINCIPLES.md) for the project workflow and conventions.
+
 ```bash
 pnpm run check
 ```
