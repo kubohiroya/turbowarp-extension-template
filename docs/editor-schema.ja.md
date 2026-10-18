@@ -9,3 +9,7 @@
 確認: 型検査、新adapterと既存登録/extensionの15テスト、既存Vite＋独立JS/型/resource emit、srcなしDOM/Reactなしisolated importとskipLibCheck:falseのconsumer型検査が成功。既存JSON/YAML fixtureの受理、追加データ保持、不正構造/形式の拒否、source不変を確認した。
 
 共通型/検証依存を検証済みGit commit a1ab4f4f5b384eef08ef26e544186ee9d8ad4543へ固定する。npm publishやGUIの依存変更は含めない。既定OFFのGUIフラグは保持し、新pure入口の利用停止/本Issueのcommit revertでrollbackできる。保存済みsourceの移行は不要。段階2以降のbinding・候補UI、Schema自体や任意Schemaによるフォームは後段。
+
+## S1-5の最終確認
+
+対象は合計15ケース（増分検証を含む）。srcを除いた実packageでReact不在・DOM/VM/通信globalアクセス0、skipLibCheck:falseの型検査を確認し、独立生成4ファイルを再emitと全SHA-256照合した。16契約の横断fixtureと依存artifact照合の記録は共通repoのschema-stage1-*.jsonを参照。既存生成基準は保持する。

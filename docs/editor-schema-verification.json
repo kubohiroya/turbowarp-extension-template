@@ -2,7 +2,7 @@
   "stage": "S1-4/p",
   "repository": "turbowarp-extension-template",
   "issue": "https://github.com/kubohiroya/turbowarp-extension-template/issues/29",
-  "base": "5e6dafc0d3d3283d046d593cdd16fc555d8cf3b5",
+  "base": "5a797e5e403c09f62413e204a79090d85b33b5ce",
   "branch": "feat/schema/stage1-extension-template",
   "targeted_tests_passed": 15,
   "typecheck": "passed",
@@ -14,7 +14,8 @@
       "version": "0.1.0",
       "resolved_path": "/private/tmp/schema-stage1-worktrees-20261018/extension-template/node_modules/.pnpm/@kubohiroya+turbowarp-extension-data-editor@https+++codeload.github.com+kubohiroya+turb_5f902832b16dc00a1fc95546529ab82c/node_modules/@kubohiroya/turbowarp-extension-data-editor",
       "manifest_sha256": "3e86db1bf667088a7a87ada19fc11573082918335dd281073464ca4fcebf74da",
-      "specifier": "git+https://github.com/kubohiroya/turbowarp-extension-data-editor.git#a1ab4f4f5b384eef08ef26e544186ee9d8ad4543"
+      "specifier": "git+https://github.com/kubohiroya/turbowarp-extension-data-editor.git#a1ab4f4f5b384eef08ef26e544186ee9d8ad4543",
+      "via": "@kubohiroya/turbowarp-extension-template"
     }
   },
   "emitted_sha256": {
@@ -23,6 +24,16 @@
     "lib-editor/src/editor-schema.d.ts": "91adb6fa7ee17c66bb48a71582523072399419543eb02d1ad075bdaa6b2e006c",
     "lib-editor/src/editor-schema.js": "0cfccf408ee6855e765f2b1bc4004e4e849d82cdd94fbc98f1df9935beffa765"
   },
+  "source_sha256": {
+    "src/block-editors.ts": "e3387fb238b522dd4c1eb4cfe0e906413ddf8f4abe5127ebfad79e5de79fc085",
+    "src/config.ts": "785c1a715ee4940ae90de71698b1b383b894236b66186d28734a4475a463a4c7",
+    "src/editor-schema.ts": "8ba1362f17871360661dd4cfe54d49fc8b61c3feb9bec01f33beb4201b6b3631",
+    "src/extension.ts": "8af3541382bde13a281bd92819a6751fac3388afa98a8749c0c3b65a811e2b3e",
+    "src/globals.d.ts": "88c8b368adcc95141a318d5d8999f9923ba2a54007c4dc5cf76bb86be6397285",
+    "src/index.ts": "238637035c0e457b5b365ff13bf941c41df4c6141f09a5147b31f3302c2b9491"
+  },
+  "source_emit_hash_matches": 4,
+  "side_effect_guarded_isolated_import": "0 DOM/VM/network global accesses; React absent",
   "scope": {
     "new_extension_editor_registration": false,
     "schema_authoring_UI": false,
