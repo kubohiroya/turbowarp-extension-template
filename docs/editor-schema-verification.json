@@ -1,0 +1,33 @@
+{
+  "stage": "S1-4/p",
+  "repository": "turbowarp-extension-template",
+  "issue": "https://github.com/kubohiroya/turbowarp-extension-template/issues/29",
+  "base": "5e6dafc0d3d3283d046d593cdd16fc555d8cf3b5",
+  "branch": "feat/schema/stage1-extension-template",
+  "targeted_tests_passed": 15,
+  "typecheck": "passed",
+  "existing_build_and_editor_emit": "passed",
+  "source_absent_isolated_import": "passed",
+  "isolated_no_DOM_skipLibCheck_false": "passed",
+  "resolved_dependencies": {
+    "@kubohiroya/turbowarp-extension-data-editor": {
+      "version": "0.1.0",
+      "resolved_path": "/private/tmp/schema-stage1-worktrees-20261018/extension-template/node_modules/.pnpm/@kubohiroya+turbowarp-extension-data-editor@https+++codeload.github.com+kubohiroya+turb_5f902832b16dc00a1fc95546529ab82c/node_modules/@kubohiroya/turbowarp-extension-data-editor",
+      "manifest_sha256": "3e86db1bf667088a7a87ada19fc11573082918335dd281073464ca4fcebf74da",
+      "specifier": "git+https://github.com/kubohiroya/turbowarp-extension-data-editor.git#a1ab4f4f5b384eef08ef26e544186ee9d8ad4543"
+    }
+  },
+  "emitted_sha256": {
+    "lib-editor/schemas/note-properties.schema.json": "99c262f212c94a24100649d6362ae6b8090a52a0637d88c157269aef7d24a767",
+    "lib-editor/schemas/scene-properties.schema.json": "e8431f5a601b483f56a04b524a2ec5bf45867af72ac6b630593b7ed8c3d3ac7c",
+    "lib-editor/src/editor-schema.d.ts": "91adb6fa7ee17c66bb48a71582523072399419543eb02d1ad075bdaa6b2e006c",
+    "lib-editor/src/editor-schema.js": "0cfccf408ee6855e765f2b1bc4004e4e849d82cdd94fbc98f1df9935beffa765"
+  },
+  "scope": {
+    "new_extension_editor_registration": false,
+    "schema_authoring_UI": false,
+    "arbitrary_schema_UI": false,
+    "GUI_dependency_change": false,
+    "cause_investigation": false
+  }
+}
