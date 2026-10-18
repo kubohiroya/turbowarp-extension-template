@@ -7,15 +7,16 @@
 
 ## 依存・フラグ・起動
 
-先に[turbowarp-block-editor #1](https://github.com/kubohiroya/turbowarp-block-editor/issues/1)のJSON/YAML対応をビルドし、
-[scratch-gui #1](https://github.com/kubohiroya/scratch-gui/issues/1)のGUIへ接続します。
-共通パッケージはnpm未公開の`0.0.0`です。JSON/YAML対応ソースは[共通API PR #4](https://github.com/kubohiroya/turbowarp-block-editor/pull/4)としてmainへ統合済みです。
-検証した共通APIコミット`2f45521fdac9bd3759525d6a50369ebdb355805a`をcheckoutしてビルドしてください。
-対応する[GUI PR #5](https://github.com/kubohiroya/scratch-gui/pull/5)は、通常CIとPagesの両方でこのコミットを参照します。
+共通基盤は[turbowarp-extension-data-editor](https://github.com/kubohiroya/turbowarp-extension-data-editor)です。
+[scratch-guiのdevelop](https://github.com/kubohiroya/scratch-gui/blob/develop/package.json)と
+[公開GUI](https://kubohiroya.github.io/scratch-gui/)は、npm公開版`@kubohiroya/turbowarp-extension-data-editor@0.1.0`を使用します。
+同版のsource SHAは`9e041e5278a1ea70146a76c10732d1401955a12a`です。
+GUIの通常ビルドに共通リポジトリのcheckout・ローカルリンクは不要です。
 JSON専用の旧版は`format`を無視するため、YAMLには使用できません。
 `apiVersion: 1`の一致だけではYAML対応を判定できません。対応する共通API・GUIの組合せを結合テストし、
-npm公開後は検証済みの依存版を固定してください。対応するソースと初回ローカル検証の組合せは[検証記録](block-editors-validation.ja.md)で識別します。
-webpack 4のGUIでは、既存のRJSF用Babel変換対象に`yaml`も含めて再ビルドします。
+検証済みの依存版を固定してください。現在の公開版と過去の検証結果は[検証記録](block-editors-validation.ja.md)で区別します。
+webpack 4のGUIでは、共通パッケージの`/webpack4`入口が提供する設定APIを使います。
+詳しくは[共通側のwebpack 4ガイド](https://github.com/kubohiroya/turbowarp-extension-data-editor/blob/9e041e5278a1ea70146a76c10732d1401955a12a/docs/webpack4.md)を参照してください。
 
 GUIのURLへ`blockEditorDialogs=1`を付け、`dist/example-extension.js`をカスタム拡張として
 **unsandboxedで実行する設定で**読み込みます。配置済みブロックの先頭アイコンから編集します。
@@ -195,12 +196,18 @@ pnpm run typecheck
 pnpm exec vitest run tests/block-editors.test.ts tests/extension.test.ts tests/extension-manifest.test.ts
 pnpm exec eslint src tests/block-editors.test.ts
 pnpm run build
-BLOCK_EDITOR_PACKAGE_DIR=../turbowarp-block-editor pnpm run test:block-editor-host
+npm install --prefix /tmp/turbowarp-extension-data-editor-host --no-save --ignore-scripts \
+  @kubohiroya/turbowarp-extension-data-editor@0.1.0 react@16.14.0 react-dom@16.14.0
+BLOCK_EDITOR_PACKAGE_DIR=/tmp/turbowarp-extension-data-editor-host/node_modules/@kubohiroya/turbowarp-extension-data-editor \
+  pnpm run test:block-editor-host
 pnpm run docs
 npm pack --dry-run --ignore-scripts
 ```
 
-ホスト結合テストはビルド済み共通パッケージを使い、生成JSの実API登録、fixtureの読込・保存・再オープン・不正値・解除を検証します。
+ホスト結合テストは上記のnpm配布物を使い、生成JSの実API登録、fixtureの読込・保存・再オープン・不正値・解除を検証します。
+標準フォームの`/rjsf`入口にはReactとReactDOMのpeerが必要なため、隔離環境にはGUIと同じ16.14.0を明示的にインストールします。
+`BLOCK_EDITOR_PACKAGE_DIR`はインストールされた共通パッケージのディレクトリを指します。互換性のため変数名は維持します。
+共通側の開発版を検証する場合は、ビルドした`../turbowarp-extension-data-editor`等へ同じ変数を向けることもできます。
 同じscene Schemaの定義を`format`だけ変えて登録し、両形式で同じ検証・保存ができることも確認します。
 共通側の`test/codec.test.mjs`と`test/schema-editor.test.mjs`はRJSFの実入力・Cancel・非同期検証も確認します。
 実ブラウザでは両形式のアイコン、invalid、Save、Cancel、Undo/Redo、`.sb3`の保存・新しい画面での再読込・再編集を確認します。

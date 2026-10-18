@@ -1,29 +1,41 @@
 # Issue #21の検証記録
 
 日付: 2026-10-18（日本時間）。対象: [テンプレート #21](https://github.com/kubohiroya/turbowarp-extension-template/issues/21)。
-初回ローカル実装・検証と、公開後のCI統合確認を記録しています。
+初回ローカル実装・検証、公開後のCI統合確認、改名後のnpm配布物の確認を区別して記録しています。
+
+## 現在の公開版と改名後の確認
+
+[参照更新 #25](https://github.com/kubohiroya/turbowarp-extension-template/issues/25)で、現行ガイド・結合テストの案内を新名へ更新しました。
+共通基盤は`@kubohiroya/turbowarp-extension-data-editor@0.1.0`、公開元は`9e041e5278a1ea70146a76c10732d1401955a12a`です。
+scratch-guiのdevelopと公開GUIはこのnpm版を固定して使用します。現在の再現手順は[日英ガイド](block-editors.ja.md)を参照してください。
+
+今回の確認では、npm配布物とReact/ReactDOM 16.14.0を隔離インストールし、生成した拡張JSによるJSON/YAML結合テスト2件が成功しました。
+テンプレートのビルドと`tests/block-editors.test.ts`の10件も成功しています。
+最初の単独インストールではReactDOM peerがなくRJSF入口を読み込めなかったため、日英の再現手順へ両peerの明示インストールを追加して解消しました。
+
+以下の未公開`0.0.0`、ブランチ、SHA、件数は当時の結果です。現在の公開版を指す値に置換せず、初回の検証記録として保持します。
 
 ## CI統合時の対応版
 
-- 共通API基盤: [PR #3](https://github.com/kubohiroya/turbowarp-block-editor/pull/3)。CI追加後の型検査・ビルド・29テストが成功し、mainへ統合済み。
-- JSON/YAML対応: [PR #4](https://github.com/kubohiroya/turbowarp-block-editor/pull/4)。型検査・ビルド・38テストが成功し、mainへ統合済み。対応コミットは`2f45521fdac9bd3759525d6a50369ebdb355805a`。
+- 共通API基盤: [PR #3](https://github.com/kubohiroya/turbowarp-extension-data-editor/pull/3)。CI追加後の型検査・ビルド・29テストが成功し、mainへ統合済み。
+- JSON/YAML対応: [PR #4](https://github.com/kubohiroya/turbowarp-extension-data-editor/pull/4)。型検査・ビルド・38テストが成功し、mainへ統合済み。対応コミットは`2f45521fdac9bd3759525d6a50369ebdb355805a`。
 - GUI基盤: [PR #3](https://github.com/kubohiroya/scratch-gui/pull/3)。共通APIの固定取得と専用エディター17テストをCIへ接続し、成功確認後にdevelopへ統合済み。
 - GUIのYAML対応: [PR #5](https://github.com/kubohiroya/scratch-gui/pull/5)。検証対象headは`86f5b75d9b8077224dcc1dde098328172dbe5b51`。通常CIとPagesの両方で上記のマージ済み共通APIを固定参照。
 
-共通APIはソースを公開済みですが、npmパッケージは実験的な未公開`0.0.0`を維持しています。
+当時は共通APIのソースを公開済みで、npmパッケージは実験的な未公開`0.0.0`を維持していました。
 以降のブランチ名・ハッシュ・未pushの記述は初回ローカル検証時点の記録です。
 
 ## ブランチと依存順序
 
 | リポジトリ | ブランチ | 変更 |
 |---|---|---|
-| turbowarp-block-editor | `feat/editor/session-contract` | format契約、JSON/YAML codec、保存、境界テスト |
+| turbowarp-extension-data-editor | `feat/editor/session-contract` | format契約、JSON/YAML codec、保存、境界テスト |
 | turbowarp-extension-template | `feat/template/schema-block-editors` | 静的Schema、JSON/YAMLサンプル、登録・解除、配布・文書 |
 | scratch-gui | `feat/site/github-pages`（既存作業ブランチ） | webpackの既存Babel対象へyamlを加える1行 |
 
 直列: 共通APIのJSON/YAML対応をビルド → GUIを再ビルド → 拡張JSを読み込んで統合確認。
 テンプレートとGUIは、今回の共通API修正を含むビルドを必要とします。
-共通APIは未公開の`0.0.0`のため、現時点で公開済みの依存版として扱いません。
+当時の共通APIは未公開の`0.0.0`のため、当時の記録では公開済みの依存版として扱っていません。
 
 `apiVersion: 1`だけではJSON専用の旧版を区別できないため、今回の対応版を次で識別します。
 共通側の基点コミットは`5e8b76d2834be2d699737b6c8b4a0a9990796f92`、

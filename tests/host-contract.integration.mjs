@@ -8,7 +8,7 @@ import {runInNewContext} from 'node:vm';
 import {test} from 'node:test';
 
 const packagePath = process.env.BLOCK_EDITOR_PACKAGE_DIR;
-if (!packagePath) throw new Error('Set BLOCK_EDITOR_PACKAGE_DIR to the built turbowarp-block-editor checkout.');
+if (!packagePath) throw new Error('Set BLOCK_EDITOR_PACKAGE_DIR to the installed @kubohiroya/turbowarp-extension-data-editor package or its built checkout.');
 const {EditorRegistry} = await import(pathToFileURL(resolve(packagePath, 'dist/index.js')).href);
 const {createSchemaEditor} = await import(pathToFileURL(resolve(packagePath, 'dist/rjsf.js')).href);
 const {decodeSource, encodeSource} = await import(pathToFileURL(resolve(packagePath, 'dist/codec.js')).href);
