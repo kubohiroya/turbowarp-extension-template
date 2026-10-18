@@ -1,0 +1,98 @@
+{
+  "record_kind": "corrected count/contract snapshot; final own HEAD and postcommit CI are recorded on the existing PR and local coordinator",
+  "observed_at_utc": "2026-10-18T07:56:01.307864+00:00",
+  "owner_full_checks_unique_cases": {
+    "scene-graph": 66,
+    "camera-source": 240,
+    "aframe": 55,
+    "time-space-sync": 342,
+    "extension-template": 18,
+    "3d-scene-runtime": 15,
+    "camera-calibration": 202,
+    "realtime-motion-capture": 168
+  },
+  "owner_full_checks_total": 1106,
+  "previous_incorrect_scene_count": 10,
+  "previous_incorrect_total": 1050,
+  "past_snapshot": "history/stage1-counts-before-20261018/snapshot.json",
+  "count_basis": {
+    "scene_check_log_sha256": "35fcec3e680a426057b88e39739d2479adc5bb199e2fb3fc07e766a6e4dc51e7",
+    "scope": "full pnpm check includes66 scene tests; previous10/215 were scoped targeted runs and remain historical",
+    "unaffected_results": "7other full-check success logs retained; no full rerun merely for count documentation"
+  },
+  "repositories": [
+    {
+      "repository": "kubohiroya/turbowarp-extension-data-editor",
+      "PR": "https://github.com/kubohiroya/turbowarp-extension-data-editor/pull/21",
+      "head": "b5f4b8d2e391a0d57d091c8f3e1c2d58da152dc8",
+      "role": "common"
+    },
+    {
+      "repository": "kubohiroya/turbowarp-scene-graph",
+      "PR": "https://github.com/kubohiroya/turbowarp-scene-graph/pull/6",
+      "head": "5cb8b7787040f55d968c2e2aa384653e8c6abed5",
+      "role": "producer"
+    },
+    {
+      "repository": "kubohiroya/turbowarp-camera-source",
+      "PR": "https://github.com/kubohiroya/turbowarp-camera-source/pull/48",
+      "head": "53a2a400bbdee6a850379eff29f0d422d948174e",
+      "role": "producer"
+    },
+    {
+      "repository": "kubohiroya/turbowarp-aframe",
+      "PR": "https://github.com/kubohiroya/turbowarp-aframe/pull/20",
+      "head": "f200da585fa3b38d13cfc998d32fabd62689028a",
+      "role": "owner/consumer"
+    },
+    {
+      "repository": "kubohiroya/turbowarp-time-space-sync",
+      "PR": "https://github.com/kubohiroya/turbowarp-time-space-sync/pull/21",
+      "head": "ca5fd820c18be6cf3dea1f6b1efd2985f14a19a3",
+      "role": "owner/consumer"
+    },
+    {
+      "repository": "kubohiroya/turbowarp-extension-template",
+      "PR": "https://github.com/kubohiroya/turbowarp-extension-template/pull/30",
+      "head": "Git revision containing this document; resolve via PR head",
+      "role": "owner/consumer"
+    },
+    {
+      "repository": "kubohiroya/turbowarp-3d-scene-runtime",
+      "PR": "https://github.com/kubohiroya/turbowarp-3d-scene-runtime/pull/2",
+      "head": "e5a910a4f21ca8533b006b372c2b1d7722b84f2a",
+      "role": "owner/consumer"
+    },
+    {
+      "repository": "kubohiroya/turbowarp-camera-calibration",
+      "PR": "https://github.com/kubohiroya/turbowarp-camera-calibration/pull/39",
+      "head": "33fd9368540c4c4edfd5ad4ee6c0ca29bf524b2f",
+      "role": "owner/consumer"
+    },
+    {
+      "repository": "kubohiroya/turbowarp-realtime-motion-capture",
+      "PR": "https://github.com/kubohiroya/turbowarp-realtime-motion-capture/pull/33",
+      "head": "cfd8219cc356fb9ac03a5cb0abbf92351efae816",
+      "role": "owner/consumer"
+    }
+  ],
+  "common_revision": "b5f4b8d2e391a0d57d091c8f3e1c2d58da152dc8",
+  "scene_revision": "5cb8b7787040f55d968c2e2aa384653e8c6abed5",
+  "camera_source_revision": "53a2a400bbdee6a850379eff29f0d422d948174e",
+  "dependency_contract": "Runtime manifest/lock/allowBuilds/actual scene resolution match scene_revision; indirect common B5 and AR0.3 remain fixed",
+  "unchanged_generated_files": 135,
+  "headless_contracts": 16,
+  "API_data_schema_changes": false,
+  "postcommit_verification": "Final Runtime dist guard, final packed artifact hashes and latest PR checks are verified after the correction commits; prior snapshots remain linked",
+  "rollback": "Restore the count-correction before-commit package/lock/workspace as a unit, restore related notice SHA if needed, rebuild tracked dist and verify actual resolution; no saved source migration",
+  "next_stage_conditions": [
+    "GUI still public0.1.0 without./schema; align corrected artifact/lock/actual resolution and capability before UI binding",
+    "Preserve raw JSON/YAML/ROS and variants, no-change source/comments/Undo; reacquire context before save",
+    "Verify16owner RJSF forms; keep other fixed contracts, candidates and schema authoring/dynamic schema in later tasks"
+  ],
+  "operations_not_performed": [
+    "stage2 or later",
+    "PR merge",
+    "npm publication"
+  ]
+}

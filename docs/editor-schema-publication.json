@@ -1,0 +1,96 @@
+{
+  "stage": "S1 reviewed fixes and Git artifact alignment",
+  "repository": "@kubohiroya/turbowarp-extension-template",
+  "issue": "https://github.com/kubohiroya/turbowarp-extension-template/issues/29",
+  "observed_at_utc": "2026-10-18T06:31:22.337199+00:00",
+  "base_commit_before_this_publication": "1604bb18da1eeb5cbe47e520ca455140d83ad517",
+  "branch": "feat/schema/stage1-extension-template",
+  "dependency_pins": {
+    "@kubohiroya/turbowarp-extension-data-editor": "git+https://github.com/kubohiroya/turbowarp-extension-data-editor.git#b5f4b8d2e391a0d57d091c8f3e1c2d58da152dc8"
+  },
+  "common_revision": "b5f4b8d2e391a0d57d091c8f3e1c2d58da152dc8",
+  "resolved_dependencies": [
+    {
+      "name": "@kubohiroya/turbowarp-extension-data-editor",
+      "via": "@kubohiroya/turbowarp-extension-template",
+      "specifier": "git+https://github.com/kubohiroya/turbowarp-extension-data-editor.git#b5f4b8d2e391a0d57d091c8f3e1c2d58da152dc8",
+      "resolved_path": "/private/tmp/schema-stage1-worktrees-20261018/extension-template/node_modules/.pnpm/@kubohiroya+turbowarp-extension-data-editor@https+++codeload.github.com+kubohiroya+turb_ea9ed4fbe83b895db0a5315e4e7cce4f/node_modules/@kubohiroya/turbowarp-extension-data-editor",
+      "version": "0.1.0",
+      "manifest_sha256": "3e86db1bf667088a7a87ada19fc11573082918335dd281073464ca4fcebf74da",
+      "build_info": {
+        "name": "@kubohiroya/turbowarp-extension-data-editor",
+        "version": "0.1.0",
+        "repository": "https://github.com/kubohiroya/turbowarp-extension-data-editor",
+        "revision": "b5f4b8d2e391a0d57d091c8f3e1c2d58da152dc8"
+      },
+      "rjsf_type_sha256": "6b68cfc2a04c7b730234968bdd6fac380747e2de6631e1752caf07fd8b9b0c90",
+      "rjsf_default_null": true,
+      "pure_files_sha256": {
+        "schema-compose.d.ts": "e9bb269fcb3be82661b692e7fdf5c55ac433a31d699ac591a86bf5358046b83e",
+        "schema-compose.js": "04b32c71920f1ad99425582c3ef57b69b3725f87191efc808ef94e28b8d7bdd2",
+        "schema-engine.d.ts": "36049b8206969175b2e9628b3cf0cb670cb6b10836e28963e5aa32c797882681",
+        "schema-engine.js": "80f203c8c8035ea3e0becd02087dfe3cd5a77ffbcf1a183cbd7976e79294efff",
+        "schema-json.d.ts": "dc0a7644776117235b33129292ec0936bce37f769adb497387a7071508ce4540",
+        "schema-json.js": "367f4deb589286fad3d2c05456cfd8b6859d5e1e2efa22dcd84e629f6d9efddc",
+        "schema-types.d.ts": "4c56872a799cb4e5e59c5ebcd3b889493e082e08c5ad6629b6b1a1c5ae24a3b0",
+        "schema-types.js": "7d29a0d2cb0e10d9c98b299939c91c64fd791f09e1284b5022d8782fa54dad9a",
+        "schema-view.d.ts": "77c66c91b30d4ce06a33f1b8fac153202f64ad68936dda467eae251117132702",
+        "schema-view.js": "7efbcdd76d653b7fb8ce6dcbbe303cc282f6d640793918501717e5dc04bf0a32",
+        "schema.d.ts": "2ad7f9350c391c59d6c641c18120c84926210d7905d0d27e51e58097ced5f7be",
+        "schema.js": "c0acab4248f09489a99ae7f931302a4cf83ad0221027e06a9c6d5b32d6d094b2"
+      }
+    }
+  ],
+  "configuration_sha256": {
+    "package.json": "53fa13978bebde300edb06d202bae313078d416d83f21f9f986fa570adb74b8d",
+    "pnpm-lock.yaml": "cbb7db0d3e469f44d423a68475ec4287491f6178fa3bf0ce20c5fd00c62d15ff",
+    "pnpm-workspace.yaml": "0f86636fb47db0fbfe47e59810585a468d589889e75dcf0d019e6146193781d4",
+    "tsconfig.editor.json": "719e677d23a27032768057d11778f881e9adf7a911cbcbe3ed4f86704600bbad"
+  },
+  "source_sha256": {
+    "src/block-editors.ts": "e3387fb238b522dd4c1eb4cfe0e906413ddf8f4abe5127ebfad79e5de79fc085",
+    "src/config.ts": "785c1a715ee4940ae90de71698b1b383b894236b66186d28734a4475a463a4c7",
+    "src/editor-schema.ts": "7b5c53944c5c2d86314112e750ad088527163913bdd8ea125e8f9b35244ef79c",
+    "src/extension.ts": "8af3541382bde13a281bd92819a6751fac3388afa98a8749c0c3b65a811e2b3e",
+    "src/globals.d.ts": "88c8b368adcc95141a318d5d8999f9923ba2a54007c4dc5cf76bb86be6397285",
+    "src/index.ts": "238637035c0e457b5b365ff13bf941c41df4c6141f09a5147b31f3302c2b9491"
+  },
+  "emitted_sha256": {
+    "lib-editor/schemas/note-properties.schema.json": "99c262f212c94a24100649d6362ae6b8090a52a0637d88c157269aef7d24a767",
+    "lib-editor/schemas/scene-properties.schema.json": "e8431f5a601b483f56a04b524a2ec5bf45867af72ac6b630593b7ed8c3d3ac7c",
+    "lib-editor/src/editor-schema.d.ts": "91adb6fa7ee17c66bb48a71582523072399419543eb02d1ad075bdaa6b2e006c",
+    "lib-editor/src/editor-schema.js": "e28836a96b144f0631042423d3bdcdaaaf3ab45cee9407b2f7a44ef13ab67298"
+  },
+  "verification": {
+    "frozen_install": "passed with exact allowBuilds Git URLs",
+    "frozen_log_sha256": "b57a45d3c8eea1f197c940716d6711098731224d00bf7742623c1effe5b09902",
+    "typecheck": "passed",
+    "targeted_runtime_tests": 16,
+    "runtime_log_sha256": "41ce8c76a0204e6859a78115b0b50f2a127e0b2948a4dd39055dea572b866664",
+    "resolved_R4_type_consumer": "passed; skipLibCheck:true for legacy RJSF dependency declaration limitation",
+    "R4_fixture_sha256": "089952725903af0df9aeaa65114c062271bb7d80359cb44cb7d19c2bf11aeb9d",
+    "R4_type_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pure_no_DOM_consumer": "passed; skipLibCheck:false",
+    "source_emitted_hash_matches": 4,
+    "isolated_consumer": "/tmp/schema-owner-consumer-Lf1h8E",
+    "global_accesses": 0,
+    "React_present": false
+  },
+  "validation_frameworks": {
+    "typescript": "5.9.3",
+    "vitest": "5.0.0"
+  },
+  "reviewed_source_unchanged": true,
+  "rollback_dependency_pins": {
+    "@kubohiroya/turbowarp-extension-data-editor": "git+https://github.com/kubohiroya/turbowarp-extension-data-editor.git#a1ab4f4f5b384eef08ef26e544186ee9d8ad4543"
+  },
+  "scope": {
+    "new_editor_registrations": false,
+    "stage2_or_later": false,
+    "GUI_dependency_updated": false,
+    "PR_merge_npm_publish": false
+  },
+  "stage2_start_condition": "Select corrected artifacts in GUI and align manifest/lock/resolution before binding/forms; GUI still public 0.1.0.",
+  "record_kind": "historical snapshot before CI corrections and producer re-pinning",
+  "current_record": "editor-schema-ci-fix-20261018.json"
+}
