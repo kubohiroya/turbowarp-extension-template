@@ -101,6 +101,8 @@ canonical READMEは`README.md`です。日本語ドキュメントは`README.ja.
 
 リポジトリ固有の差分は`repo-policy.json`に記録します。upstream fork、mixed-license content、legacy package name、third-party bundleは、検査を弱めるのではなくpolicy例外として表現します。
 
+43リポジトリのブロック分類は[段階0の棚卸し・設計スナップショット](docs/block-editor-inventory/stage-0/README.ja.md)（2026-10-18採取）に保存しています。現在の実装状況を示す資料ではありません。
+
 ## 開発
 
 開発手順と規約は、英語の[貢献ガイド](CONTRIBUTING.md)・[スタイルガイド](STYLE_GUIDE.md)・[設計原則](DESIGN_PRINCIPLES.md)を参照してください。

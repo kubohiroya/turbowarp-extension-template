@@ -115,6 +115,8 @@ The canonical README is `README.md`. Japanese documentation uses `README.ja.md`;
 
 Repository-level differences belong in `repo-policy.json`. Use policy exceptions for upstream forks, mixed-license content, legacy package names, or third-party bundles instead of weakening checks silently.
 
+The [stage 0 inventory and design snapshot](docs/block-editor-inventory/stage-0/README.ja.md) (Japanese, captured 2026-10-18) classifies blocks across 43 repositories; it does not report current implementation status.
+
 ## Development
 
 See the [contribution guide](CONTRIBUTING.md), [style guide](STYLE_GUIDE.md), and
