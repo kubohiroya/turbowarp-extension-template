@@ -1,0 +1,37 @@
+{
+  "formatVersion": 1,
+  "id": "kubohiroyaexampleextension",
+  "blocks": [
+    {
+      "opcode": "hello",
+      "blockType": "REPORTER",
+      "arguments": [
+        {
+          "id": "NAME",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "opcode": "noteYaml",
+      "blockType": "REPORTER",
+      "arguments": [
+        {
+          "id": "SOURCE",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "opcode": "sceneJson",
+      "blockType": "REPORTER",
+      "arguments": [
+        {
+          "id": "SOURCE",
+          "type": "STRING"
+        }
+      ]
+    }
+  ],
+  "menus": []
+}

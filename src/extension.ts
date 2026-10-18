@@ -1,23 +1,44 @@
 import {extensionConfig} from './config';
+import definitions from './block-definitions.json';
+import {registerBlockEditors} from './block-editors.js';
+
+type BlockTypeName = 'REPORTER';
+type ArgumentTypeName = 'STRING';
+
+interface DefinitionArgument {
+  type: ArgumentTypeName;
+  defaultValue: string;
+}
+
+interface BlockDefinition {
+  opcode: string;
+  blockType: BlockTypeName;
+  text: string;
+  description: string;
+  arguments: Record<string, DefinitionArgument>;
+}
+
+const blockDefinitions = definitions.blocks as readonly BlockDefinition[];
 
 export class ExampleExtension implements TurboWarpExtension {
+  private unregisterBlockEditors: () => void = () => {};
+
+  public initializeBlockEditors(): void {
+    this.unregisterBlockEditors();
+    this.unregisterBlockEditors = registerBlockEditors(Scratch);
+  }
+
+  public dispose(): void {
+    this.unregisterBlockEditors();
+  }
+
   public getInfo(): Record<string, unknown> {
     return {
       id: extensionConfig.id,
-      name: Scratch.translate(extensionConfig.name),
-      blocks: [
-        {
-          opcode: 'hello',
-          blockType: Scratch.BlockType.REPORTER,
-          text: Scratch.translate('hello [NAME]'),
-          arguments: {
-            NAME: {
-              type: Scratch.ArgumentType.STRING,
-              defaultValue: 'world'
-            }
-          }
-        }
-      ]
+      name: Scratch.translate(definitions.extensionName),
+      docsURI: extensionConfig.docsURI,
+      blockIconURI: extensionConfig.blockIconURI,
+      blocks: blockDefinitions.map((block) => this.toScratchBlock(block))
     };
   }
 
@@ -29,5 +50,30 @@ export class ExampleExtension implements TurboWarpExtension {
       },
       {name: Scratch.Cast.toString(args.NAME)}
     );
+  }
+
+  public sceneJson(args: {SOURCE: unknown}): string {
+    return Scratch.Cast.toString(args.SOURCE);
+  }
+
+  public noteYaml(args: {SOURCE: unknown}): string {
+    return Scratch.Cast.toString(args.SOURCE);
+  }
+
+  private toScratchBlock(block: BlockDefinition): Record<string, unknown> {
+    return {
+      opcode: block.opcode,
+      blockType: Scratch.BlockType[block.blockType],
+      text: Scratch.translate(block.text),
+      arguments: Object.fromEntries(
+        Object.entries(block.arguments).map(([name, argument]) => [
+          name,
+          {
+            type: Scratch.ArgumentType[argument.type],
+            defaultValue: argument.defaultValue
+          }
+        ])
+      )
+    };
   }
 }

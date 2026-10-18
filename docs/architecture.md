@@ -1,0 +1,74 @@
+# Architecture
+
+[日本語](architecture.ja.md)
+
+## Project layers and boundaries
+
+The template separates runtime behavior from build infrastructure:
+
+- `src/config.ts` defines extension metadata, and `src/block-definitions.json`
+  defines canonical blocks and reference text.
+- `src/extension.ts` implements runtime behavior; `src/index.ts` handles registration
+  and lifecycle wiring, and `src/globals.d.ts` declares the Scratch boundary.
+- `src/block-editors.ts` and `schemas/` provide optional JSON/YAML editor examples.
+  Ordinary execution remains available without a compatible editor API.
+- `vite.config.ts` delegates JavaScript output to the extension plugin and API
+  metadata to the manifest plugin.
+- `scripts/` generates documentation and checks repository policy and build drift.
+  `tests/` verifies behavior and compatibility contracts.
+- GitHub Actions runs the checks in `package.json`; the documentation workflow
+  publishes `docs/` to Pages.
+
+Reusable structure and small examples belong in the template. Domain-specific APIs,
+assets, and behavior belong in repositories created from it. See the
+[contribution workflow](../CONTRIBUTING.md), [style guide](../STYLE_GUIDE.md), and
+[design principles](../DESIGN_PRINCIPLES.md).
+
+## Build outputs
+
+The project keeps runtime behavior and compatibility metadata separate while generating both from
+the same checked-in source definitions.
+
+```text
+src/index.ts + src/extension.ts
+  -> vite-plugin-turbowarp-extension
+  -> dist/<extension>.js
+
+src/config.ts + src/block-definitions.json
+  -> extension-api-manifest Vite plugin
+  -> dist/extension-manifest.json
+```
+
+The JavaScript bundle is readable and non-minified, with TurboWarp metadata, one
+registration call, no runtime imports or exports, and the standard
+`(function (Scratch) { ... })(Scratch);` wrapper. The manifest is a separate artifact.
+
+The manifest plugin runs in Vite's post-build phase. This preserves the JavaScript plugin's
+single-output validation and adds the manifest only after the TurboWarp bundle is complete.
+
+## Extension API manifest v1
+
+[`@kubohiroya/turbowarp-extension-manifest`](https://github.com/kubohiroya/turbowarp-extension-manifest)
+owns this contract: its `schemas/extension-manifest.schema.json` is the normative JSON Schema, and its
+`createExtensionManifest` is the only generator. `formatVersion` is `1` and must change there when an
+incompatible manifest shape is introduced. This template pins that package exactly rather than
+carrying its own copy, so a repository created from the template inherits one contract instead of a
+copy that can drift.
+
+The v1 contract contains:
+
+- the TurboWarp extension ID;
+- each block opcode and block type;
+- each argument ID, argument type, and optional menu reference;
+- each menu ID and whether it accepts reporter blocks.
+
+Blocks, arguments, and menus are sorted by their identifiers before serialization. Text,
+descriptions, default values, and static menu items are intentionally excluded because they do not
+identify saved-project API references. A compatibility checker can therefore distinguish API
+changes from documentation or localization changes.
+
+## Drift detection
+
+`dist/` is committed as a release artifact. `npm run check:dist` rebuilds both files and fails when
+Git reports any modified, deleted, or untracked file below `dist/`. This catches manifest and bundle
+drift in local checks and CI.

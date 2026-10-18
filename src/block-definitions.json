@@ -1,0 +1,32 @@
+{
+  "extensionName": "TurboWarp-Example-Extension",
+  "blocks": [
+    {
+      "opcode": "hello",
+      "blockType": "REPORTER",
+      "text": "hello [NAME]",
+      "description": "Returns a localized greeting for the supplied name.",
+      "arguments": {
+        "NAME": {"type": "STRING", "defaultValue": "world"}
+      }
+    },
+    {
+      "opcode": "sceneJson",
+      "blockType": "REPORTER",
+      "text": "scene JSON [SOURCE]",
+      "description": "Returns the JSON source unchanged; a compatible GUI can edit its scene properties.",
+      "arguments": {
+        "SOURCE": {"type": "STRING", "defaultValue": "{\"title\":\"最初のシーン\",\"duration\":3}"}
+      }
+    },
+    {
+      "opcode": "noteYaml",
+      "blockType": "REPORTER",
+      "text": "note YAML [SOURCE]",
+      "description": "Returns the YAML source unchanged; a compatible GUI can edit its note properties.",
+      "arguments": {
+        "SOURCE": {"type": "STRING", "defaultValue": "title: 'メモ「春」'\nbody: |\n  一行目の \"引用\"\n  二行目\n"}
+      }
+    }
+  ]
+}
