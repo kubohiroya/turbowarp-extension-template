@@ -1,0 +1,1918 @@
+{
+  "observed_at_utc": "2026-10-18T07:18:57.615926+00:00",
+  "status": "CI corrections committed/pushed and re-reviewed; all configured latest-head CI checks pass; scene main conflict resolved",
+  "repositories": [
+    {
+      "repo": "editor",
+      "repository": "kubohiroya/turbowarp-extension-data-editor",
+      "url": "https://github.com/kubohiroya/turbowarp-extension-data-editor/pull/21",
+      "head": "b5f4b8d2e391a0d57d091c8f3e1c2d58da152dc8",
+      "branch": "feat/schema/stage1-common",
+      "base": "main",
+      "base_head": "ef703b2bbe4dcb6b74c0fee9f799db09240c266b",
+      "draft": false,
+      "mergeable": true,
+      "mergeable_state": "clean",
+      "checks": [
+        {
+          "bucket": "pass",
+          "link": "https://github.com/kubohiroya/turbowarp-extension-data-editor/actions/runs/39105761588/job/117611127935",
+          "name": "check",
+          "state": "SUCCESS"
+        },
+        {
+          "bucket": "pass",
+          "link": "https://github.com/kubohiroya/turbowarp-extension-data-editor/actions/runs/39103994230/job/117605864118",
+          "name": "check",
+          "state": "SUCCESS"
+        }
+      ],
+      "state": "open",
+      "merged": false,
+      "auto_merge": null,
+      "local_head": "b5f4b8d2e391a0d57d091c8f3e1c2d58da152dc8",
+      "remote_head": "b5f4b8d2e391a0d57d091c8f3e1c2d58da152dc8",
+      "local_clean": true
+    },
+    {
+      "repo": "scene-graph",
+      "repository": "kubohiroya/turbowarp-scene-graph",
+      "url": "https://github.com/kubohiroya/turbowarp-scene-graph/pull/6",
+      "head": "7235a23718aeea94c952c49de7928af943321f6b",
+      "branch": "feat/schema/stage1-scene-graph",
+      "base": "main",
+      "base_head": "8839eab2b673b30203ddadae9715d58a284b3089",
+      "draft": true,
+      "mergeable": true,
+      "mergeable_state": "clean",
+      "checks": [],
+      "state": "open",
+      "merged": false,
+      "auto_merge": null,
+      "local_head": "7235a23718aeea94c952c49de7928af943321f6b",
+      "remote_head": "7235a23718aeea94c952c49de7928af943321f6b",
+      "local_clean": true
+    },
+    {
+      "repo": "camera-source",
+      "repository": "kubohiroya/turbowarp-camera-source",
+      "url": "https://github.com/kubohiroya/turbowarp-camera-source/pull/48",
+      "head": "53a2a400bbdee6a850379eff29f0d422d948174e",
+      "branch": "feat/schema/stage1-camera-source",
+      "base": "main",
+      "base_head": "beece9042d782e30b393a65fcb2d6916589dd063",
+      "draft": false,
+      "mergeable": true,
+      "mergeable_state": "clean",
+      "checks": [
+        {
+          "bucket": "pass",
+          "link": "https://github.com/kubohiroya/turbowarp-camera-source/actions/runs/39106582891/job/117613629528",
+          "name": "check",
+          "state": "SUCCESS"
+        },
+        {
+          "bucket": "pass",
+          "link": "https://github.com/kubohiroya/turbowarp-camera-source/actions/runs/39106580381/job/117613621325",
+          "name": "check",
+          "state": "SUCCESS"
+        }
+      ],
+      "state": "open",
+      "merged": false,
+      "auto_merge": null,
+      "local_head": "53a2a400bbdee6a850379eff29f0d422d948174e",
+      "remote_head": "53a2a400bbdee6a850379eff29f0d422d948174e",
+      "local_clean": true
+    },
+    {
+      "repo": "aframe",
+      "repository": "kubohiroya/turbowarp-aframe",
+      "url": "https://github.com/kubohiroya/turbowarp-aframe/pull/20",
+      "head": "f200da585fa3b38d13cfc998d32fabd62689028a",
+      "branch": "feat/schema/stage1-aframe",
+      "base": "main",
+      "base_head": "8d05ee87a17ef230afa0f01b31b98282f71996a1",
+      "draft": false,
+      "mergeable": true,
+      "mergeable_state": "clean",
+      "checks": [
+        {
+          "bucket": "pass",
+          "link": "https://github.com/kubohiroya/turbowarp-aframe/actions/runs/39106659964/job/117613862277",
+          "name": "check",
+          "state": "SUCCESS"
+        },
+        {
+          "bucket": "pass",
+          "link": "https://github.com/kubohiroya/turbowarp-aframe/actions/runs/39106657491/job/117613854117",
+          "name": "check",
+          "state": "SUCCESS"
+        }
+      ],
+      "state": "open",
+      "merged": false,
+      "auto_merge": null,
+      "local_head": "f200da585fa3b38d13cfc998d32fabd62689028a",
+      "remote_head": "f200da585fa3b38d13cfc998d32fabd62689028a",
+      "local_clean": true
+    },
+    {
+      "repo": "time-space-sync",
+      "repository": "kubohiroya/turbowarp-time-space-sync",
+      "url": "https://github.com/kubohiroya/turbowarp-time-space-sync/pull/21",
+      "head": "ca5fd820c18be6cf3dea1f6b1efd2985f14a19a3",
+      "branch": "feat/schema/stage1-time-space-sync",
+      "base": "main",
+      "base_head": "28ce8bfe1e875c378f4100710ed1e41170962ce5",
+      "draft": false,
+      "mergeable": true,
+      "mergeable_state": "clean",
+      "checks": [
+        {
+          "bucket": "pass",
+          "link": "https://github.com/kubohiroya/turbowarp-time-space-sync/actions/runs/39106942840/job/117614753631",
+          "name": "check",
+          "state": "SUCCESS"
+        },
+        {
+          "bucket": "pass",
+          "link": "https://github.com/kubohiroya/turbowarp-time-space-sync/actions/runs/39106940026/job/117614744683",
+          "name": "check",
+          "state": "SUCCESS"
+        }
+      ],
+      "state": "open",
+      "merged": false,
+      "auto_merge": null,
+      "local_head": "ca5fd820c18be6cf3dea1f6b1efd2985f14a19a3",
+      "remote_head": "ca5fd820c18be6cf3dea1f6b1efd2985f14a19a3",
+      "local_clean": true
+    },
+    {
+      "repo": "extension-template",
+      "repository": "kubohiroya/turbowarp-extension-template",
+      "url": "https://github.com/kubohiroya/turbowarp-extension-template/pull/30",
+      "head": "fd73d0fcb1b0a86222ebc33b0863399f45bb3f5b",
+      "branch": "feat/schema/stage1-extension-template",
+      "base": "main",
+      "base_head": "5e6dafc0d3d3283d046d593cdd16fc555d8cf3b5",
+      "draft": false,
+      "mergeable": true,
+      "mergeable_state": "clean",
+      "checks": [
+        {
+          "bucket": "pass",
+          "link": "https://github.com/kubohiroya/turbowarp-extension-template/actions/runs/39106665049/job/117613877168",
+          "name": "check",
+          "state": "SUCCESS"
+        },
+        {
+          "bucket": "pass",
+          "link": "https://github.com/kubohiroya/turbowarp-extension-template/actions/runs/39106661862/job/117613868132",
+          "name": "check",
+          "state": "SUCCESS"
+        }
+      ],
+      "state": "open",
+      "merged": false,
+      "auto_merge": null,
+      "local_head": "fd73d0fcb1b0a86222ebc33b0863399f45bb3f5b",
+      "remote_head": "fd73d0fcb1b0a86222ebc33b0863399f45bb3f5b",
+      "local_clean": true
+    },
+    {
+      "repo": "3d-scene-runtime",
+      "repository": "kubohiroya/turbowarp-3d-scene-runtime",
+      "url": "https://github.com/kubohiroya/turbowarp-3d-scene-runtime/pull/2",
+      "head": "8e159de960387875a0d4aa1de0f273c5905d102b",
+      "branch": "feat/schema/stage1-3d-scene-runtime",
+      "base": "main",
+      "base_head": "aca6edaab457e11f043690c6571ef4c537232148",
+      "draft": false,
+      "mergeable": true,
+      "mergeable_state": "clean",
+      "checks": [
+        {
+          "bucket": "pass",
+          "link": "https://github.com/kubohiroya/turbowarp-3d-scene-runtime/actions/runs/39106724401/job/117614056198",
+          "name": "check",
+          "state": "SUCCESS"
+        },
+        {
+          "bucket": "pass",
+          "link": "https://github.com/kubohiroya/turbowarp-3d-scene-runtime/actions/runs/39106720629/job/117614045068",
+          "name": "check",
+          "state": "SUCCESS"
+        }
+      ],
+      "state": "open",
+      "merged": false,
+      "auto_merge": null,
+      "local_head": "8e159de960387875a0d4aa1de0f273c5905d102b",
+      "remote_head": "8e159de960387875a0d4aa1de0f273c5905d102b",
+      "local_clean": true
+    },
+    {
+      "repo": "camera-calibration",
+      "repository": "kubohiroya/turbowarp-camera-calibration",
+      "url": "https://github.com/kubohiroya/turbowarp-camera-calibration/pull/39",
+      "head": "33fd9368540c4c4edfd5ad4ee6c0ca29bf524b2f",
+      "branch": "feat/schema/stage1-camera-calibration",
+      "base": "main",
+      "base_head": "ec75f6d07ace3492b0b18b68af2c36594eba4c08",
+      "draft": false,
+      "mergeable": true,
+      "mergeable_state": "clean",
+      "checks": [
+        {
+          "bucket": "pass",
+          "link": "https://github.com/kubohiroya/turbowarp-camera-calibration/actions/runs/39106731783/job/117614077370",
+          "name": "check",
+          "state": "SUCCESS"
+        },
+        {
+          "bucket": "pass",
+          "link": "https://github.com/kubohiroya/turbowarp-camera-calibration/actions/runs/39106728759/job/117614068109",
+          "name": "check",
+          "state": "SUCCESS"
+        }
+      ],
+      "state": "open",
+      "merged": false,
+      "auto_merge": null,
+      "local_head": "33fd9368540c4c4edfd5ad4ee6c0ca29bf524b2f",
+      "remote_head": "33fd9368540c4c4edfd5ad4ee6c0ca29bf524b2f",
+      "local_clean": true
+    },
+    {
+      "repo": "realtime-motion-capture",
+      "repository": "kubohiroya/turbowarp-realtime-motion-capture",
+      "url": "https://github.com/kubohiroya/turbowarp-realtime-motion-capture/pull/33",
+      "head": "cfd8219cc356fb9ac03a5cb0abbf92351efae816",
+      "branch": "feat/schema/stage1-realtime-motion-capture",
+      "base": "main",
+      "base_head": "213cbd39ff0c9111d8dff04713eb4baf627da577",
+      "draft": false,
+      "mergeable": true,
+      "mergeable_state": "clean",
+      "checks": [
+        {
+          "bucket": "pass",
+          "link": "https://github.com/kubohiroya/turbowarp-realtime-motion-capture/actions/runs/39106737522/job/117614095288",
+          "name": "check",
+          "state": "SUCCESS"
+        },
+        {
+          "bucket": "pass",
+          "link": "https://github.com/kubohiroya/turbowarp-realtime-motion-capture/actions/runs/39106735095/job/117614087890",
+          "name": "check",
+          "state": "SUCCESS"
+        }
+      ],
+      "state": "open",
+      "merged": false,
+      "auto_merge": null,
+      "local_head": "cfd8219cc356fb9ac03a5cb0abbf92351efae816",
+      "remote_head": "cfd8219cc356fb9ac03a5cb0abbf92351efae816",
+      "local_clean": true
+    }
+  ],
+  "correction_commits": {
+    "scene-graph": {
+      "repo": "scene-graph",
+      "head": "7235a23718aeea94c952c49de7928af943321f6b",
+      "previous_head": "80fe466e1ec58586ebd131f5fd55dc6e41c4af19",
+      "branch": "feat/schema/stage1-scene-graph",
+      "remote": "git@github.com:kubohiroya/turbowarp-scene-graph.git",
+      "committed_paths": [
+        "docs/editor-schema-ci-fix-20261018.ja.md",
+        "docs/editor-schema-ci-fix-20261018.json",
+        "docs/editor-schema-publication.ja.md",
+        "docs/editor-schema-publication.json",
+        "docs/editor-schema.ja.md",
+        "package.json"
+      ],
+      "message": "fix(schema): preserve publish guard when integrating scene builds",
+      "commit_time_utc": "2026-10-18T07:08:35.768336+00:00",
+      "remote_head": "7235a23718aeea94c952c49de7928af943321f6b",
+      "push_verified": true
+    },
+    "camera-source": {
+      "repo": "camera-source",
+      "head": "53a2a400bbdee6a850379eff29f0d422d948174e",
+      "previous_head": "b40402000fc22c27f4dd9eb81fb46795c450d6c7",
+      "branch": "feat/schema/stage1-camera-source",
+      "remote": "git@github.com:kubohiroya/turbowarp-camera-source.git",
+      "committed_paths": [
+        "docs/editor-schema-ci-fix-20261018.ja.md",
+        "docs/editor-schema-ci-fix-20261018.json",
+        "docs/editor-schema-publication.ja.md",
+        "docs/editor-schema-publication.json",
+        "docs/editor-schema.ja.md",
+        "tests/runtime-subentry.test.ts"
+      ],
+      "message": "fix(ci): verify explicit schema entry and align reviewed artifacts",
+      "commit_time_utc": "2026-10-18T07:08:51.711918+00:00",
+      "remote_head": "53a2a400bbdee6a850379eff29f0d422d948174e",
+      "push_verified": true
+    },
+    "aframe": {
+      "repo": "aframe",
+      "head": "f200da585fa3b38d13cfc998d32fabd62689028a",
+      "previous_head": "3b1d7359e0ba91eb6b119f4530167f177662b233",
+      "branch": "feat/schema/stage1-aframe",
+      "remote": "git@github.com:kubohiroya/turbowarp-aframe.git",
+      "committed_paths": [
+        "docs/editor-schema-ci-fix-20261018.ja.md",
+        "docs/editor-schema-ci-fix-20261018.json",
+        "docs/editor-schema-publication.ja.md",
+        "docs/editor-schema-publication.json",
+        "docs/editor-schema.ja.md",
+        "scripts/check-repo.ts"
+      ],
+      "message": "fix(ci): keep pack metadata JSON separate from lifecycle output",
+      "commit_time_utc": "2026-10-18T07:10:08.148738+00:00",
+      "remote_head": "f200da585fa3b38d13cfc998d32fabd62689028a",
+      "push_verified": true
+    },
+    "extension-template": {
+      "repo": "extension-template",
+      "head": "fd73d0fcb1b0a86222ebc33b0863399f45bb3f5b",
+      "previous_head": "52a693d9c7f985dd1e6f4118d526722f36a0cf97",
+      "branch": "feat/schema/stage1-extension-template",
+      "remote": "https://github.com/kubohiroya/turbowarp-extension-template",
+      "committed_paths": [
+        "docs/editor-schema-ci-fix-20261018.ja.md",
+        "docs/editor-schema-ci-fix-20261018.json",
+        "docs/editor-schema-publication.ja.md",
+        "docs/editor-schema-publication.json",
+        "docs/editor-schema.ja.md",
+        "scripts/check-repo.ts"
+      ],
+      "message": "fix(ci): keep pack metadata JSON separate from lifecycle output",
+      "commit_time_utc": "2026-10-18T07:10:13.127474+00:00",
+      "remote_head": "fd73d0fcb1b0a86222ebc33b0863399f45bb3f5b",
+      "push_verified": true
+    },
+    "time-space-sync": {
+      "repo": "time-space-sync",
+      "head": "ca5fd820c18be6cf3dea1f6b1efd2985f14a19a3",
+      "previous_head": "890b6f7da12f516064d939ca83526d6f4e543073",
+      "branch": "feat/schema/stage1-time-space-sync",
+      "remote": "git@github.com:kubohiroya/turbowarp-time-space-sync.git",
+      "committed_paths": [
+        "docs/editor-schema-ci-fix-20261018.ja.md",
+        "docs/editor-schema-ci-fix-20261018.json",
+        "tests/optical-time-corners.test.ts"
+      ],
+      "message": "test(ci): allow bounded time for optical corner analysis",
+      "commit_time_utc": "2026-10-18T07:14:46.256947+00:00",
+      "remote_head": "ca5fd820c18be6cf3dea1f6b1efd2985f14a19a3",
+      "push_verified": true
+    },
+    "3d-scene-runtime": {
+      "repo": "3d-scene-runtime",
+      "head": "8e159de960387875a0d4aa1de0f273c5905d102b",
+      "previous_head": "2b9b66c612b83aeb8e4c1713d57eb8bec434debc",
+      "branch": "feat/schema/stage1-3d-scene-runtime",
+      "remote": "git@github.com:kubohiroya/turbowarp-3d-scene-runtime.git",
+      "committed_paths": [
+        "dist/3d-scene-runtime.js",
+        "docs/editor-schema-ci-fix-20261018.ja.md",
+        "docs/editor-schema-ci-fix-20261018.json",
+        "docs/editor-schema-publication.ja.md",
+        "docs/editor-schema-publication.json",
+        "docs/editor-schema.ja.md",
+        "package.json",
+        "pnpm-lock.yaml",
+        "pnpm-workspace.yaml",
+        "scripts/check-repo.ts"
+      ],
+      "message": "fix(ci): keep pack metadata JSON separate from lifecycle output",
+      "commit_time_utc": "2026-10-18T07:11:09.343238+00:00",
+      "remote_head": "8e159de960387875a0d4aa1de0f273c5905d102b",
+      "push_verified": true
+    },
+    "camera-calibration": {
+      "repo": "camera-calibration",
+      "head": "33fd9368540c4c4edfd5ad4ee6c0ca29bf524b2f",
+      "previous_head": "8ab5dd1341f22b002bffdf183561b5428c8c8746",
+      "branch": "feat/schema/stage1-camera-calibration",
+      "remote": "git@github.com:kubohiroya/turbowarp-camera-calibration.git",
+      "committed_paths": [
+        "THIRD_PARTY_NOTICES.md",
+        "dist/camera-calibration.js",
+        "docs/editor-schema-ci-fix-20261018.ja.md",
+        "docs/editor-schema-ci-fix-20261018.json",
+        "docs/editor-schema-publication.ja.md",
+        "docs/editor-schema-publication.json",
+        "docs/editor-schema.ja.md",
+        "package.json",
+        "pnpm-lock.yaml",
+        "pnpm-workspace.yaml",
+        "scripts/check-repo.ts",
+        "scripts/dependency-pin.ts",
+        "tests/dependency-pin.test.ts",
+        "tests/runtime-subentry.test.ts"
+      ],
+      "message": "fix(ci): verify explicit schema entry and align reviewed artifacts",
+      "commit_time_utc": "2026-10-18T07:11:15.982976+00:00",
+      "remote_head": "33fd9368540c4c4edfd5ad4ee6c0ca29bf524b2f",
+      "push_verified": true
+    },
+    "realtime-motion-capture": {
+      "repo": "realtime-motion-capture",
+      "head": "cfd8219cc356fb9ac03a5cb0abbf92351efae816",
+      "previous_head": "48b9b3eb75c1bf2a88e8a34982b69803ffdd4c39",
+      "branch": "feat/schema/stage1-realtime-motion-capture",
+      "remote": "git@github.com:kubohiroya/turbowarp-realtime-motion-capture.git",
+      "committed_paths": [
+        "docs/editor-schema-ci-fix-20261018.ja.md",
+        "docs/editor-schema-ci-fix-20261018.json",
+        "docs/editor-schema-publication.ja.md",
+        "docs/editor-schema-publication.json",
+        "docs/editor-schema.ja.md",
+        "package.json",
+        "pnpm-lock.yaml",
+        "pnpm-workspace.yaml",
+        "scripts/check-repo.ts"
+      ],
+      "message": "fix(ci): keep pack metadata JSON separate from lifecycle output",
+      "commit_time_utc": "2026-10-18T07:11:22.841416+00:00",
+      "remote_head": "cfd8219cc356fb9ac03a5cb0abbf92351efae816",
+      "push_verified": true
+    }
+  },
+  "initial_correction_commits": {
+    "scene-graph": {
+      "repo": "scene-graph",
+      "head": "7235a23718aeea94c952c49de7928af943321f6b",
+      "previous_head": "80fe466e1ec58586ebd131f5fd55dc6e41c4af19",
+      "branch": "feat/schema/stage1-scene-graph",
+      "remote": "git@github.com:kubohiroya/turbowarp-scene-graph.git",
+      "committed_paths": [
+        "docs/editor-schema-ci-fix-20261018.ja.md",
+        "docs/editor-schema-ci-fix-20261018.json",
+        "docs/editor-schema-publication.ja.md",
+        "docs/editor-schema-publication.json",
+        "docs/editor-schema.ja.md",
+        "package.json"
+      ],
+      "message": "fix(schema): preserve publish guard when integrating scene builds",
+      "commit_time_utc": "2026-10-18T07:08:35.768336+00:00",
+      "remote_head": "7235a23718aeea94c952c49de7928af943321f6b",
+      "push_verified": true
+    },
+    "camera-source": {
+      "repo": "camera-source",
+      "head": "53a2a400bbdee6a850379eff29f0d422d948174e",
+      "previous_head": "b40402000fc22c27f4dd9eb81fb46795c450d6c7",
+      "branch": "feat/schema/stage1-camera-source",
+      "remote": "git@github.com:kubohiroya/turbowarp-camera-source.git",
+      "committed_paths": [
+        "docs/editor-schema-ci-fix-20261018.ja.md",
+        "docs/editor-schema-ci-fix-20261018.json",
+        "docs/editor-schema-publication.ja.md",
+        "docs/editor-schema-publication.json",
+        "docs/editor-schema.ja.md",
+        "tests/runtime-subentry.test.ts"
+      ],
+      "message": "fix(ci): verify explicit schema entry and align reviewed artifacts",
+      "commit_time_utc": "2026-10-18T07:08:51.711918+00:00",
+      "remote_head": "53a2a400bbdee6a850379eff29f0d422d948174e",
+      "push_verified": true
+    },
+    "aframe": {
+      "repo": "aframe",
+      "head": "f200da585fa3b38d13cfc998d32fabd62689028a",
+      "previous_head": "3b1d7359e0ba91eb6b119f4530167f177662b233",
+      "branch": "feat/schema/stage1-aframe",
+      "remote": "git@github.com:kubohiroya/turbowarp-aframe.git",
+      "committed_paths": [
+        "docs/editor-schema-ci-fix-20261018.ja.md",
+        "docs/editor-schema-ci-fix-20261018.json",
+        "docs/editor-schema-publication.ja.md",
+        "docs/editor-schema-publication.json",
+        "docs/editor-schema.ja.md",
+        "scripts/check-repo.ts"
+      ],
+      "message": "fix(ci): keep pack metadata JSON separate from lifecycle output",
+      "commit_time_utc": "2026-10-18T07:10:08.148738+00:00",
+      "remote_head": "f200da585fa3b38d13cfc998d32fabd62689028a",
+      "push_verified": true
+    },
+    "extension-template": {
+      "repo": "extension-template",
+      "head": "fd73d0fcb1b0a86222ebc33b0863399f45bb3f5b",
+      "previous_head": "52a693d9c7f985dd1e6f4118d526722f36a0cf97",
+      "branch": "feat/schema/stage1-extension-template",
+      "remote": "https://github.com/kubohiroya/turbowarp-extension-template",
+      "committed_paths": [
+        "docs/editor-schema-ci-fix-20261018.ja.md",
+        "docs/editor-schema-ci-fix-20261018.json",
+        "docs/editor-schema-publication.ja.md",
+        "docs/editor-schema-publication.json",
+        "docs/editor-schema.ja.md",
+        "scripts/check-repo.ts"
+      ],
+      "message": "fix(ci): keep pack metadata JSON separate from lifecycle output",
+      "commit_time_utc": "2026-10-18T07:10:13.127474+00:00",
+      "remote_head": "fd73d0fcb1b0a86222ebc33b0863399f45bb3f5b",
+      "push_verified": true
+    },
+    "time-space-sync": {
+      "repo": "time-space-sync",
+      "head": "890b6f7da12f516064d939ca83526d6f4e543073",
+      "previous_head": "1e85de6f29b8a5604f133bee75d0cfdad3ded4e7",
+      "branch": "feat/schema/stage1-time-space-sync",
+      "remote": "git@github.com:kubohiroya/turbowarp-time-space-sync.git",
+      "committed_paths": [
+        "docs/editor-schema-ci-fix-20261018.ja.md",
+        "docs/editor-schema-ci-fix-20261018.json",
+        "docs/editor-schema-publication.ja.md",
+        "docs/editor-schema-publication.json",
+        "docs/editor-schema.ja.md",
+        "scripts/check-repo.ts",
+        "tests/runtime-subentry.test.ts"
+      ],
+      "message": "fix(ci): verify explicit schema entry and align reviewed artifacts",
+      "commit_time_utc": "2026-10-18T07:10:17.041778+00:00",
+      "remote_head": "890b6f7da12f516064d939ca83526d6f4e543073",
+      "push_verified": true
+    },
+    "3d-scene-runtime": {
+      "repo": "3d-scene-runtime",
+      "head": "8e159de960387875a0d4aa1de0f273c5905d102b",
+      "previous_head": "2b9b66c612b83aeb8e4c1713d57eb8bec434debc",
+      "branch": "feat/schema/stage1-3d-scene-runtime",
+      "remote": "git@github.com:kubohiroya/turbowarp-3d-scene-runtime.git",
+      "committed_paths": [
+        "dist/3d-scene-runtime.js",
+        "docs/editor-schema-ci-fix-20261018.ja.md",
+        "docs/editor-schema-ci-fix-20261018.json",
+        "docs/editor-schema-publication.ja.md",
+        "docs/editor-schema-publication.json",
+        "docs/editor-schema.ja.md",
+        "package.json",
+        "pnpm-lock.yaml",
+        "pnpm-workspace.yaml",
+        "scripts/check-repo.ts"
+      ],
+      "message": "fix(ci): keep pack metadata JSON separate from lifecycle output",
+      "commit_time_utc": "2026-10-18T07:11:09.343238+00:00",
+      "remote_head": "8e159de960387875a0d4aa1de0f273c5905d102b",
+      "push_verified": true
+    },
+    "camera-calibration": {
+      "repo": "camera-calibration",
+      "head": "33fd9368540c4c4edfd5ad4ee6c0ca29bf524b2f",
+      "previous_head": "8ab5dd1341f22b002bffdf183561b5428c8c8746",
+      "branch": "feat/schema/stage1-camera-calibration",
+      "remote": "git@github.com:kubohiroya/turbowarp-camera-calibration.git",
+      "committed_paths": [
+        "THIRD_PARTY_NOTICES.md",
+        "dist/camera-calibration.js",
+        "docs/editor-schema-ci-fix-20261018.ja.md",
+        "docs/editor-schema-ci-fix-20261018.json",
+        "docs/editor-schema-publication.ja.md",
+        "docs/editor-schema-publication.json",
+        "docs/editor-schema.ja.md",
+        "package.json",
+        "pnpm-lock.yaml",
+        "pnpm-workspace.yaml",
+        "scripts/check-repo.ts",
+        "scripts/dependency-pin.ts",
+        "tests/dependency-pin.test.ts",
+        "tests/runtime-subentry.test.ts"
+      ],
+      "message": "fix(ci): verify explicit schema entry and align reviewed artifacts",
+      "commit_time_utc": "2026-10-18T07:11:15.982976+00:00",
+      "remote_head": "33fd9368540c4c4edfd5ad4ee6c0ca29bf524b2f",
+      "push_verified": true
+    },
+    "realtime-motion-capture": {
+      "repo": "realtime-motion-capture",
+      "head": "cfd8219cc356fb9ac03a5cb0abbf92351efae816",
+      "previous_head": "48b9b3eb75c1bf2a88e8a34982b69803ffdd4c39",
+      "branch": "feat/schema/stage1-realtime-motion-capture",
+      "remote": "git@github.com:kubohiroya/turbowarp-realtime-motion-capture.git",
+      "committed_paths": [
+        "docs/editor-schema-ci-fix-20261018.ja.md",
+        "docs/editor-schema-ci-fix-20261018.json",
+        "docs/editor-schema-publication.ja.md",
+        "docs/editor-schema-publication.json",
+        "docs/editor-schema.ja.md",
+        "package.json",
+        "pnpm-lock.yaml",
+        "pnpm-workspace.yaml",
+        "scripts/check-repo.ts"
+      ],
+      "message": "fix(ci): keep pack metadata JSON separate from lifecycle output",
+      "commit_time_utc": "2026-10-18T07:11:22.841416+00:00",
+      "remote_head": "cfd8219cc356fb9ac03a5cb0abbf92351efae816",
+      "push_verified": true
+    }
+  },
+  "common_artifact_unchanged": "b5f4b8d2e391a0d57d091c8f3e1c2d58da152dc8",
+  "producer_revisions": {
+    "scene-graph": "7235a23718aeea94c952c49de7928af943321f6b",
+    "camera-source": "53a2a400bbdee6a850379eff29f0d422d948174e"
+  },
+  "changes": [
+    "Strict public-entry expectations include ./editor-schema while preserving existing runtime ABI and pure reachability guards.",
+    "Pack metadata parsing keeps ignore-scripts and disables foreground lifecycle stdout; verified on npm10.9.8.",
+    "Scene main prepublishOnly protection integrated into work branch while preserving build:editor and prepare; no GitHub PR merge.",
+    "Calibration admits exact immutable Git pins only for two specified packages and exact origins/40-hex revisions; notice version and pins corrected.",
+    "Only one CPU-bound optical-corners test uses15s; all five views,43 frames and precision assertions remain unchanged."
+  ],
+  "verification": {
+    "owner_full_checks_unique_cases": {
+      "scene-graph": 10,
+      "camera-source": 240,
+      "aframe": 55,
+      "time-space-sync": 342,
+      "extension-template": 18,
+      "3d-scene-runtime": 15,
+      "camera-calibration": 202,
+      "realtime-motion-capture": 168
+    },
+    "owner_full_checks_total": 1050,
+    "common_prior65_reused": true,
+    "source_current_tarball_hash_matches": 135,
+    "production_source_and_emits": [
+      {
+        "repo": "editor",
+        "production_source_count": 27,
+        "emit_count": 52,
+        "matches_reviewed_baseline": true
+      },
+      {
+        "repo": "scene-graph",
+        "production_source_count": 5,
+        "emit_count": 9,
+        "matches_reviewed_baseline": true
+      },
+      {
+        "repo": "camera-source",
+        "production_source_count": 22,
+        "emit_count": 13,
+        "matches_reviewed_baseline": true
+      },
+      {
+        "repo": "aframe",
+        "production_source_count": 9,
+        "emit_count": 5,
+        "matches_reviewed_baseline": true
+      },
+      {
+        "repo": "time-space-sync",
+        "production_source_count": 47,
+        "emit_count": 10,
+        "matches_reviewed_baseline": true
+      },
+      {
+        "repo": "extension-template",
+        "production_source_count": 6,
+        "emit_count": 4,
+        "matches_reviewed_baseline": true
+      },
+      {
+        "repo": "3d-scene-runtime",
+        "production_source_count": 6,
+        "emit_count": 4,
+        "matches_reviewed_baseline": true
+      },
+      {
+        "repo": "camera-calibration",
+        "production_source_count": 21,
+        "emit_count": 8,
+        "matches_reviewed_baseline": true
+      },
+      {
+        "repo": "realtime-motion-capture",
+        "production_source_count": 48,
+        "emit_count": 30,
+        "matches_reviewed_baseline": true
+      }
+    ],
+    "record_consistency": [
+      {
+        "repo": "scene-graph",
+        "head": "7235a23718aeea94c952c49de7928af943321f6b",
+        "config_source_emit_and_resolved_record_match": true,
+        "full_check_cases": 10
+      },
+      {
+        "repo": "camera-source",
+        "head": "53a2a400bbdee6a850379eff29f0d422d948174e",
+        "config_source_emit_and_resolved_record_match": true,
+        "full_check_cases": 240
+      },
+      {
+        "repo": "aframe",
+        "head": "f200da585fa3b38d13cfc998d32fabd62689028a",
+        "config_source_emit_and_resolved_record_match": true,
+        "full_check_cases": 55
+      },
+      {
+        "repo": "time-space-sync",
+        "head": "ca5fd820c18be6cf3dea1f6b1efd2985f14a19a3",
+        "config_source_emit_and_resolved_record_match": true,
+        "full_check_cases": 342
+      },
+      {
+        "repo": "extension-template",
+        "head": "fd73d0fcb1b0a86222ebc33b0863399f45bb3f5b",
+        "config_source_emit_and_resolved_record_match": true,
+        "full_check_cases": 18
+      },
+      {
+        "repo": "3d-scene-runtime",
+        "head": "8e159de960387875a0d4aa1de0f273c5905d102b",
+        "config_source_emit_and_resolved_record_match": true,
+        "full_check_cases": 15
+      },
+      {
+        "repo": "camera-calibration",
+        "head": "33fd9368540c4c4edfd5ad4ee6c0ca29bf524b2f",
+        "config_source_emit_and_resolved_record_match": true,
+        "full_check_cases": 202
+      },
+      {
+        "repo": "realtime-motion-capture",
+        "head": "cfd8219cc356fb9ac03a5cb0abbf92351efae816",
+        "config_source_emit_and_resolved_record_match": true,
+        "full_check_cases": 168
+      }
+    ],
+    "consumer_installs": [
+      {
+        "repo": "3d-scene-runtime",
+        "exit_code": 0,
+        "standard_frozen": true,
+        "permanent_exotic_relaxation": false
+      },
+      {
+        "repo": "camera-calibration",
+        "exit_code": 0,
+        "standard_frozen": true,
+        "permanent_exotic_relaxation": false
+      },
+      {
+        "repo": "realtime-motion-capture",
+        "exit_code": 0,
+        "standard_frozen": true,
+        "permanent_exotic_relaxation": false
+      }
+    ],
+    "headless_contracts": {
+      "contracts": 16,
+      "packageCount": 9,
+      "sourceImports": false,
+      "results": [
+        {
+          "contract": "aframe-template",
+          "identity": {
+            "ownerId": "turbowarp-aframe",
+            "contractId": "aframe-template",
+            "revision": "parser-v0.7.0",
+            "variantId": "template-json"
+          },
+          "dialect": "2020-12",
+          "resourceCount": 1,
+          "valid": true,
+          "invalidRejected": true,
+          "inputUnchanged": true
+        },
+        {
+          "contract": "scene-document",
+          "identity": {
+            "ownerId": "turbowarp-scene-graph",
+            "contractId": "scene-document",
+            "revision": "parser-v0.2.0-ar0.3.0",
+            "variantId": "bare"
+          },
+          "dialect": "2020-12",
+          "resourceCount": 3,
+          "valid": true,
+          "invalidRejected": true,
+          "inputUnchanged": true
+        },
+        {
+          "contract": "camera-profile",
+          "identity": {
+            "ownerId": "turbowarp-camera-source",
+            "contractId": "camera-profile",
+            "revision": "profile-v0.16.0",
+            "variantId": "twcs"
+          },
+          "dialect": "2020-12",
+          "resourceCount": 1,
+          "valid": true,
+          "invalidRejected": true,
+          "inputUnchanged": true
+        },
+        {
+          "contract": "calibration-profile",
+          "identity": {
+            "ownerId": "turbowarp-camera-calibration",
+            "contractId": "calibration-profile",
+            "revision": "parser-v0.14.0",
+            "variantId": "camerasource"
+          },
+          "dialect": "2020-12",
+          "resourceCount": 1,
+          "valid": true,
+          "invalidRejected": true,
+          "inputUnchanged": true
+        },
+        {
+          "contract": "motion-calibration",
+          "identity": {
+            "ownerId": "turbowarp-realtime-motion-capture",
+            "contractId": "motion-calibration",
+            "revision": "typebox-v0.7.0",
+            "variantId": "v1"
+          },
+          "dialect": "draft-07",
+          "resourceCount": 1,
+          "valid": true,
+          "invalidRejected": true,
+          "inputUnchanged": true
+        },
+        {
+          "contract": "pose2d",
+          "identity": {
+            "ownerId": "turbowarp-realtime-motion-capture",
+            "contractId": "pose2d",
+            "revision": "typebox-v0.7.0",
+            "variantId": "v1"
+          },
+          "dialect": "draft-07",
+          "resourceCount": 1,
+          "valid": true,
+          "invalidRejected": true,
+          "inputUnchanged": true
+        },
+        {
+          "contract": "pose2d-v2",
+          "identity": {
+            "ownerId": "turbowarp-realtime-motion-capture",
+            "contractId": "pose2d-v2",
+            "revision": "typebox-v0.7.0",
+            "variantId": "v2"
+          },
+          "dialect": "draft-07",
+          "resourceCount": 1,
+          "valid": true,
+          "invalidRejected": true,
+          "inputUnchanged": true
+        },
+        {
+          "contract": "pose3d",
+          "identity": {
+            "ownerId": "turbowarp-realtime-motion-capture",
+            "contractId": "pose3d",
+            "revision": "typebox-v0.7.0",
+            "variantId": "v1"
+          },
+          "dialect": "draft-07",
+          "resourceCount": 1,
+          "valid": true,
+          "invalidRejected": true,
+          "inputUnchanged": true
+        },
+        {
+          "contract": "performance-dsl",
+          "identity": {
+            "ownerId": "turbowarp-realtime-motion-capture",
+            "contractId": "performance-dsl",
+            "revision": "typebox-v0.7.0",
+            "variantId": "v1"
+          },
+          "dialect": "draft-07",
+          "resourceCount": 1,
+          "valid": true,
+          "invalidRejected": true,
+          "inputUnchanged": true
+        },
+        {
+          "contract": "protocol-union",
+          "identity": {
+            "ownerId": "turbowarp-realtime-motion-capture",
+            "contractId": "protocol-union",
+            "revision": "typebox-v0.7.0",
+            "variantId": "fixed-union"
+          },
+          "dialect": "draft-07",
+          "resourceCount": 7,
+          "valid": true,
+          "invalidRejected": true,
+          "inputUnchanged": true
+        },
+        {
+          "contract": "pose2d-union",
+          "identity": {
+            "ownerId": "turbowarp-realtime-motion-capture",
+            "contractId": "pose2d-union",
+            "revision": "typebox-v0.7.0",
+            "variantId": "fixed-union"
+          },
+          "dialect": "draft-07",
+          "resourceCount": 3,
+          "valid": true,
+          "invalidRejected": true,
+          "inputUnchanged": true
+        },
+        {
+          "contract": "motion-calibration-import",
+          "identity": {
+            "ownerId": "turbowarp-realtime-motion-capture",
+            "contractId": "motion-calibration-import",
+            "revision": "delegate-off-v0.7.0-on-source-v0.16.0",
+            "variantId": "delegate-off-legacy"
+          },
+          "dialect": "draft-07",
+          "resourceCount": 1,
+          "valid": true,
+          "invalidRejected": true,
+          "inputUnchanged": true
+        },
+        {
+          "contract": "placement-reference",
+          "identity": {
+            "ownerId": "turbowarp-time-space-sync",
+            "contractId": "placement-reference",
+            "revision": "spec-v0.2.0",
+            "variantId": "v1-json"
+          },
+          "dialect": "2020-12",
+          "resourceCount": 1,
+          "valid": true,
+          "invalidRejected": true,
+          "inputUnchanged": true
+        },
+        {
+          "contract": "placement-observation",
+          "identity": {
+            "ownerId": "turbowarp-time-space-sync",
+            "contractId": "placement-observation",
+            "revision": "spec-v0.2.0",
+            "variantId": "v1-json"
+          },
+          "dialect": "2020-12",
+          "resourceCount": 1,
+          "valid": true,
+          "invalidRejected": true,
+          "inputUnchanged": true
+        },
+        {
+          "contract": "scene-example",
+          "identity": {
+            "ownerId": "turbowarp-extension-template",
+            "contractId": "scene-example",
+            "revision": "schema-v0.4.0",
+            "variantId": "json"
+          },
+          "dialect": "draft-07",
+          "resourceCount": 1,
+          "valid": true,
+          "invalidRejected": true,
+          "inputUnchanged": true
+        },
+        {
+          "contract": "note-example",
+          "identity": {
+            "ownerId": "turbowarp-extension-template",
+            "contractId": "note-example",
+            "revision": "schema-v0.4.0",
+            "variantId": "yaml"
+          },
+          "dialect": "draft-07",
+          "resourceCount": 1,
+          "valid": true,
+          "invalidRejected": true,
+          "inputUnchanged": true
+        }
+      ],
+      "reviewRegressions": {
+        "legacyRosKeyCompatibility": true,
+        "calibrationDiagnosticVariants": [
+          "camerasource",
+          "legacy",
+          "twcs",
+          "ros"
+        ],
+        "malformedSourceContextGetterReads": 0,
+        "emptySceneContextFree": true
+      }
+    },
+    "dependency_fingerprints": {
+      "results": [
+        {
+          "consumer": "3d-scene-runtime",
+          "producer": "scene-graph",
+          "installedVersion": "0.2.0",
+          "bundleFingerprint": "e7bd3757debac9c58855391c82d512e4fdb7b6fd5d6c2c1e4a3bbe922fc7d5a4",
+          "activeProducerBundlesMatch": true
+        },
+        {
+          "consumer": "camera-calibration",
+          "producer": "camera-source",
+          "installedVersion": "0.16.0",
+          "bundleFingerprint": "517fbefdbc0e479660729b0101953911383ac47cb07adca1c95f5259b3a3b812",
+          "activeProducerBundlesMatch": true
+        },
+        {
+          "consumer": "realtime-motion-capture",
+          "producer": "camera-source",
+          "installedVersion": "0.16.0",
+          "bundleFingerprint": "517fbefdbc0e479660729b0101953911383ac47cb07adca1c95f5259b3a3b812",
+          "activeProducerBundlesMatch": true
+        },
+        {
+          "consumer": "aframe",
+          "producer": "extension-data-editor",
+          "pinnedPureFilesCompared": 12,
+          "pureArtifactMatchesActiveSource": true,
+          "UIArtifactMayDiffer": true
+        },
+        {
+          "consumer": "scene-graph",
+          "producer": "extension-data-editor",
+          "pinnedPureFilesCompared": 12,
+          "pureArtifactMatchesActiveSource": true,
+          "UIArtifactMayDiffer": true
+        },
+        {
+          "consumer": "camera-source",
+          "producer": "extension-data-editor",
+          "pinnedPureFilesCompared": 12,
+          "pureArtifactMatchesActiveSource": true,
+          "UIArtifactMayDiffer": true
+        },
+        {
+          "consumer": "camera-calibration",
+          "producer": "extension-data-editor",
+          "pinnedPureFilesCompared": 12,
+          "pureArtifactMatchesActiveSource": true,
+          "UIArtifactMayDiffer": true
+        },
+        {
+          "consumer": "realtime-motion-capture",
+          "producer": "extension-data-editor",
+          "pinnedPureFilesCompared": 12,
+          "pureArtifactMatchesActiveSource": true,
+          "UIArtifactMayDiffer": true
+        },
+        {
+          "consumer": "time-space-sync",
+          "producer": "extension-data-editor",
+          "pinnedPureFilesCompared": 12,
+          "pureArtifactMatchesActiveSource": true,
+          "UIArtifactMayDiffer": true
+        },
+        {
+          "consumer": "extension-template",
+          "producer": "extension-data-editor",
+          "pinnedPureFilesCompared": 12,
+          "pureArtifactMatchesActiveSource": true,
+          "UIArtifactMayDiffer": true
+        },
+        {
+          "consumer": "3d-scene-runtime",
+          "producer": "extension-data-editor",
+          "pinnedPureFilesCompared": 12,
+          "pureArtifactMatchesActiveSource": true,
+          "UIArtifactMayDiffer": true
+        }
+      ]
+    },
+    "source_free_consumer_checks": [
+      {
+        "repo": "editor",
+        "all_top_level_dependency_src_removed": true,
+        "removed_src_packages": [
+          "ajv-formats"
+        ],
+        "guarded_import": {
+          "package": "@kubohiroya/turbowarp-extension-data-editor",
+          "exports": [
+            "compileSchemaBundle",
+            "toValidationIssues",
+            "validateSchemaInput"
+          ],
+          "sourceAbsent": true,
+          "globalAccesses": 0,
+          "reactInstalled": false
+        },
+        "noDOM_strict_skipLibCheck_false": true,
+        "R4_type_sha256": "6b68cfc2a04c7b730234968bdd6fac380747e2de6631e1752caf07fd8b9b0c90"
+      },
+      {
+        "repo": "aframe",
+        "all_top_level_dependency_src_removed": true,
+        "removed_src_packages": [
+          "json-schema-merge-allof",
+          "ajv-formats",
+          "json-schema-compare",
+          "core",
+          "utils",
+          "validator-ajv8"
+        ],
+        "guarded_import": {
+          "package": "@kubohiroya/turbowarp-aframe",
+          "exports": [
+            "decodeTemplateSource",
+            "templateSchemaBundle",
+            "validateTemplateInput",
+            "validateTemplateNode",
+            "validateTemplateSource"
+          ],
+          "sourceAbsent": true,
+          "globalAccesses": 0,
+          "reactInstalled": false
+        },
+        "noDOM_strict_skipLibCheck_false": true,
+        "R4_type_sha256": "6b68cfc2a04c7b730234968bdd6fac380747e2de6631e1752caf07fd8b9b0c90"
+      },
+      {
+        "repo": "scene-graph",
+        "all_top_level_dependency_src_removed": true,
+        "removed_src_packages": [
+          "json-schema-merge-allof",
+          "ajv-formats",
+          "json-schema-compare",
+          "turbowarp-ar",
+          "core",
+          "utils",
+          "validator-ajv8"
+        ],
+        "guarded_import": {
+          "package": "@kubohiroya/turbowarp-scene-graph",
+          "exports": [
+            "normalizeKamishibai3DSceneExtension",
+            "normalizeSceneGraphDocument",
+            "sceneSchemaBundles",
+            "validateKamishibai3DSceneExtension",
+            "validateSceneDocumentInput",
+            "validateSceneExtensionInput",
+            "validateSceneGraphDocument"
+          ],
+          "sourceAbsent": true,
+          "globalAccesses": 0,
+          "reactInstalled": false
+        },
+        "noDOM_strict_skipLibCheck_false": true,
+        "R4_type_sha256": "6b68cfc2a04c7b730234968bdd6fac380747e2de6631e1752caf07fd8b9b0c90"
+      },
+      {
+        "repo": "camera-source",
+        "all_top_level_dependency_src_removed": true,
+        "removed_src_packages": [
+          "json-schema-merge-allof",
+          "ajv-formats",
+          "json-schema-compare",
+          "core",
+          "utils",
+          "validator-ajv8"
+        ],
+        "guarded_import": {
+          "package": "@kubohiroya/turbowarp-camera-source",
+          "exports": [
+            "cameraProfileSchemaBundles",
+            "decodeCameraProfileSource",
+            "readCameraInfoDocument",
+            "readCameraProfileDocument",
+            "readCameraProfileInput",
+            "validateCameraProfileInput",
+            "validateCameraProfileSource"
+          ],
+          "sourceAbsent": true,
+          "globalAccesses": 0,
+          "reactInstalled": false
+        },
+        "noDOM_strict_skipLibCheck_false": true,
+        "R4_type_sha256": "6b68cfc2a04c7b730234968bdd6fac380747e2de6631e1752caf07fd8b9b0c90"
+      },
+      {
+        "repo": "camera-calibration",
+        "all_top_level_dependency_src_removed": true,
+        "removed_src_packages": [
+          "json-schema-merge-allof",
+          "ajv-formats",
+          "json-schema-compare",
+          "core",
+          "utils",
+          "validator-ajv8"
+        ],
+        "guarded_import": {
+          "package": "@kubohiroya/turbowarp-camera-calibration",
+          "exports": [
+            "calibrationSchemaBundles",
+            "decodeCalibrationSource",
+            "validateCalibrationInput",
+            "validateCalibrationSource"
+          ],
+          "sourceAbsent": true,
+          "globalAccesses": 0,
+          "reactInstalled": false
+        },
+        "noDOM_strict_skipLibCheck_false": true,
+        "R4_type_sha256": "6b68cfc2a04c7b730234968bdd6fac380747e2de6631e1752caf07fd8b9b0c90"
+      },
+      {
+        "repo": "realtime-motion-capture",
+        "all_top_level_dependency_src_removed": true,
+        "removed_src_packages": [
+          "json-schema-merge-allof",
+          "ajv-formats",
+          "json-schema-compare",
+          "core",
+          "utils",
+          "validator-ajv8"
+        ],
+        "guarded_import": {
+          "package": "@kubohiroya/turbowarp-realtime-motion-capture",
+          "exports": [
+            "decodeMotionSource",
+            "motionOwnerValidator",
+            "motionSchemaBundles",
+            "parseCalibrationProfile",
+            "parseFrame",
+            "parsePoseFrame2D",
+            "validateMotionSource",
+            "validateProtocolValue"
+          ],
+          "sourceAbsent": true,
+          "globalAccesses": 0,
+          "reactInstalled": false
+        },
+        "noDOM_strict_skipLibCheck_false": true,
+        "R4_type_sha256": "6b68cfc2a04c7b730234968bdd6fac380747e2de6631e1752caf07fd8b9b0c90"
+      },
+      {
+        "repo": "time-space-sync",
+        "all_top_level_dependency_src_removed": true,
+        "removed_src_packages": [
+          "json-schema-merge-allof",
+          "ajv-formats",
+          "json-schema-compare",
+          "core",
+          "utils",
+          "validator-ajv8"
+        ],
+        "guarded_import": {
+          "package": "@kubohiroya/turbowarp-time-space-sync",
+          "exports": [
+            "decodePlacementSource",
+            "parsePlacementObservation",
+            "parseReferenceDefinition",
+            "placementSchemaBundles",
+            "validatePlacementObservationInput",
+            "validatePlacementReferenceInput",
+            "validatePlacementSource"
+          ],
+          "sourceAbsent": true,
+          "globalAccesses": 0,
+          "reactInstalled": false
+        },
+        "noDOM_strict_skipLibCheck_false": true,
+        "R4_type_sha256": "6b68cfc2a04c7b730234968bdd6fac380747e2de6631e1752caf07fd8b9b0c90"
+      },
+      {
+        "repo": "extension-template",
+        "all_top_level_dependency_src_removed": true,
+        "removed_src_packages": [
+          "json-schema-merge-allof",
+          "ajv-formats",
+          "json-schema-compare",
+          "core",
+          "utils",
+          "validator-ajv8"
+        ],
+        "guarded_import": {
+          "package": "@kubohiroya/turbowarp-extension-template",
+          "exports": [
+            "decodeExampleSource",
+            "exampleSchemaBundles",
+            "validateExampleSource"
+          ],
+          "sourceAbsent": true,
+          "globalAccesses": 0,
+          "reactInstalled": false
+        },
+        "noDOM_strict_skipLibCheck_false": true,
+        "R4_type_sha256": "6b68cfc2a04c7b730234968bdd6fac380747e2de6631e1752caf07fd8b9b0c90"
+      },
+      {
+        "repo": "3d-scene-runtime",
+        "all_top_level_dependency_src_removed": true,
+        "removed_src_packages": [
+          "json-schema-merge-allof",
+          "ajv-formats",
+          "json-schema-compare",
+          "turbowarp-ar",
+          "turbowarp-scene-graph",
+          "core",
+          "utils",
+          "validator-ajv8"
+        ],
+        "guarded_import": {
+          "package": "@kubohiroya/turbowarp-3d-scene-runtime",
+          "exports": [
+            "decodeSceneSource",
+            "sceneSchemaBundles",
+            "validateSceneSource"
+          ],
+          "sourceAbsent": true,
+          "globalAccesses": 0,
+          "reactInstalled": false
+        },
+        "noDOM_strict_skipLibCheck_false": true,
+        "R4_type_sha256": "6b68cfc2a04c7b730234968bdd6fac380747e2de6631e1752caf07fd8b9b0c90"
+      }
+    ],
+    "R4_default": "null",
+    "R4_type_sha256": "6b68cfc2a04c7b730234968bdd6fac380747e2de6631e1752caf07fd8b9b0c90",
+    "pure_skipLibCheck": false,
+    "legacy_RJSF_skipLibCheck": true,
+    "postcommit_runtime_check": "passed including unchanged dist guard",
+    "postcommit_calibration_check": "passed including unchanged dist guard"
+  },
+  "artifacts": {
+    "source_current_tarball_hash_matches": 135,
+    "artifacts": [
+      {
+        "repo": "editor",
+        "package_name": "@kubohiroya/turbowarp-extension-data-editor",
+        "version": "0.1.0",
+        "tarball": "/Users/hiroya/Dev/turbowarp-extension-template/docs/block-editor-inventory/implementation-history/stage-1-ci-fixes-20261018/artifacts/editor/kubohiroya-turbowarp-extension-data-editor-0.1.0.tgz",
+        "sha256": "d42660aba1b4e237885ab62919be021770e57d324372c735c4859c011a4c2ab4",
+        "tarball_sha512": "sha512-mhdGQLgMny/JL7eQxYMp62OMpP29+3UNugObFaABIeJQCsHx2wxDTdt2XnzJn+dqPrZxR6xmI+xUHP+aE3AjmQ==",
+        "unpacked_bytes": 5522213,
+        "isolated_consumer": "/tmp/schema-owner-consumer-zLk6Bc",
+        "source_current_tarball_hash_matches": 52,
+        "temporary_tarball": "/tmp/schema-stage1-ci-fix-20261018/artifacts/editor/kubohiroya-turbowarp-extension-data-editor-0.1.0.tgz"
+      },
+      {
+        "repo": "aframe",
+        "package_name": "@kubohiroya/turbowarp-aframe",
+        "version": "0.7.0",
+        "tarball": "/Users/hiroya/Dev/turbowarp-extension-template/docs/block-editor-inventory/implementation-history/stage-1-ci-fixes-20261018/artifacts/aframe/kubohiroya-turbowarp-aframe-0.7.0.tgz",
+        "sha256": "fba64118dad0a38cda4aff8a24c67596e154b26f0b01fce2b074b62d42555533",
+        "tarball_sha512": "sha512-tr2pDW7CzoMktJNodgT60cPVxxHRburuUaG2GS42yjA5HHY+eSUsDh6b2KrsmxXq+++kkdf7wjv/SfeXTefweQ==",
+        "unpacked_bytes": 552887,
+        "isolated_consumer": "/tmp/schema-owner-consumer-rrIbOw",
+        "source_current_tarball_hash_matches": 5,
+        "temporary_tarball": "/tmp/schema-stage1-ci-fix-20261018/artifacts/aframe/kubohiroya-turbowarp-aframe-0.7.0.tgz"
+      },
+      {
+        "repo": "scene-graph",
+        "package_name": "@kubohiroya/turbowarp-scene-graph",
+        "version": "0.2.0",
+        "tarball": "/Users/hiroya/Dev/turbowarp-extension-template/docs/block-editor-inventory/implementation-history/stage-1-ci-fixes-20261018/artifacts/scene-graph/kubohiroya-turbowarp-scene-graph-0.2.0.tgz",
+        "sha256": "82832e6276b396448f2dd96ad6743315f9f0b7d83911820ca0e8a92b8d748f1e",
+        "tarball_sha512": "sha512-hy1t5oOCOHvTlR9Iz+wXAVtenPq8Eyliym2onwcJiL3cAMXgt1UFUi/uSOZPXuuZZkxRPsAPTSyq9loui+6yaQ==",
+        "unpacked_bytes": 99780,
+        "isolated_consumer": "/tmp/schema-owner-consumer-v27lHh",
+        "source_current_tarball_hash_matches": 9,
+        "temporary_tarball": "/tmp/schema-stage1-ci-fix-20261018/artifacts/scene-graph/kubohiroya-turbowarp-scene-graph-0.2.0.tgz"
+      },
+      {
+        "repo": "camera-source",
+        "package_name": "@kubohiroya/turbowarp-camera-source",
+        "version": "0.16.0",
+        "tarball": "/Users/hiroya/Dev/turbowarp-extension-template/docs/block-editor-inventory/implementation-history/stage-1-ci-fixes-20261018/artifacts/camera-source/kubohiroya-turbowarp-camera-source-0.16.0.tgz",
+        "sha256": "7deffdc1c276de8973c2690407609f9ff585bb650b042622661dc80177b681d7",
+        "tarball_sha512": "sha512-1np962/7NpqZiiZiXrp8mxNWcqCW9aM7RQRFoiaEUgRoPWTBqwV8sEMtJbd/sJ0hAFlmpOHJqUnsOFhqgNbyGg==",
+        "unpacked_bytes": 514726,
+        "isolated_consumer": "/tmp/schema-owner-consumer-KuBOz6",
+        "source_current_tarball_hash_matches": 13,
+        "temporary_tarball": "/tmp/schema-stage1-ci-fix-20261018/artifacts/camera-source/kubohiroya-turbowarp-camera-source-0.16.0.tgz"
+      },
+      {
+        "repo": "camera-calibration",
+        "package_name": "@kubohiroya/turbowarp-camera-calibration",
+        "version": "0.14.0",
+        "tarball": "/Users/hiroya/Dev/turbowarp-extension-template/docs/block-editor-inventory/implementation-history/stage-1-ci-fixes-20261018/artifacts/camera-calibration/kubohiroya-turbowarp-camera-calibration-0.14.0.tgz",
+        "sha256": "4c848220ed0c678764e865738dc66cfcb4884a136ea491ec7c1d267372a67b6d",
+        "tarball_sha512": "sha512-/UUWf/flZET9Py3BqO4pMpou4Epu2R2WM12I039X63Il86nK1XB/boYAdkyaZvZRbICW+Wak9wfwP6Qhz3NWnw==",
+        "unpacked_bytes": 8443395,
+        "isolated_consumer": "/tmp/schema-owner-consumer-5ACde7",
+        "source_current_tarball_hash_matches": 8,
+        "temporary_tarball": "/tmp/schema-stage1-ci-fix-20261018/artifacts/camera-calibration/kubohiroya-turbowarp-camera-calibration-0.14.0.tgz"
+      },
+      {
+        "repo": "realtime-motion-capture",
+        "package_name": "@kubohiroya/turbowarp-realtime-motion-capture",
+        "version": "0.7.0",
+        "tarball": "/Users/hiroya/Dev/turbowarp-extension-template/docs/block-editor-inventory/implementation-history/stage-1-ci-fixes-20261018/artifacts/realtime-motion-capture/kubohiroya-turbowarp-realtime-motion-capture-0.7.0.tgz",
+        "sha256": "0ad08bc244625a134e798de3ac55317a30354b96c6f600b6af270034ba21ad02",
+        "tarball_sha512": "sha512-eU5MsgGtAn4xucKW/ST8fsOnXD2lR19+tLXMd8hk68nbVOPxH101StTllJZzNWJsHc658leOt95p5c4ht0ggkA==",
+        "unpacked_bytes": 14675302,
+        "isolated_consumer": "/tmp/schema-owner-consumer-6hj9ya",
+        "source_current_tarball_hash_matches": 30,
+        "temporary_tarball": "/tmp/schema-stage1-ci-fix-20261018/artifacts/realtime-motion-capture/kubohiroya-turbowarp-realtime-motion-capture-0.7.0.tgz"
+      },
+      {
+        "repo": "time-space-sync",
+        "package_name": "@kubohiroya/turbowarp-time-space-sync",
+        "version": "0.2.0",
+        "tarball": "/Users/hiroya/Dev/turbowarp-extension-template/docs/block-editor-inventory/implementation-history/stage-1-ci-fixes-20261018/artifacts/time-space-sync/kubohiroya-turbowarp-time-space-sync-0.2.0.tgz",
+        "sha256": "15004860f2150e5307404d460753e26d4d097c70c8783cc99403b123c1d9112a",
+        "tarball_sha512": "sha512-Hgt0vfywmpB/D7/YI+TKJbQFv12aovPSbh2bj5RwvUtBU9PAxEyAS+F7KJOXV9C+smGrAZE+plIa7KoRoMACNw==",
+        "unpacked_bytes": 1013219,
+        "isolated_consumer": "/tmp/schema-owner-consumer-JHSWv6",
+        "source_current_tarball_hash_matches": 10,
+        "final_head": "ca5fd820c18be6cf3dea1f6b1efd2985f14a19a3",
+        "metadata_refreshed_after_timeout_only_commit": true,
+        "temporary_tarball": "/tmp/schema-stage1-ci-fix-20261018/artifacts/time-space-sync/kubohiroya-turbowarp-time-space-sync-0.2.0.tgz"
+      },
+      {
+        "repo": "extension-template",
+        "package_name": "@kubohiroya/turbowarp-extension-template",
+        "version": "0.4.0",
+        "tarball": "/Users/hiroya/Dev/turbowarp-extension-template/docs/block-editor-inventory/implementation-history/stage-1-ci-fixes-20261018/artifacts/extension-template/kubohiroya-turbowarp-extension-template-0.4.0.tgz",
+        "sha256": "522f497afdb0e863c451492fef748d7eb7c68ea31e0c87e90f5dbcc4590161a1",
+        "tarball_sha512": "sha512-FVlPg0RedQBdPRtJSAtlAfRhFBwqxUtiZxt/kwippZCt9NgrrPVUK0yN2ENRxXEodPBUPKpnVAHtrFDkKJ5zuQ==",
+        "unpacked_bytes": 4122998,
+        "isolated_consumer": "/tmp/schema-owner-consumer-TAXv5B",
+        "source_current_tarball_hash_matches": 4,
+        "temporary_tarball": "/tmp/schema-stage1-ci-fix-20261018/artifacts/extension-template/kubohiroya-turbowarp-extension-template-0.4.0.tgz"
+      },
+      {
+        "repo": "3d-scene-runtime",
+        "package_name": "@kubohiroya/turbowarp-3d-scene-runtime",
+        "version": "0.1.0",
+        "tarball": "/Users/hiroya/Dev/turbowarp-extension-template/docs/block-editor-inventory/implementation-history/stage-1-ci-fixes-20261018/artifacts/3d-scene-runtime/kubohiroya-turbowarp-3d-scene-runtime-0.1.0.tgz",
+        "sha256": "f712defc29109af45a39a3ffecbf70dca4723a8b3da588d10826d7a84433dfbf",
+        "tarball_sha512": "sha512-I2y20RctBtoucaFdGzD/rnd/JsiwBjw0SrpU5U/18lT0+E26f5FU0buhLHX+5sXaouDjr7kmsAm8FKzp2VcNKA==",
+        "unpacked_bytes": 317015,
+        "isolated_consumer": "/tmp/schema-owner-consumer-D26aJO",
+        "source_current_tarball_hash_matches": 4,
+        "temporary_tarball": "/tmp/schema-stage1-ci-fix-20261018/artifacts/3d-scene-runtime/kubohiroya-turbowarp-3d-scene-runtime-0.1.0.tgz"
+      }
+    ]
+  },
+  "PR_body_updates": [
+    {
+      "repo": "editor",
+      "url": "https://github.com/kubohiroya/turbowarp-extension-data-editor/pull/21",
+      "repository": "kubohiroya/turbowarp-extension-data-editor",
+      "head": "b5f4b8d2e391a0d57d091c8f3e1c2d58da152dc8",
+      "body_file": "/tmp/schema-stage1-ci-fix-20261018/editor-PR-final-body.md",
+      "body_sha256": "3231e4083a09b5f863d9fe04c30b169bd02534a6b9217a75f6b9088f69eb08d0",
+      "expected_previous_body_sha256": "dd1a7f11bbe48c2eee8aaae3eb01bb981e1c165f24723ed23b1f509ada963f32",
+      "draft": false,
+      "published_verified": true,
+      "checked_at_utc": "2026-10-18T07:17:16.515005+00:00"
+    },
+    {
+      "repo": "scene-graph",
+      "url": "https://github.com/kubohiroya/turbowarp-scene-graph/pull/6",
+      "repository": "kubohiroya/turbowarp-scene-graph",
+      "head": "7235a23718aeea94c952c49de7928af943321f6b",
+      "body_file": "/tmp/schema-stage1-ci-fix-20261018/scene-graph-PR-final-body.md",
+      "body_sha256": "8633d81c158fa1925888d21e3f5b01b163210addc2258e787bd6a37d55c2958f",
+      "expected_previous_body_sha256": "9862cd5d6d99a39a75addc4af231599b6864510c47fe2fe2873ef820059aa026",
+      "draft": true,
+      "published_verified": true,
+      "checked_at_utc": "2026-10-18T07:17:18.366807+00:00"
+    },
+    {
+      "repo": "camera-source",
+      "url": "https://github.com/kubohiroya/turbowarp-camera-source/pull/48",
+      "repository": "kubohiroya/turbowarp-camera-source",
+      "head": "53a2a400bbdee6a850379eff29f0d422d948174e",
+      "body_file": "/tmp/schema-stage1-ci-fix-20261018/camera-source-PR-final-body.md",
+      "body_sha256": "9e31c4ed12a5f7d0a47039d8a100401f68ae4de80ca8e0ceb1adcc881b18df64",
+      "expected_previous_body_sha256": "7320419b8d586a21aa6968c80f73543320a77b3c29e85919ef5b9350bc62577a",
+      "draft": false,
+      "published_verified": true,
+      "checked_at_utc": "2026-10-18T07:17:20.485445+00:00"
+    },
+    {
+      "repo": "aframe",
+      "url": "https://github.com/kubohiroya/turbowarp-aframe/pull/20",
+      "repository": "kubohiroya/turbowarp-aframe",
+      "head": "f200da585fa3b38d13cfc998d32fabd62689028a",
+      "body_file": "/tmp/schema-stage1-ci-fix-20261018/aframe-PR-final-body.md",
+      "body_sha256": "4a31dc414a27d255f3a2b109b0af198bd15fe41c744559b386ccbfb116c8f416",
+      "expected_previous_body_sha256": "5abfd06651013d5d07201348d87da5539450ae648f37257c1df314bf86008471",
+      "draft": false,
+      "published_verified": true,
+      "checked_at_utc": "2026-10-18T07:17:22.225255+00:00"
+    },
+    {
+      "repo": "time-space-sync",
+      "url": "https://github.com/kubohiroya/turbowarp-time-space-sync/pull/21",
+      "repository": "kubohiroya/turbowarp-time-space-sync",
+      "head": "ca5fd820c18be6cf3dea1f6b1efd2985f14a19a3",
+      "body_file": "/tmp/schema-stage1-ci-fix-20261018/time-space-sync-PR-final-body.md",
+      "body_sha256": "a4ecd18669121f348cd6f2bf7fcdb15c76a9ffdc0fe44a2e8edbf9572913f436",
+      "expected_previous_body_sha256": "ef98a1f8a941891ed7bd3236d43e50ea4fd4df1f944a20d2d40a35e468cd4aac",
+      "draft": false,
+      "published_verified": true,
+      "checked_at_utc": "2026-10-18T07:17:24.057745+00:00"
+    },
+    {
+      "repo": "extension-template",
+      "url": "https://github.com/kubohiroya/turbowarp-extension-template/pull/30",
+      "repository": "kubohiroya/turbowarp-extension-template",
+      "head": "fd73d0fcb1b0a86222ebc33b0863399f45bb3f5b",
+      "body_file": "/tmp/schema-stage1-ci-fix-20261018/extension-template-PR-final-body.md",
+      "body_sha256": "560265d715d2010abfafcd11c0cc19bbebcebb906e58daf580cb7f041dae66a6",
+      "expected_previous_body_sha256": "1a55907f52832ab416b96eb86bb48a3162fcf6c52d44c4b42bac05ffb36a5ad0",
+      "draft": false,
+      "published_verified": true,
+      "checked_at_utc": "2026-10-18T07:17:25.876805+00:00"
+    },
+    {
+      "repo": "3d-scene-runtime",
+      "url": "https://github.com/kubohiroya/turbowarp-3d-scene-runtime/pull/2",
+      "repository": "kubohiroya/turbowarp-3d-scene-runtime",
+      "head": "8e159de960387875a0d4aa1de0f273c5905d102b",
+      "body_file": "/tmp/schema-stage1-ci-fix-20261018/3d-scene-runtime-PR-final-body.md",
+      "body_sha256": "c12d7e7d5c522ed3f53850ee48a31d9642770df23e36e83639bafc7b3e8ecd07",
+      "expected_previous_body_sha256": "109a24ce1f5e3477173cba2de3017abe87772350b38b43769286ca264ac1faa1",
+      "draft": false,
+      "published_verified": true,
+      "checked_at_utc": "2026-10-18T07:17:28.005370+00:00"
+    },
+    {
+      "repo": "camera-calibration",
+      "url": "https://github.com/kubohiroya/turbowarp-camera-calibration/pull/39",
+      "repository": "kubohiroya/turbowarp-camera-calibration",
+      "head": "33fd9368540c4c4edfd5ad4ee6c0ca29bf524b2f",
+      "body_file": "/tmp/schema-stage1-ci-fix-20261018/camera-calibration-PR-final-body.md",
+      "body_sha256": "c4def6bee278f21df547d2b461c9423d0f3d48bef250fa674697fd476d887bef",
+      "expected_previous_body_sha256": "c624418a9b4200820debbb0b32ddd366b62a55fee10b7792723e8cd7191c0c94",
+      "draft": false,
+      "published_verified": true,
+      "checked_at_utc": "2026-10-18T07:17:30.272703+00:00"
+    },
+    {
+      "repo": "realtime-motion-capture",
+      "url": "https://github.com/kubohiroya/turbowarp-realtime-motion-capture/pull/33",
+      "repository": "kubohiroya/turbowarp-realtime-motion-capture",
+      "head": "cfd8219cc356fb9ac03a5cb0abbf92351efae816",
+      "body_file": "/tmp/schema-stage1-ci-fix-20261018/realtime-motion-capture-PR-final-body.md",
+      "body_sha256": "c67a76baa571bf00bb17fee71d1d4053619fc423dadad9aa94745c946ef3ffba",
+      "expected_previous_body_sha256": "f15b6f29a26050c98f8e4711d9fcf81c216d1a75735293920d671d8daa937a9a",
+      "draft": false,
+      "published_verified": true,
+      "checked_at_utc": "2026-10-18T07:17:32.333956+00:00"
+    }
+  ],
+  "independent_review": {
+    "observed_at_utc": "2026-10-18T07:18:39.068638+00:00",
+    "reviewers": [
+      "pack_ci",
+      "camera_source_ci",
+      "runtime_boundary_ci"
+    ],
+    "status": "independent re-review complete; no unresolved findings",
+    "reviewed_scopes": [
+      "Existing runtime ABI and strict public-entry/reachability guards",
+      "Exact two-package Git pin allowlist and notice version/license consistency",
+      "Scene main ancestry and build/prepublish safeguards",
+      "Direct/indirect pin, lock, allowBuilds and actual producer/common resolution",
+      "CPU test timeout with unchanged fixture and precision coverage",
+      "135 generated files,9 final packed consumers,16 contracts",
+      "Published9 PR bodies and complete rollback references",
+      "Old/new time artifact history and final HEAD metadata"
+    ],
+    "resolved_findings": [
+      "Calibration package version0.8.0 corrected to0.16.0",
+      "Rollback nonexistent key reference corrected; notice and dist steps added",
+      "Historical time artifact old record recovered by deepcopy",
+      "Pre-timeout head snapshot kept separately; final record usesca5fd820"
+    ],
+    "latest_review_result": "8configured repos all2checks pass; scene clean/Draft;9published body/hash/head/draft verified; no additional findings"
+  },
+  "actual_dependency_edges": [
+    {
+      "owner": "aframe",
+      "via": "@kubohiroya/turbowarp-aframe",
+      "dependency": "@kubohiroya/turbowarp-extension-data-editor",
+      "specifier": "git+https://github.com/kubohiroya/turbowarp-extension-data-editor.git#b5f4b8d2e391a0d57d091c8f3e1c2d58da152dc8",
+      "resolved_path": "/private/tmp/schema-stage1-worktrees-20261018/aframe/node_modules/.pnpm/@kubohiroya+turbowarp-extension-data-editor@https+++codeload.github.com+kubohiroya+turb_ea9ed4fbe83b895db0a5315e4e7cce4f/node_modules/@kubohiroya/turbowarp-extension-data-editor",
+      "version": "0.1.0",
+      "revision": "b5f4b8d2e391a0d57d091c8f3e1c2d58da152dc8"
+    },
+    {
+      "owner": "scene-graph",
+      "via": "@kubohiroya/turbowarp-scene-graph",
+      "dependency": "@kubohiroya/turbowarp-ar",
+      "specifier": "0.3.0",
+      "resolved_path": "/private/tmp/schema-stage1-worktrees-20261018/scene-graph/node_modules/.pnpm/@kubohiroya+turbowarp-ar@0.3.0/node_modules/@kubohiroya/turbowarp-ar",
+      "version": "0.3.0"
+    },
+    {
+      "owner": "scene-graph",
+      "via": "@kubohiroya/turbowarp-scene-graph",
+      "dependency": "@kubohiroya/turbowarp-extension-data-editor",
+      "specifier": "git+https://github.com/kubohiroya/turbowarp-extension-data-editor.git#b5f4b8d2e391a0d57d091c8f3e1c2d58da152dc8",
+      "resolved_path": "/private/tmp/schema-stage1-worktrees-20261018/scene-graph/node_modules/.pnpm/@kubohiroya+turbowarp-extension-data-editor@https+++codeload.github.com+kubohiroya+turb_ea9ed4fbe83b895db0a5315e4e7cce4f/node_modules/@kubohiroya/turbowarp-extension-data-editor",
+      "version": "0.1.0",
+      "revision": "b5f4b8d2e391a0d57d091c8f3e1c2d58da152dc8"
+    },
+    {
+      "owner": "camera-source",
+      "via": "@kubohiroya/turbowarp-camera-source",
+      "dependency": "@kubohiroya/turbowarp-extension-data-editor",
+      "specifier": "git+https://github.com/kubohiroya/turbowarp-extension-data-editor.git#b5f4b8d2e391a0d57d091c8f3e1c2d58da152dc8",
+      "resolved_path": "/private/tmp/schema-stage1-worktrees-20261018/camera-source/node_modules/.pnpm/@kubohiroya+turbowarp-extension-data-editor@https+++codeload.github.com+kubohiroya+turb_ea9ed4fbe83b895db0a5315e4e7cce4f/node_modules/@kubohiroya/turbowarp-extension-data-editor",
+      "version": "0.1.0",
+      "revision": "b5f4b8d2e391a0d57d091c8f3e1c2d58da152dc8"
+    },
+    {
+      "owner": "camera-calibration",
+      "via": "@kubohiroya/turbowarp-camera-calibration",
+      "dependency": "@kubohiroya/turbowarp-extension-data-editor",
+      "specifier": "git+https://github.com/kubohiroya/turbowarp-extension-data-editor.git#b5f4b8d2e391a0d57d091c8f3e1c2d58da152dc8",
+      "resolved_path": "/private/tmp/schema-stage1-worktrees-20261018/camera-calibration/node_modules/.pnpm/@kubohiroya+turbowarp-extension-data-editor@https+++codeload.github.com+kubohiroya+turb_ea9ed4fbe83b895db0a5315e4e7cce4f/node_modules/@kubohiroya/turbowarp-extension-data-editor",
+      "version": "0.1.0",
+      "revision": "b5f4b8d2e391a0d57d091c8f3e1c2d58da152dc8"
+    },
+    {
+      "owner": "camera-calibration",
+      "via": "@kubohiroya/turbowarp-camera-calibration",
+      "dependency": "@kubohiroya/turbowarp-camera-source",
+      "specifier": "git+https://github.com/kubohiroya/turbowarp-camera-source.git#53a2a400bbdee6a850379eff29f0d422d948174e",
+      "resolved_path": "/private/tmp/schema-stage1-worktrees-20261018/camera-calibration/node_modules/.pnpm/@kubohiroya+turbowarp-camera-source@https+++codeload.github.com+kubohiroya+turbowarp-ca_6d53dbec2c8fd13d30dcb50232b20111/node_modules/@kubohiroya/turbowarp-camera-source",
+      "version": "0.16.0"
+    },
+    {
+      "owner": "camera-calibration",
+      "via": "@kubohiroya/turbowarp-camera-source",
+      "dependency": "@kubohiroya/turbowarp-extension-data-editor",
+      "specifier": "git+https://github.com/kubohiroya/turbowarp-extension-data-editor.git#b5f4b8d2e391a0d57d091c8f3e1c2d58da152dc8",
+      "resolved_path": "/private/tmp/schema-stage1-worktrees-20261018/camera-calibration/node_modules/.pnpm/@kubohiroya+turbowarp-extension-data-editor@https+++codeload.github.com+kubohiroya+turb_ea9ed4fbe83b895db0a5315e4e7cce4f/node_modules/@kubohiroya/turbowarp-extension-data-editor",
+      "version": "0.1.0",
+      "revision": "b5f4b8d2e391a0d57d091c8f3e1c2d58da152dc8"
+    },
+    {
+      "owner": "realtime-motion-capture",
+      "via": "@kubohiroya/turbowarp-realtime-motion-capture",
+      "dependency": "@kubohiroya/turbowarp-camera-source",
+      "specifier": "git+https://github.com/kubohiroya/turbowarp-camera-source.git#53a2a400bbdee6a850379eff29f0d422d948174e",
+      "resolved_path": "/private/tmp/schema-stage1-worktrees-20261018/realtime-motion-capture/node_modules/.pnpm/@kubohiroya+turbowarp-camera-source@https+++codeload.github.com+kubohiroya+turbowarp-ca_6d53dbec2c8fd13d30dcb50232b20111/node_modules/@kubohiroya/turbowarp-camera-source",
+      "version": "0.16.0"
+    },
+    {
+      "owner": "realtime-motion-capture",
+      "via": "@kubohiroya/turbowarp-camera-source",
+      "dependency": "@kubohiroya/turbowarp-extension-data-editor",
+      "specifier": "git+https://github.com/kubohiroya/turbowarp-extension-data-editor.git#b5f4b8d2e391a0d57d091c8f3e1c2d58da152dc8",
+      "resolved_path": "/private/tmp/schema-stage1-worktrees-20261018/realtime-motion-capture/node_modules/.pnpm/@kubohiroya+turbowarp-extension-data-editor@https+++codeload.github.com+kubohiroya+turb_ea9ed4fbe83b895db0a5315e4e7cce4f/node_modules/@kubohiroya/turbowarp-extension-data-editor",
+      "version": "0.1.0",
+      "revision": "b5f4b8d2e391a0d57d091c8f3e1c2d58da152dc8"
+    },
+    {
+      "owner": "realtime-motion-capture",
+      "via": "@kubohiroya/turbowarp-realtime-motion-capture",
+      "dependency": "@kubohiroya/turbowarp-extension-data-editor",
+      "specifier": "git+https://github.com/kubohiroya/turbowarp-extension-data-editor.git#b5f4b8d2e391a0d57d091c8f3e1c2d58da152dc8",
+      "resolved_path": "/private/tmp/schema-stage1-worktrees-20261018/realtime-motion-capture/node_modules/.pnpm/@kubohiroya+turbowarp-extension-data-editor@https+++codeload.github.com+kubohiroya+turb_ea9ed4fbe83b895db0a5315e4e7cce4f/node_modules/@kubohiroya/turbowarp-extension-data-editor",
+      "version": "0.1.0",
+      "revision": "b5f4b8d2e391a0d57d091c8f3e1c2d58da152dc8"
+    },
+    {
+      "owner": "time-space-sync",
+      "via": "@kubohiroya/turbowarp-time-space-sync",
+      "dependency": "@kubohiroya/turbowarp-camera-source",
+      "specifier": "0.7.0",
+      "resolved_path": "/private/tmp/schema-stage1-worktrees-20261018/time-space-sync/node_modules/.pnpm/@kubohiroya+turbowarp-camera-source@0.7.0/node_modules/@kubohiroya/turbowarp-camera-source",
+      "version": "0.7.0"
+    },
+    {
+      "owner": "time-space-sync",
+      "via": "@kubohiroya/turbowarp-time-space-sync",
+      "dependency": "@kubohiroya/turbowarp-extension-data-editor",
+      "specifier": "git+https://github.com/kubohiroya/turbowarp-extension-data-editor.git#b5f4b8d2e391a0d57d091c8f3e1c2d58da152dc8",
+      "resolved_path": "/private/tmp/schema-stage1-worktrees-20261018/time-space-sync/node_modules/.pnpm/@kubohiroya+turbowarp-extension-data-editor@https+++codeload.github.com+kubohiroya+turb_ea9ed4fbe83b895db0a5315e4e7cce4f/node_modules/@kubohiroya/turbowarp-extension-data-editor",
+      "version": "0.1.0",
+      "revision": "b5f4b8d2e391a0d57d091c8f3e1c2d58da152dc8"
+    },
+    {
+      "owner": "extension-template",
+      "via": "@kubohiroya/turbowarp-extension-template",
+      "dependency": "@kubohiroya/turbowarp-extension-data-editor",
+      "specifier": "git+https://github.com/kubohiroya/turbowarp-extension-data-editor.git#b5f4b8d2e391a0d57d091c8f3e1c2d58da152dc8",
+      "resolved_path": "/private/tmp/schema-stage1-worktrees-20261018/extension-template/node_modules/.pnpm/@kubohiroya+turbowarp-extension-data-editor@https+++codeload.github.com+kubohiroya+turb_ea9ed4fbe83b895db0a5315e4e7cce4f/node_modules/@kubohiroya/turbowarp-extension-data-editor",
+      "version": "0.1.0",
+      "revision": "b5f4b8d2e391a0d57d091c8f3e1c2d58da152dc8"
+    },
+    {
+      "owner": "3d-scene-runtime",
+      "via": "@kubohiroya/turbowarp-3d-scene-runtime",
+      "dependency": "@kubohiroya/turbowarp-scene-graph",
+      "specifier": "git+https://github.com/kubohiroya/turbowarp-scene-graph.git#7235a23718aeea94c952c49de7928af943321f6b",
+      "resolved_path": "/private/tmp/schema-stage1-worktrees-20261018/3d-scene-runtime/node_modules/.pnpm/@kubohiroya+turbowarp-scene-graph@https+++codeload.github.com+kubohiroya+turbowarp-scen_e972fc00b31c337ba8b7a55b43c727d2/node_modules/@kubohiroya/turbowarp-scene-graph",
+      "version": "0.2.0"
+    },
+    {
+      "owner": "3d-scene-runtime",
+      "via": "@kubohiroya/turbowarp-scene-graph",
+      "dependency": "@kubohiroya/turbowarp-ar",
+      "specifier": "0.3.0",
+      "resolved_path": "/private/tmp/schema-stage1-worktrees-20261018/3d-scene-runtime/node_modules/.pnpm/@kubohiroya+turbowarp-ar@0.3.0/node_modules/@kubohiroya/turbowarp-ar",
+      "version": "0.3.0"
+    },
+    {
+      "owner": "3d-scene-runtime",
+      "via": "@kubohiroya/turbowarp-scene-graph",
+      "dependency": "@kubohiroya/turbowarp-extension-data-editor",
+      "specifier": "git+https://github.com/kubohiroya/turbowarp-extension-data-editor.git#b5f4b8d2e391a0d57d091c8f3e1c2d58da152dc8",
+      "resolved_path": "/private/tmp/schema-stage1-worktrees-20261018/3d-scene-runtime/node_modules/.pnpm/@kubohiroya+turbowarp-extension-data-editor@https+++codeload.github.com+kubohiroya+turb_ea9ed4fbe83b895db0a5315e4e7cce4f/node_modules/@kubohiroya/turbowarp-extension-data-editor",
+      "version": "0.1.0",
+      "revision": "b5f4b8d2e391a0d57d091c8f3e1c2d58da152dc8"
+    },
+    {
+      "owner": "3d-scene-runtime",
+      "via": "@kubohiroya/turbowarp-3d-scene-runtime",
+      "dependency": "@kubohiroya/turbowarp-extension-data-editor",
+      "specifier": "git+https://github.com/kubohiroya/turbowarp-extension-data-editor.git#b5f4b8d2e391a0d57d091c8f3e1c2d58da152dc8",
+      "resolved_path": "/private/tmp/schema-stage1-worktrees-20261018/3d-scene-runtime/node_modules/.pnpm/@kubohiroya+turbowarp-extension-data-editor@https+++codeload.github.com+kubohiroya+turb_ea9ed4fbe83b895db0a5315e4e7cce4f/node_modules/@kubohiroya/turbowarp-extension-data-editor",
+      "version": "0.1.0",
+      "revision": "b5f4b8d2e391a0d57d091c8f3e1c2d58da152dc8"
+    }
+  ],
+  "review_findings_resolved": [
+    "Calibration notice version0.8.0 corrected to actual0.16.0; runtime/profile imports explained separately.",
+    "Planned PR rollback reference to missing dictionary replaced with actual base_before_CI_fix; calibration notice SHA restoration and regenerated dist verification included.",
+    "Old time artifact row reconstructed from preserved prior aggregate with deepcopy; old/new archive and metadata agree.",
+    "Pre-timeout review retained separately; final record head updated to ca5fd820."
+  ],
+  "rollback": "Stop new pure/bundle use. For CI-only dependency rollback, restore package/lock/workspace from base_before_CI_fix together, restore calibration notice SHA, rebuild tracked dist and verify actual resolution. Whole PR rollback reverts integration commit; scene local integration reverts first parent. No source migration.",
+  "downstream_start_conditions": [
+    "GUI still public0.1.0 at1848ab82 and has no./schema; select corrected artifact and align manifest/lock/resolution before UI integration.",
+    "Check capability, raw read/encode/no-change text/comment/Undo preservation, fresh validation context and all16 RJSF owner formats.",
+    "No automatic ROS/twcs,bare/wrapper,legacy migrations. Schema authoring/dynamic schema and remaining9 fixed contracts stay separate."
+  ],
+  "operations_performed": [
+    "Local scene main integration, CI/test/policy/doc corrections",
+    "9 new commits on8 existing work branches and fast-forward pushes; common branch unchanged",
+    "Update existing9 PR bodies with current pins/results/rollback; scene Draft retained",
+    "Local build/test/pack and read-only CI verification"
+  ],
+  "operations_not_performed": [
+    "cause investigation",
+    "stage2 or later implementation",
+    "new PR/Issue creation",
+    "Issue edits/comments",
+    "GitHub PR merge or auto-merge",
+    "npm publication"
+  ],
+  "saved_evidence_sha256": {
+    "implementation-history/stage-1-ci-fixes-20261018/realtime-motion-capture-PR-body-request.json": "8f55f1ed2ac710bfe1f860f28d18bdb2483418ecabc1cb71defb4520a5b3c802",
+    "implementation-history/stage-1-ci-fixes-20261018/3d-scene-runtime-postpin-repo.log": "6b0c5217e10070716f2a27162d456c7a39f0d7ecb02420ead4c9713a6a5672cf",
+    "implementation-history/stage-1-ci-fixes-20261018/prepare-pr-updates.py": "08438fbd86972ec0e36b3e9c8c3617677f7147ca7345b7692ddb0da1e211d6e3",
+    "implementation-history/stage-1-ci-fixes-20261018/check-remote.py": "236fd630492d5c1dc1d2ea61ac63db030e3b05e07f559ce4b7dd77c4cf7eea7a",
+    "implementation-history/stage-1-ci-fixes-20261018/aframe-PR-body-request.json": "5a7ebd5f9b82bc74a10847e2457b541f5593b1dd29ff66f63d10bcc6aa1b8bf9",
+    "implementation-history/stage-1-ci-fixes-20261018/realtime-motion-capture-check.log": "b8e4de33518b43465266e911cea7071754236bc889981cec2b6738c9d26a5227",
+    "implementation-history/stage-1-ci-fixes-20261018/PR-updates.json": "c1a908874270c332a3acad59f51c71c80adba7a82f439904d736f8ab4182ce48",
+    "implementation-history/stage-1-ci-fixes-20261018/time-space-sync-timeout-check.log": "075fc6d9d0ead6c444e81b3aebcaf321eb27bb36d33760f8f026f836da4398de",
+    "implementation-history/stage-1-ci-fixes-20261018/time-space-sync-PR-after-ci-update.json": "a13922cbb05380993d5219623a2a685fe18d784f67596809f67de11be79c9652",
+    "implementation-history/stage-1-ci-fixes-20261018/time-space-sync-PR-before-ci-update.json": "1bc08c6c0e0bc1e04db61c7891cefd5d60631e77b57e394c761154901660c150",
+    "implementation-history/stage-1-ci-fixes-20261018/final-contracts.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "implementation-history/stage-1-ci-fixes-20261018/package-check-all.log": "cbef29fe288d71e4eb22bd30f7bc34298b6b3c6cbde597a8af11b0e68469c8f0",
+    "implementation-history/stage-1-ci-fixes-20261018/producer-revisions.json": "058fe77a93d011d334d7461077a3f0416d7e6b3674c47173fd0da3e96384ebb8",
+    "implementation-history/stage-1-ci-fixes-20261018/editor-PR-final-body.md": "3231e4083a09b5f863d9fe04c30b169bd02534a6b9217a75f6b9088f69eb08d0",
+    "implementation-history/stage-1-ci-fixes-20261018/extension-template-final-package.log": "fd864d24d32b5e07ce5a7939e43f23966a5277272a048550d77ddd40bf6fa78a",
+    "implementation-history/stage-1-ci-fixes-20261018/isolation-index.json": "6ab65c22960d243dac0ba0023d729743c33531f8eeb3f3a5405ed39878da98e2",
+    "implementation-history/stage-1-ci-fixes-20261018/camera-calibration-postcommit-check.log": "b23044afa41ccfd19f4ca2b6bf90dabbfa48a4e47eeb2b7f8ba00ca11cb28add",
+    "implementation-history/stage-1-ci-fixes-20261018/time-space-sync-artifact-refresh.json": "e42a0a6df1d1fd1db463e4a2e67ded0ac62571b21be7b7324b21a67e1adf6342",
+    "implementation-history/stage-1-ci-fixes-20261018/final-source-free-consumers.json": "3f63ad28889973223792bdf228294632a22a6d8a69c6a4a4d5998923e535c184",
+    "implementation-history/stage-1-ci-fixes-20261018/commits-before-timeout-fix.json": "3744a214d83433f3a804fa9f42bcc1b4d138c6d137809135b980d55681a8d7f7",
+    "implementation-history/stage-1-ci-fixes-20261018/time-space-sync-refreshed-pack.json": "3e0585ab284feaa9b02ac6a41290abe565c29c8aac1695526f708993c10a25ea",
+    "implementation-history/stage-1-ci-fixes-20261018/final-dependencies.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "implementation-history/stage-1-ci-fixes-20261018/extension-template-PR-before-ci-update.json": "610ec541537cbcfa902cacccf65b050509667ac0f8eccac1267cfa40119daea8",
+    "implementation-history/stage-1-ci-fixes-20261018/producer-checks.json": "e11f2d26498e4909bcc02b9ed0b8a8ebfd150946baf782a8c92e5c5912adfc83",
+    "implementation-history/stage-1-ci-fixes-20261018/pack-ci-postpin-agent-results.json": "1967079d87cb9e507f6db20ba36423f713e9b8ec44f3cc6d8318b6cef49845e4",
+    "implementation-history/stage-1-ci-fixes-20261018/final-artifacts.json": "9980bab468ae5bd9eeb0ae4c416c55762595f30678c4ca12bcaab2529d76ee8d",
+    "implementation-history/stage-1-ci-fixes-20261018/extension-template-PR-final-body.md": "560265d715d2010abfafcd11c0cc19bbebcebb906e58daf580cb7f041dae66a6",
+    "implementation-history/stage-1-ci-fixes-20261018/realtime-motion-capture-lock-resolution.log": "a1c02ecf73493ff2055b8b4f55aabb264ff2def1b56d219a927c06d29af4a4d9",
+    "implementation-history/stage-1-ci-fixes-20261018/camera-calibration-postpin-pack.log": "52018ddb75fdef9183bf4ec358d135b0a8eadab6a814cad12e1bbad77f3dca15",
+    "implementation-history/stage-1-ci-fixes-20261018/camera-calibration-postpin-repo-npm10.log": "6b0c5217e10070716f2a27162d456c7a39f0d7ecb02420ead4c9713a6a5672cf",
+    "implementation-history/stage-1-ci-fixes-20261018/production-source-emit-baseline.json": "24af85e509a3f84f7b668b15be874418e448e7bb2ad2636921683fd76e341011",
+    "implementation-history/stage-1-ci-fixes-20261018/refresh-time-artifact.py": "91266375799d9dfc063d84f2c349781e086bdd8f84e98971bb33dc52aa8329db",
+    "implementation-history/stage-1-ci-fixes-20261018/realtime-motion-capture-repo-npm10.log": "6b0c5217e10070716f2a27162d456c7a39f0d7ecb02420ead4c9713a6a5672cf",
+    "implementation-history/stage-1-ci-fixes-20261018/records-rereview.json": "3c8d04b36f5852025adb8c01f42bcc8e332a75ef4264a0e2c4a4fa81fe61ea1b",
+    "implementation-history/stage-1-ci-fixes-20261018/scene-graph-PR-body-request.json": "539438be1ed232d7cfd4f477dd19506251223443a6485c2e06d155eeb671ea44",
+    "implementation-history/stage-1-ci-fixes-20261018/consumer-installs.json": "7fa4e81d92b805f7f5e4ca5f8f6f73bc5617a8ecfdb922cf8e92eaff3276faad",
+    "implementation-history/stage-1-ci-fixes-20261018/time-space-sync-timeout-targeted.log": "cf9e4b7fa376e326c6d6a9d6f389478073d7356f6c396bf9f61fede33cc1f87a",
+    "implementation-history/stage-1-ci-fixes-20261018/camera-calibration-check-fixed.log": "469a7d53d78708ade355e8d47a85aa573c88239850b4fc31e9d3117132070c69",
+    "implementation-history/stage-1-ci-fixes-20261018/package-check-runtime-retry.log": "309e29b73ecac73b1afac1bd5cd243f8b3d93ff0376b23539e3447a162ea8680",
+    "implementation-history/stage-1-ci-fixes-20261018/editor-PR-after-ci-update.json": "b96357fb6538d78a91f3476cd38592247040aac0790eb8cc47f6d231df1472b8",
+    "implementation-history/stage-1-ci-fixes-20261018/3d-scene-runtime-lock-resolution.log": "3673a44ec6e2ab683c7d7e1ebdd65cfdb3bad0773e6df09d3cc2140ab302276c",
+    "implementation-history/stage-1-ci-fixes-20261018/aframe-check.log": "309d7ace6b8778025753fd267ddfeb12da7fa1c0e595e4931212e38af46c4570",
+    "implementation-history/stage-1-ci-fixes-20261018/camera-source-npm10-pack-background.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "implementation-history/stage-1-ci-fixes-20261018/runtime-boundary-ci-agent-results.json": "423965fe8c1a5f769788995da3c3307dbeb11113c71ae6c0da81ee3d6baf6a1c",
+    "implementation-history/stage-1-ci-fixes-20261018/final-package-heads.json": "7de59b217e3e039b7f0deedbc862461a6f0d43a2f8b2b12525e7e58eb84bb63e",
+    "implementation-history/stage-1-ci-fixes-20261018/records-rereview-before-timeout.json": "75afbe559b6d5d530f1d87c7c25b9bf4e37c9cce456399267b2956a5bad9b7d0",
+    "implementation-history/stage-1-ci-fixes-20261018/final-contracts.json": "e60b45675dee80cc4e0e41e68cb81ffb599a8ee65a9062dd67b11e27a5b8fb8c",
+    "implementation-history/stage-1-ci-fixes-20261018/time-space-sync-PR-body-request.json": "5c888d573fd4f761b9d8fdc9121a133a9a12334579b109aac7af912e717e295a",
+    "implementation-history/stage-1-ci-fixes-20261018/3d-scene-runtime-postcommit-check.log": "480814c2c6dd0152d07cbad8d4f5200903da73650619f5f0f1171afb8e00341b",
+    "implementation-history/stage-1-ci-fixes-20261018/commits.json": "2090c0002002645c945877dccd96e63f83f4e77f619ab6fb8f2d84f373acdfdb",
+    "implementation-history/stage-1-ci-fixes-20261018/scene-graph-PR-final-body.md": "8633d81c158fa1925888d21e3f5b01b163210addc2258e787bd6a37d55c2958f",
+    "implementation-history/stage-1-ci-fixes-20261018/realtime-motion-capture-PR-after-ci-update.json": "b0a1689a88ce41fa31248a2a4cdbfa47d70add41d22a67829f02b6abdb3e4cf6",
+    "implementation-history/stage-1-ci-fixes-20261018/camera-calibration-repo-npm10-after-doc.log": "6b0c5217e10070716f2a27162d456c7a39f0d7ecb02420ead4c9713a6a5672cf",
+    "implementation-history/stage-1-ci-fixes-20261018/3d-scene-runtime-postpin-pack.log": "e89c0d4291cea007ab5ee27535354c2add754648f5fc8d9e8120a1ac0c197b5b",
+    "implementation-history/stage-1-ci-fixes-20261018/install-consumers.py": "cd9f8104c8a82ed3725b84bbd65d93c947d642b91634d01b1426b5bdfb05b984",
+    "implementation-history/stage-1-ci-fixes-20261018/time-space-sync-final-package.log": "4324b83470e2eb750d28e7782fc733d20fd347c4b76bb215ca3fa17a01b2ef4c",
+    "implementation-history/stage-1-ci-fixes-20261018/aframe-PR-before-ci-update.json": "81e223c3fdba85810fa4160d258799b5999335f70c5bd5316d475b58b79dbec4",
+    "implementation-history/stage-1-ci-fixes-20261018/package-check-all.py": "9fea1c2e32a27c12f60d0656b8ab11837d8b55284985b7e74452d1b7aa1e2e19",
+    "implementation-history/stage-1-ci-fixes-20261018/camera-calibration-repo-npm10.log": "6b0c5217e10070716f2a27162d456c7a39f0d7ecb02420ead4c9713a6a5672cf",
+    "implementation-history/stage-1-ci-fixes-20261018/camera-source-npm10-pack-default.stdout.log": "26873b3c1e2811bc1421f40fdbc4d6eef76e5d2cb0d69b249605e32096dc3628",
+    "implementation-history/stage-1-ci-fixes-20261018/extension-template-PR-body-request.json": "4f6ea5eae01b2a72142b5a5a373955c1af33d3cc5e1ca4a76b18e58879aebd49",
+    "implementation-history/stage-1-ci-fixes-20261018/time-space-sync-new-ci-failure.log": "500db4e27a5c2c42fe6f3547c62b10d3ac684d5ba24091ce664fab6b98e1fd7a",
+    "implementation-history/stage-1-ci-fixes-20261018/record-owner.py": "335832c5c71088db6cde255d23cc8747f53927e896fba6896c612c8fdc20e84d",
+    "implementation-history/stage-1-ci-fixes-20261018/camera-source-PR-body-request.json": "855c8b9d1914c6ab6f6c3c77b4fb7608013bf05c788951d017155224f6a1a562",
+    "implementation-history/stage-1-ci-fixes-20261018/editor-final-package.log": "f3e5da4a505dcc6728fae51d58e109bbcde97510db8ea4f65a4357141454c2c4",
+    "implementation-history/stage-1-ci-fixes-20261018/camera-source-check.log": "6ada01a24ab7c5d7b7045a4cf8b7ca11799bcbeb7f8a8434cd7050be0bbdd75e",
+    "implementation-history/stage-1-ci-fixes-20261018/scene-graph-check.log": "35fcec3e680a426057b88e39739d2479adc5bb199e2fb3fc07e766a6e4dc51e7",
+    "implementation-history/stage-1-ci-fixes-20261018/3d-scene-runtime-PR-body-request.json": "88f6dfe2e3afadd2a1ba9c13749ff069d12e9c76d87df98d6c832828111989f1",
+    "implementation-history/stage-1-ci-fixes-20261018/scene-graph-PR-before-ci-update.json": "b14f7cd96e9673991c301336ab44131bc8e9259d7c9c6d282f0a7e9655f3a077",
+    "implementation-history/stage-1-ci-fixes-20261018/extension-template-repo-npm10.log": "6b0c5217e10070716f2a27162d456c7a39f0d7ecb02420ead4c9713a6a5672cf",
+    "implementation-history/stage-1-ci-fixes-20261018/camera-source-PR-final-body.md": "9e31c4ed12a5f7d0a47039d8a100401f68ae4de80ca8e0ceb1adcc881b18df64",
+    "implementation-history/stage-1-ci-fixes-20261018/pack-ci-agent-results.json": "b825d8e31a1f325363171d40dc22dde4058db0b3024253fc110745e1d1bb7f3e",
+    "implementation-history/stage-1-ci-fixes-20261018/baseline.json": "49cbb8d424b27f56afb4aeb0cab5785d3ccefa62a590bbddb7e9a4e1c0ca0080",
+    "implementation-history/stage-1-ci-fixes-20261018/camera-calibration-postpin-bundle.json": "7131087fc97ae1e4119bcede72a19222f93940ce5b80fcc8c53dc4d1123b68e6",
+    "implementation-history/stage-1-ci-fixes-20261018/camera-calibration-check.log": "4ad1186a49695a9dda50908580f9ddfb1254ee19fefa82ab5b41328b2c7adda5",
+    "implementation-history/stage-1-ci-fixes-20261018/realtime-motion-capture-frozen.log": "5a63b10bfab5413529605a49d73577a8d8895136477d17e29d93b67ef32f4baf",
+    "implementation-history/stage-1-ci-fixes-20261018/time-space-sync-PR-final-body.md": "a4ecd18669121f348cd6f2bf7fcdb15c76a9ffdc0fe44a2e8edbf9572913f436",
+    "implementation-history/stage-1-ci-fixes-20261018/final-package-checks.json": "345ce84d4127188296e7d7499a21c7a01ef9ba487267476091917eba4b50b6e8",
+    "implementation-history/stage-1-ci-fixes-20261018/aframe-repo-npm10.log": "6b0c5217e10070716f2a27162d456c7a39f0d7ecb02420ead4c9713a6a5672cf",
+    "implementation-history/stage-1-ci-fixes-20261018/final-dependencies.json": "c74d2721fb72ee93ee587e436100e0768b288eacf8ca1d2cb5db67aef9edded2",
+    "implementation-history/stage-1-ci-fixes-20261018/3d-scene-runtime-check.log": "33d89c05e4e98f712d42191d55e1edf3a37627bcacef40acf71553aa92f9ad19",
+    "implementation-history/stage-1-ci-fixes-20261018/time-space-sync-repo-npm10.log": "6b0c5217e10070716f2a27162d456c7a39f0d7ecb02420ead4c9713a6a5672cf",
+    "implementation-history/stage-1-ci-fixes-20261018/scene-graph-final-package.log": "7da7aa206ad24142062ea6c0569336b24658cae382adfd3e7b28f8764a5ab13e",
+    "implementation-history/stage-1-ci-fixes-20261018/time-space-sync-repo-npm10-after-doc.log": "6b0c5217e10070716f2a27162d456c7a39f0d7ecb02420ead4c9713a6a5672cf",
+    "implementation-history/stage-1-ci-fixes-20261018/realtime-motion-capture-PR-final-body.md": "c67a76baa571bf00bb17fee71d1d4053619fc423dadad9aa94745c946ef3ffba",
+    "implementation-history/stage-1-ci-fixes-20261018/commit-one.py": "13c1539a790b637ed324489661c922a1ab42f1165677b5d4d54af5a6abe4fbae",
+    "implementation-history/stage-1-ci-fixes-20261018/editor-PR-before-ci-update.json": "d39380e420e3f31dfa26f6bf199171571f2cb77ee9d3561bd1a88aa8a05debdb",
+    "implementation-history/stage-1-ci-fixes-20261018/time-space-sync-check.log": "faa7ba899c62385043d203bd91734a73dcb076605cd02d1ed6464245099d264b",
+    "implementation-history/stage-1-ci-fixes-20261018/aframe-PR-after-ci-update.json": "19019d94fde2a89f1fcd5d2cd1ceb42727934f0378610c2581e780f7481b3c64",
+    "implementation-history/stage-1-ci-fixes-20261018/3d-scene-runtime-PR-after-ci-update.json": "0b58567d4b3288dbefb8f7ba8f92d773e0400e1ccaee5fde9ac769ea0524a9f6",
+    "implementation-history/stage-1-ci-fixes-20261018/camera-source-final-package.log": "c2b6d02c8ab32facad0031c6083bbb81f9799bd3235a31aa6b67befd730105af",
+    "implementation-history/stage-1-ci-fixes-20261018/PR-final-plans.json": "d2721cfb0d2942c0af977ad3e7070823579873ca0bfb54402cbb813ed78b01bf",
+    "implementation-history/stage-1-ci-fixes-20261018/dependency-edges.log": "cfe299a82cc5ed53d36633810556f38eb3b0573be6ed84c51d64ed33e2b3a159",
+    "implementation-history/stage-1-ci-fixes-20261018/aframe-reproduce-cache.log": "6b0c5217e10070716f2a27162d456c7a39f0d7ecb02420ead4c9713a6a5672cf",
+    "implementation-history/stage-1-ci-fixes-20261018/camera-calibration-PR-final-body.md": "c4def6bee278f21df547d2b461c9423d0f3d48bef250fa674697fd476d887bef",
+    "implementation-history/stage-1-ci-fixes-20261018/aframe-final-package.log": "be1de8eb2a1891212c44ac0dc9e777393539fcd50f60df5a2c19eb4083cb0257",
+    "implementation-history/stage-1-ci-fixes-20261018/camera-calibration-postpin-check.log": "be244d1c53300712c82d46c88ef22f799243a1aa041f2beb542bfd43c1da30a7",
+    "implementation-history/stage-1-ci-fixes-20261018/camera-source-npm10-pack-background.stdout.log": "2b63888a60c6996cfa75c56f5dcd0a40d0f15254cf5312af85abd97d9a0190dd",
+    "implementation-history/stage-1-ci-fixes-20261018/3d-scene-runtime-PR-before-ci-update.json": "1fd32975e1f1011313ea0417c030eb42a8c0ea0768ae146453995bbac9c242fe",
+    "implementation-history/stage-1-ci-fixes-20261018/3d-scene-runtime-postpin-check.log": "fd0bcb465bee82accd7e14903b839e00dd9dfe349ae177fa5c91a1f28d6bef33",
+    "implementation-history/stage-1-ci-fixes-20261018/realtime-motion-capture-PR-before-ci-update.json": "655d320d9fdec4acaa966923b9172eb934de39b18fd6fb314ce7157d0e8d13fb",
+    "implementation-history/stage-1-ci-fixes-20261018/camera-source-repo-after-doc.log": "6b0c5217e10070716f2a27162d456c7a39f0d7ecb02420ead4c9713a6a5672cf",
+    "implementation-history/stage-1-ci-fixes-20261018/camera-calibration-PR-body-request.json": "31f440a784def5b6d3f20a141efa54c4777927fb308da5a027fddd9df2bcff3e",
+    "implementation-history/stage-1-ci-fixes-20261018/3d-scene-runtime-repo-npm10.log": "6b0c5217e10070716f2a27162d456c7a39f0d7ecb02420ead4c9713a6a5672cf",
+    "implementation-history/stage-1-ci-fixes-20261018/camera-calibration-frozen.log": "9ecc69b241aa987a2828072a215c06e8a7c62a299d37f9415125f100c2decfc4",
+    "implementation-history/stage-1-ci-fixes-20261018/update-prs.py": "e049f57f9b435247f4a129d9a9981a173baaee29a46e7b24175f7adbc26db770",
+    "implementation-history/stage-1-ci-fixes-20261018/aframe-reproduce.log": "ff711b5f5af109c0f56a443d9a07a471b1e8f968061d7d48b26198cbb5176022",
+    "implementation-history/stage-1-ci-fixes-20261018/camera-calibration-PR-before-ci-update.json": "accdd5838039696d82e8f05a9666927897ae8436987b6b49ab1d71e2f30093a6",
+    "implementation-history/stage-1-ci-fixes-20261018/save-final-record.py": "7eead0937eb8581587584e95e54e0ae619376910f4700a24b23f3547c76c42fd",
+    "implementation-history/stage-1-ci-fixes-20261018/realtime-motion-capture-final-package.log": "04594acfbacd0da50077fd09e3c44b23583660d82790c61a154eeaf1e0a6e2f8",
+    "implementation-history/stage-1-ci-fixes-20261018/dependency-edges.mjs": "ea52dd053173257118da70e9a38bbd14c69b99d27e1089dda8478cfa06414455",
+    "implementation-history/stage-1-ci-fixes-20261018/independent-rereview.json": "169c83738a0e2c3ce6b4cb60917de742759bf92399a0bc26fab5ff2f0d3d3c83",
+    "implementation-history/stage-1-ci-fixes-20261018/aframe-PR-final-body.md": "4a31dc414a27d255f3a2b109b0af198bd15fe41c744559b386ccbfb116c8f416",
+    "implementation-history/stage-1-ci-fixes-20261018/editor-PR-body-request.json": "02437c53981a133024bea41d2f3570432968588b816b3393f34dc6a36e7cc549",
+    "implementation-history/stage-1-ci-fixes-20261018/camera-source-npm10-pack-default.stderr.log": "48b33171f0eeea31f56d90023ee7717c48f1a4986283d84d88d6f4c67648d3a5",
+    "implementation-history/stage-1-ci-fixes-20261018/3d-scene-runtime-PR-final-body.md": "c12d7e7d5c522ed3f53850ee48a31d9642770df23e36e83639bafc7b3e8ecd07",
+    "implementation-history/stage-1-ci-fixes-20261018/camera-calibration-lock-resolution.log": "110e7122387cfc345f3fa4b281920822412b353d8f6e35731f1e921144fd1449",
+    "implementation-history/stage-1-ci-fixes-20261018/3d-scene-runtime-frozen.log": "6a1f0da502f89673ca003000fd7d8a9060ed868d42e86cef75627809cf347296",
+    "implementation-history/stage-1-ci-fixes-20261018/camera-calibration-PR-after-ci-update.json": "db6cc98668acde82d788d7e15f237a14a1069c8a79f86c738aa677daad937ee3",
+    "implementation-history/stage-1-ci-fixes-20261018/scene-graph-PR-after-ci-update.json": "abf7bcee673476b0d02e796ff5f00e11c6c5f6fcfdb4b14a7fa8c926b2731271",
+    "implementation-history/stage-1-ci-fixes-20261018/dependency-edges.json": "1251a983d885203f86311be299212250d86c9067fdbb4f774a6036be708be6f3",
+    "implementation-history/stage-1-ci-fixes-20261018/camera-source-PR-after-ci-update.json": "7524615b8373aa6f32841911654f1bac2040269d79870457f2b2756cf6a7cf91",
+    "implementation-history/stage-1-ci-fixes-20261018/camera-source-PR-before-ci-update.json": "92b7f0665d8713b80036006f0160adccb6d2d32fb3a64740ed9a3cdf5a0be556",
+    "implementation-history/stage-1-ci-fixes-20261018/realtime-motion-capture-postpin-check.log": "310dfd7156a1fe456e21c20b002b2b597aac00834f69542875cfa3950dee73a4",
+    "implementation-history/stage-1-ci-fixes-20261018/camera-calibration-final-package.log": "66a164882ea9a5427e037734303bb7b59da788d7b032a86d465569ebf7ffc73f",
+    "implementation-history/stage-1-ci-fixes-20261018/3d-scene-runtime-final-package.log": "3b7df69cc16cc329a21f4fd981f0a9162d32c76f63f81c9233980a55b77f33ab",
+    "implementation-history/stage-1-ci-fixes-20261018/extension-template-PR-after-ci-update.json": "c376baa6c24c3c53be81a7bc4d9dbf70fedf579ea322a65f46d7512977a4ee08",
+    "implementation-history/stage-1-ci-fixes-20261018/time-space-sync-refreshed-pack.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "implementation-history/stage-1-ci-fixes-20261018/remote-final.json": "0d1fd12f80999054edd4ecf41e3a629ebc93bf5c69d38d54dfd13a7f0880e2e9",
+    "implementation-history/stage-1-ci-fixes-20261018/extension-template-check.log": "2132450fb8b8421386fdf6de8d9d81aeac6fcab696c757cca8f5913821a8884b",
+    "implementation-history/stage-1-ci-fixes-20261018/ci-snapshots/20261018T071314Z.json": "2cc595b45645bb1c1fa5203e34dd8ba5909fa5d4546931f668f4b87bfb9d0753",
+    "implementation-history/stage-1-ci-fixes-20261018/ci-snapshots/20261018T071543Z.json": "c51808457133461a8e46f747367906f3614e0d51656c8ebfedfbddfbe8367e6d",
+    "implementation-history/stage-1-ci-fixes-20261018/ci-snapshots/20261018T071205Z.json": "aa3bcbbf7c617dbc71e61a0055884b421c37aea08fe7dade574fdc10b0f3f2e4",
+    "implementation-history/stage-1-ci-fixes-20261018/ci-snapshots/20261018T071652Z.json": "0d1fd12f80999054edd4ecf41e3a629ebc93bf5c69d38d54dfd13a7f0880e2e9",
+    "implementation-history/stage-1-ci-fixes-20261018/artifact-history/time-space-sync-before-ca5fd820/kubohiroya-turbowarp-time-space-sync-0.2.0.tgz": "02cff2d60a8039b1f02cd7723a2ace0bcd534554317de5af69713fc365ca4118",
+    "implementation-history/stage-1-ci-fixes-20261018/artifact-history/time-space-sync-before-ca5fd820/final-artifacts.json": "cbb98670afa61c569d4c8a0f7134296ea9508c6b093b24a7b7e014ccdeb89ac2",
+    "implementation-history/stage-1-ci-fixes-20261018/artifact-history/time-space-sync-before-ca5fd820/final-package-checks.json": "38867a59c15daefec03e38af2cf93ad2b7aad5fdcf65ccca7bfa14023728524b",
+    "implementation-history/stage-1-ci-fixes-20261018/artifacts/editor/kubohiroya-turbowarp-extension-data-editor-0.1.0.tgz": "d42660aba1b4e237885ab62919be021770e57d324372c735c4859c011a4c2ab4",
+    "implementation-history/stage-1-ci-fixes-20261018/artifacts/aframe/kubohiroya-turbowarp-aframe-0.7.0.tgz": "fba64118dad0a38cda4aff8a24c67596e154b26f0b01fce2b074b62d42555533",
+    "implementation-history/stage-1-ci-fixes-20261018/artifacts/scene-graph/kubohiroya-turbowarp-scene-graph-0.2.0.tgz": "82832e6276b396448f2dd96ad6743315f9f0b7d83911820ca0e8a92b8d748f1e",
+    "implementation-history/stage-1-ci-fixes-20261018/artifacts/camera-source/kubohiroya-turbowarp-camera-source-0.16.0.tgz": "7deffdc1c276de8973c2690407609f9ff585bb650b042622661dc80177b681d7",
+    "implementation-history/stage-1-ci-fixes-20261018/artifacts/camera-calibration/kubohiroya-turbowarp-camera-calibration-0.14.0.tgz": "4c848220ed0c678764e865738dc66cfcb4884a136ea491ec7c1d267372a67b6d",
+    "implementation-history/stage-1-ci-fixes-20261018/artifacts/realtime-motion-capture/kubohiroya-turbowarp-realtime-motion-capture-0.7.0.tgz": "0ad08bc244625a134e798de3ac55317a30354b96c6f600b6af270034ba21ad02",
+    "implementation-history/stage-1-ci-fixes-20261018/artifacts/time-space-sync/kubohiroya-turbowarp-time-space-sync-0.2.0.tgz": "15004860f2150e5307404d460753e26d4d097c70c8783cc99403b123c1d9112a",
+    "implementation-history/stage-1-ci-fixes-20261018/artifacts/extension-template/kubohiroya-turbowarp-extension-template-0.4.0.tgz": "522f497afdb0e863c451492fef748d7eb7c68ea31e0c87e90f5dbcc4590161a1",
+    "implementation-history/stage-1-ci-fixes-20261018/artifacts/3d-scene-runtime/kubohiroya-turbowarp-3d-scene-runtime-0.1.0.tgz": "f712defc29109af45a39a3ffecbf70dca4723a8b3da588d10826d7a84433dfbf"
+  }
+}
