@@ -20,7 +20,15 @@ export function decodeExampleSource(source:string,contract:ExampleContract){
 export function validateExampleSource(source:string,contract:ExampleContract,context:SchemaValidationContext){
   let decoded:ReturnType<typeof decodeExampleSource>;
   try {decoded=decodeExampleSource(source,contract);}catch{
-    const diagnostics:readonly [InputDiagnostic & {phase:'decode'}]=[{scope:{identity:exampleSchemaBundles[contract].identity,consumerId:context.consumerId},phase:'decode',code:'input-format-invalid',dataPath:''}];
+    let consumerId: string | undefined;
+    try {
+      const descriptor = Object.getOwnPropertyDescriptor(context, 'consumerId');
+      if (descriptor && 'value' in descriptor && typeof descriptor.value === 'string') consumerId = descriptor.value;
+    } catch {
+      /* Malformed context must not replace a safe decode diagnostic with a raw exception. */
+    }
+    const diagnostics:readonly [InputDiagnostic & {phase:'decode'}]=[{scope:{identity:exampleSchemaBundles[contract].identity,
+      ...(consumerId === undefined ? {} : {consumerId})},phase:'decode',code:'input-format-invalid',dataPath:''}];
     return {source,result:{kind:'invalid' as const,diagnostics}};
   }
   const prepared=compiled[contract];return {...decoded,result:prepared.kind==='compiled'?validateSchemaInput(prepared.validator,decoded.data,{context}):prepared};

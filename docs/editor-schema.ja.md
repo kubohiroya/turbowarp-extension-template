@@ -1,5 +1,11 @@
 # 段階1: 参考scene/note契約
 
+> 現在のGit依存固定・実解決・検証結果は[editor-schema-publication.ja.md](editor-schema-publication.ja.md)と同名JSONを参照。以下は依存更新前の採取履歴として保持する。
+
+> 2026-10-18レビューR2修正追補: 現在はHEADに対するローカル未コミット差分。関連16テストと新しいsource/emit hashをeditor-schema-verification.jsonへ反映した。下記の従来結果は履歴として保持する。
+
+形式不正時のscopeはown data descriptorだけからconsumerIdを取得する。JSON/YAML両方でgetter/null/undefined contextを渡してもgetterを実行せず、生例外やその文面を返さない。元sourceを保持し、復号成功後の不正contextは共通guardで拒否する回帰を追加した。
+
 追跡: https://github.com/kubohiroya/turbowarp-extension-template/issues/29 。共通親はextension-data-editor #18。
 
 `./editor-schema`はexampleSchemaBundles.scene/note、decodeExampleSource、validateExampleSourceを公開する。正本は既存schemas/scene-properties.schema.jsonとnote-properties.schema.jsonで、draft-07を明示する。JSON/YAMLのsource・raw data・formatを保持し、defaultを挿入しない。
