@@ -25,12 +25,10 @@
     "dist/",
     "docs/",
     "src/",
-    "schemas/",
     "templates/",
     "README.md",
     "README.ja.md",
-    "LICENSE",
-    "lib-editor/"
+    "LICENSE"
   ],
   "publishConfig": {
     "access": "public",
@@ -43,19 +41,16 @@
   "scripts": {
     "dev": "vite build --watch",
     "typecheck": "tsc --noEmit",
-    "build": "vite build && npm run build:editor",
+    "build": "vite build",
     "lint": "eslint src tests scripts vite.config.ts eslint.config.ts",
     "test": "vitest run",
-    "test:block-editor-host": "node --test tests/host-contract.integration.mjs",
     "docs": "node scripts/generate-readme.ts",
     "docs:check": "pnpm run docs && git diff --exit-code -- README.md",
     "template:readme": "node scripts/apply-readme-template.ts",
     "repo:check": "node scripts/check-repo.ts",
     "pack:check": "npm pack --dry-run --ignore-scripts",
     "check": "pnpm run typecheck && pnpm run lint && pnpm run test && pnpm run docs:check && pnpm run check:dist && pnpm run repo:check && pnpm run pack:check",
-    "check:dist": "pnpm run build && node scripts/check-dist.ts",
-    "build:editor": "tsc -p tsconfig.editor.json",
-    "prepare": "npm run build"
+    "check:dist": "pnpm run build && node scripts/check-dist.ts"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.5",
@@ -68,16 +63,5 @@
     "typescript-eslint": "^8.66.0",
     "vite": "^8.2.2",
     "vitest": "^5.0.0"
-  },
-  "dependencies": {
-    "@kubohiroya/turbowarp-extension-data-editor": "git+https://github.com/kubohiroya/turbowarp-extension-data-editor.git#b5f4b8d2e391a0d57d091c8f3e1c2d58da152dc8",
-    "yaml": "2.9.1"
-  },
-  "exports": {
-    "./*": "./*",
-    "./editor-schema": {
-      "types": "./lib-editor/src/editor-schema.d.ts",
-      "import": "./lib-editor/src/editor-schema.js"
-    }
   }
 }

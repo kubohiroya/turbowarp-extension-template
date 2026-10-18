@@ -8,10 +8,9 @@ The template separates runtime behavior from build infrastructure:
 
 - `src/config.ts` defines extension metadata, and `src/block-definitions.json`
   defines canonical blocks and reference text.
-- `src/extension.ts` implements runtime behavior; `src/index.ts` handles registration
-  and lifecycle wiring, and `src/globals.d.ts` declares the Scratch boundary.
-- `src/block-editors.ts` and `schemas/` provide optional JSON/YAML editor examples.
-  Ordinary execution remains available without a compatible editor API.
+- `src/extension.ts` implements runtime behavior; `src/index.ts` handles registration, and `src/globals.d.ts` declares the Scratch boundary.
+- Block-editor samples and tests live in the shared editor repository. This template
+  does not install editing dependencies or ship sample schemas, registration, or editor APIs.
 - `vite.config.ts` delegates JavaScript output to the extension plugin and API
   metadata to the manifest plugin.
 - `scripts/` generates documentation and checks repository policy and build drift.
