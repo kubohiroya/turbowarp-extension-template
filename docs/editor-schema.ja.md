@@ -1,3 +1,9 @@
+> **履歴資料：旧サンプル撤去前の採取記録**
+>
+> 以下の「現在」「現行」、API・依存pin・テスト・再現手順は、旧サンプル撤去前の各採取時点を指します。現行Templateは `sceneJson` / `noteYaml`、サンプルSchema、`./editor-schema`、編集用の公開API・専用依存を提供しません。本文の旧値・検証結果は履歴として保持しています。
+>
+> 現行の構成と互換性への影響は[旧サンプルの撤去・移行文書](template-examples-migration.ja.md)、任意の編集機能を導入する場合は[現行ガイド](block-editors.ja.md)を参照してください。
+
 > 現在のCI修正・依存artifactの検証は [editor-schema-ci-fix-20261018.ja.md](editor-schema-ci-fix-20261018.ja.md) / [JSON](editor-schema-ci-fix-20261018.json) を参照。以下の旧pin・検証結果は採取時の履歴として保持する。
 
 # 段階1: 参考scene/note契約

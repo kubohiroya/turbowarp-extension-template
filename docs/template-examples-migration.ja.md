@@ -1,6 +1,6 @@
 # Template編集サンプルの撤去と互換性
 
-このローカル変更は公開APIの削除を含みます。最新版へ差し替えるだけで既存プロジェクトが互換になる変更ではありません。npmの版変更・公開は行っていません。
+Templateの旧Git版にあったサンプルの公開opcode・Schema・公開型の撤去は、その旧Git版を使うconsumerには非互換変更です。npm公開済み0.4.0のtarballは既にhelloブロックのみで、sceneJson/noteYamlや専用公開APIを含まないことを確認しました。Git途中版との非互換性と、npm0.4.0からの更新を区別します。公開状態はnpm registryと対応PRを正本とし、この移行説明だけで公開済みとは扱いません。
 
 ## 撤去対象
 
@@ -20,4 +20,4 @@
 
 今後の移行では、それぞれの実拡張が必要なブロックとSchemaを所有し、プロジェクトを退避して明示的に移行します。Templateの新しいopcodeへの自動置換ではありません。SOURCEの内容を自動変換しません。
 
-Motionの既存`@kubohiroya/turbowarp-extension-template: 0.4.0`など他repoのpinは変更しません。Template由来という関係だけで42拡張を一括変更しません。過去の16契約・1,106テスト・135生成物は当時の記録のまま保持します。将来公開する際は破壊的変更として版・移行手順・CIを改めて確認してください。
+Motionの既存`@kubohiroya/turbowarp-extension-template: 0.4.0`など他repoのpinは変更しません。Template由来という関係だけで42拡張を一括変更しません。過去の16契約・1,106テスト・135生成物は当時の記録のまま保持します。npm0.4.0から0.4.1への更新は文書・履歴案内の修正であり、旧APIのnpm提供を終了する版ではありません。0.4.1の公開前には安定版用の全検証・配布実体・CIを確認します。公開管理は[Issue #32](https://github.com/kubohiroya/turbowarp-extension-template/issues/32)で行います。
