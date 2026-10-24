@@ -5,7 +5,8 @@
 - Follow `tsconfig.json`, including strict checking, unchecked index access, and
   exact optional properties.
 - Avoid `any`; describe the Scratch boundary with narrow interfaces in
-  `src/globals.d.ts` and model optional capabilities explicitly.
+  `src/runtime-api.ts` (with `src/globals.d.ts` only declaring the standalone
+  global) and model optional capabilities explicitly.
 - Use clear types at public boundaries. Keep functions focused and side effects visible.
 - Follow existing ESM import conventions and the configured ESLint rules in
   `eslint.config.ts`.

@@ -85,6 +85,51 @@ The generated JavaScript is a single, non-minified TurboWarp extension file with
 
 Each build emits `dist/extension-manifest.json` with `formatVersion: 1`. It records the extension ID, block opcodes and types, argument IDs and types, and menu references in a deterministic order. Tools such as `sb3-toolchain` can compare this contract before updating an embedded extension or migrating its ID. See [the architecture document](docs/architecture.md) and the [JSON Schema](https://github.com/kubohiroya/turbowarp-extension-manifest/blob/main/schemas/extension-manifest.schema.json) for the v1 contract.
 
+## Integrated-build module API
+
+`pnpm run build` also emits dependency-preserving JavaScript and declarations in
+`lib-module/`. After building this source, a package consumer can use:
+
+```ts
+import {bundleModuleMetadata, createExtension, type ScratchApi}
+  from '@kubohiroya/turbowarp-extension-template/bundle-module';
+
+function createMember(memberScratch: ScratchApi) {
+  return createExtension(memberScratch);
+}
+```
+
+`bundleModuleMetadata` is frozen and declares `formatVersion: 1`, the original
+extension `id`, and `unsandboxed` (`required`, `optional`, or `not-needed`). This is
+the module-entry contract, separate from the block API manifest. The host checks
+the version, ID and sandbox requirement before calling the factory.
+
+Importing this entry does not access global `Scratch`, `window` or `document`,
+create an extension, register it, or connect listeners. Each explicit
+`createExtension(memberScratch)` call returns a new instance using that host for
+all later casts, translations and block metadata. The factory does not register
+or cache the instance; the caller controls its lifetime and registration. The
+standalone `src/index.ts` uses the same factory and registers exactly once.
+
+Owners adding editors or runtime services must inject the same member host into
+those helpers, initialize them once per created instance, and retain their
+disposal behavior. Do not initialize services at module scope. Owners can copy
+the structural types in `src/runtime-api.ts`; adopting this contract does not
+require a runtime dependency on the template package.
+
+`pnpm run build:module` uses TypeScript rather than a bundler, retaining the
+module graph and dependency imports such as `import ... from 'yaml'`. A future
+integrated build can resolve those imports to one compatible library copy. This
+template change does not enable module builds in sb3-toolchain or share libraries
+between existing standalone files. That integration is tracked in
+[sb3-toolchain #65](https://github.com/kubohiroya/sb3-toolchain/issues/65).
+
+`pnpm run check:module` packs the actual package, installs it in a clean consumer,
+and checks import isolation, public types and parity with the standalone file.
+Existing deep package paths remain available. To roll back to standalone use,
+keep loading `dist/example-extension.js`; no stored IDs, opcodes, startup flags
+or saved data change.
+
 ## Compatibility
 
 Block-editor integration is optional. This template does not ship data-editing sample blocks, schemas, or a dedicated editor API. See the [integration guide](docs/block-editors.md) and the [breaking-change migration notes](docs/template-examples-migration.ja.md).
@@ -104,7 +149,7 @@ See the [contribution guide](CONTRIBUTING.md), [style guide](STYLE_GUIDE.md), an
 pnpm run check
 ```
 
-The check runs type checking, linting, tests, generated README validation, `dist/` reproducibility, repository policy validation, and an npm package dry run.
+The check runs type checking, linting, tests, generated README validation, `dist/` and `lib-module/` reproducibility, a packed module consumer check, repository policy validation, and an npm package dry run.
 
 ## Release
 
@@ -115,7 +160,7 @@ pnpm run check
 npm pack --dry-run --ignore-scripts
 ```
 
-Release artifacts include `dist/example-extension.js`, `dist/extension-manifest.json`, `README.md`, `README.ja.md`, and `LICENSE`.
+Release artifacts include `dist/example-extension.js`, `dist/extension-manifest.json`, `lib-module/`, `README.md`, `README.ja.md`, and `LICENSE`.
 
 ## License
 

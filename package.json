@@ -25,6 +25,7 @@
     "dist/",
     "docs/",
     "src/",
+    "lib-module/",
     "templates/",
     "README.md",
     "README.ja.md",
@@ -35,13 +36,21 @@
     "registry": "https://registry.npmjs.org/"
   },
   "packageManager": "pnpm@11.11.0",
+  "exports": {
+    "./*": "./*",
+    "./bundle-module": {
+      "types": "./lib-module/bundle-module.d.ts",
+      "import": "./lib-module/bundle-module.js"
+    }
+  },
   "engines": {
     "node": ">=22.18.0"
   },
   "scripts": {
     "dev": "vite build --watch",
     "typecheck": "tsc --noEmit",
-    "build": "vite build",
+    "build": "vite build && pnpm run build:module",
+    "build:module": "tsc -p tsconfig.module.json",
     "lint": "eslint src tests scripts vite.config.ts eslint.config.ts",
     "test": "vitest run",
     "docs": "node scripts/generate-readme.ts",
@@ -49,7 +58,8 @@
     "template:readme": "node scripts/apply-readme-template.ts",
     "repo:check": "node scripts/check-repo.ts",
     "pack:check": "npm pack --dry-run --ignore-scripts",
-    "check": "pnpm run typecheck && pnpm run lint && pnpm run test && pnpm run docs:check && pnpm run check:dist && pnpm run repo:check && pnpm run pack:check",
+    "check": "pnpm run typecheck && pnpm run lint && pnpm run test && pnpm run docs:check && pnpm run check:dist && pnpm run check:module && pnpm run repo:check && pnpm run pack:check",
+    "check:module": "node scripts/check-bundle-module.ts",
     "check:dist": "pnpm run build && node scripts/check-dist.ts"
   },
   "devDependencies": {

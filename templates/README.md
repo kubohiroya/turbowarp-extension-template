@@ -129,6 +129,32 @@ Explain:
 
 Move the complete method reference to [`docs/composition-api.md`](docs/composition-api.md).
 
+## Integrated-build module API
+
+`pnpm run build:module` emits dependency-preserving ESM and declarations in
+`lib-module/`; the package exposes them as `./bundle-module`.
+
+```ts
+import {bundleModuleMetadata, createExtension, type ScratchApi}
+  from '@kubohiroya/<package>/bundle-module';
+
+function createMember(memberScratch: ScratchApi) {
+  return createExtension(memberScratch);
+}
+```
+
+Keep imports free of host access, instance creation, registration and listeners.
+Pass the injected member host through the class and its helpers instead of using
+global `Scratch`. The factory returns a fresh instance without registering it;
+the host validates metadata (`formatVersion: 1`, original `id`, `unsandboxed`)
+before creation and owns registration and disposal. The standalone entry uses
+the same factory. Preserve dependency imports such as `yaml` for the integrated
+builder to resolve, and keep the classic artifact for rollback. Verify the
+actual packed entry and public types with `pnpm run check:module`.
+
+An integrated builder must explicitly support this entry contract; importing it
+does not automatically share dependencies between standalone files.
+
 ## Integration
 
 | Consumer | Relationship |
