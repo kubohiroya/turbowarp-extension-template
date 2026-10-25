@@ -1,6 +1,6 @@
 {
   "name": "@kubohiroya/turbowarp-extension-template",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "description": "A reusable TypeScript template for developing TurboWarp extensions with Vite.",
   "author": "Hiroya Kubo <hiroya@cuc.ac.jp>",
   "license": "MPL-2.0",
@@ -74,9 +74,9 @@
     "vite": "^8.2.2",
     "vitest": "^5.0.0"
   },
-  "gitHead": "806739b9e944982033b1f810548af1f4b2035cb5",
+  "gitHead": "8a477793028edd9dcb7274025461dd040ca96395",
   "x-turbowarp-source": {
-    "revision": "806739b9e944982033b1f810548af1f4b2035cb5",
+    "revision": "8a477793028edd9dcb7274025461dd040ca96395",
     "revisionRole": "base-commit",
     "sourceState": "local-release-overlay"
   }
