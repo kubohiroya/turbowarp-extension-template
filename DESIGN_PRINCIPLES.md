@@ -18,7 +18,9 @@
    here. Domain-specific behavior belongs in projects created from the template.
 8. **Outputs stay reviewable.** Build one non-minified TurboWarp JavaScript bundle
    plus the separate deterministic API manifest. Keep the standard Scratch wrapper,
-   one registration call, and no runtime imports or exports in the bundle.
+   one registration call, and no runtime imports or exports in the standalone bundle.
+   The separate `lib-module/` entry preserves imports for integrated builders and
+   performs no automatic registration.
 9. **Verification follows the changed contract.** Use focused local checks and
    behavior tests, generated-output drift detection, and the complete CI/release
    checks described in the [contribution guide](CONTRIBUTING.md).

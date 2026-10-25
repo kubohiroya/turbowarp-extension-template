@@ -8,7 +8,10 @@ The template separates runtime behavior from build infrastructure:
 
 - `src/config.ts` defines extension metadata, and `src/block-definitions.json`
   defines canonical blocks and reference text.
-- `src/extension.ts` implements runtime behavior; `src/index.ts` handles registration, and `src/globals.d.ts` declares the Scratch boundary.
+- `src/extension.ts` implements runtime behavior using an injected host;
+  `src/bundle-module.ts` exposes its factory and static entry metadata.
+  `src/runtime-api.ts` exports structural host types, and `src/globals.d.ts`
+  declares the standalone `Scratch` global used by `src/index.ts` for registration.
 - Block-editor samples and tests live in the shared editor repository. This template
   does not install editing dependencies or ship sample schemas, registration, or editor APIs.
 - `vite.config.ts` delegates JavaScript output to the extension plugin and API
@@ -36,6 +39,10 @@ src/index.ts + src/extension.ts
 src/config.ts + src/block-definitions.json
   -> extension-api-manifest Vite plugin
   -> dist/extension-manifest.json
+
+src/bundle-module.ts + imported modules
+  -> TypeScript (tsconfig.module.json, no bundling)
+  -> lib-module/*.js + *.d.ts + imported JSON
 ```
 
 The JavaScript bundle is readable and non-minified, with TurboWarp metadata, one
@@ -44,6 +51,12 @@ registration call, no runtime imports or exports, and the standard
 
 The manifest plugin runs in Vite's post-build phase. This preserves the JavaScript plugin's
 single-output validation and adds the manifest only after the TurboWarp bundle is complete.
+
+The optional `./bundle-module` package export points at the dependency-preserving ESM
+and declarations. Importing it performs no host access or extension activation.
+`createExtension(memberScratch)` creates a fresh instance without registering it;
+the integrated host validates `bundleModuleMetadata` and owns registration and lifetime.
+The standalone entry calls the same factory. See the [module API contract](../README.md#integrated-build-module-api).
 
 ## Extension API manifest v1
 
@@ -68,6 +81,7 @@ changes from documentation or localization changes.
 
 ## Drift detection
 
-`dist/` is committed as a release artifact. `npm run check:dist` rebuilds both files and fails when
-Git reports any modified, deleted, or untracked file below `dist/`. This catches manifest and bundle
-drift in local checks and CI.
+`dist/` and `lib-module/` are committed as build artifacts. `pnpm run check:dist`
+rebuilds both outputs and fails when Git reports any modified, deleted, or untracked
+file in either directory. `pnpm run check:module` verifies the actual packed entry,
+public types and standalone behavior in an isolated consumer.

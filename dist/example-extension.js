@@ -36,37 +36,49 @@
   //#region src/extension.ts
   var blockDefinitions = block_definitions_default.blocks;
   var ExampleExtension = class {
+  	constructor(scratch) {
+  		this.scratch = scratch;
+  	}
   	getInfo() {
   		return {
   			id: extensionConfig.id,
-  			name: Scratch.translate(block_definitions_default.extensionName),
+  			name: this.scratch.translate(block_definitions_default.extensionName),
   			docsURI: extensionConfig.docsURI,
   			blockIconURI: extensionConfig.blockIconURI,
   			blocks: blockDefinitions.map((block) => this.toScratchBlock(block))
   		};
   	}
   	hello(args) {
-  		return Scratch.translate({
+  		return this.scratch.translate({
   			default: "Hello, {name}!",
   			description: "{name} is replaced with the value supplied to the block."
-  		}, { name: Scratch.Cast.toString(args.NAME) });
+  		}, { name: this.scratch.Cast.toString(args.NAME) });
   	}
   	toScratchBlock(block) {
   		return {
   			opcode: block.opcode,
-  			blockType: Scratch.BlockType[block.blockType],
-  			text: Scratch.translate(block.text),
+  			blockType: this.scratch.BlockType[block.blockType],
+  			text: this.scratch.translate(block.text),
   			arguments: Object.fromEntries(Object.entries(block.arguments).map(([name, argument]) => [name, {
-  				type: Scratch.ArgumentType[argument.type],
+  				type: this.scratch.ArgumentType[argument.type],
   				defaultValue: argument.defaultValue
   			}]))
   		};
   	}
   };
+  Object.freeze({
+  	formatVersion: 1,
+  	id: extensionConfig.id,
+  	unsandboxed: extensionConfig.unsandboxed ? "required" : "not-needed"
+  });
+  /** The caller owns initialization order and registration; this function does not register. */
+  function createExtension(scratch) {
+  	return new ExampleExtension(scratch);
+  }
   //#endregion
   //#region src/index.ts
   if (extensionConfig.unsandboxed && !Scratch.extensions.unsandboxed) throw new Error(`${extensionConfig.name} must run unsandboxed.`);
-  Scratch.extensions.register(new ExampleExtension());
+  Scratch.extensions.register(createExtension(Scratch));
   //#endregion
 
 })(Scratch);

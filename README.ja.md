@@ -81,6 +81,47 @@ Extension config + block definitions
 
 各ビルドは`formatVersion: 1`の`dist/extension-manifest.json`を出力します。このファイルには、拡張機能ID、ブロックopcodeと種類、引数IDと種類、メニュー参照が決定的な順序で記録されます。`sb3-toolchain`のようなツールは、埋め込み拡張機能の更新やID移行前にこの契約を比較できます。v1契約については[アーキテクチャ文書](docs/architecture.ja.md)と[JSON Schema](https://github.com/kubohiroya/turbowarp-extension-manifest/blob/main/schemas/extension-manifest.schema.json)を参照してください。
 
+## 統合ビルド用module API
+
+`pnpm run build`は、依存を内包しないJavaScriptと型宣言を`lib-module/`にも生成します。
+このソースをビルドしたpackageでは、次の入口を利用できます。
+
+```ts
+import {bundleModuleMetadata, createExtension, type ScratchApi}
+  from '@kubohiroya/turbowarp-extension-template/bundle-module';
+
+function createMember(memberScratch: ScratchApi) {
+  return createExtension(memberScratch);
+}
+```
+
+`bundleModuleMetadata`は凍結されたmetadataで、`formatVersion: 1`、元の拡張IDである
+`id`、`unsandboxed`（`required` / `optional` / `not-needed`）を宣言します。
+これはブロックAPI manifestとは別のmodule入口の契約です。hostはfactoryを呼ぶ前に
+version・ID・sandbox条件を検査します。
+
+import時はglobal `Scratch`・`window`・`document`を参照せず、instance生成・拡張登録・
+listener接続を行いません。明示的な`createExtension(memberScratch)`呼び出しごとに
+新しいinstanceを返し、その後のCast・翻訳・ブロックmetadataも渡されたhostを使います。
+factoryはinstanceを登録・cacheせず、呼出側が寿命と登録を管理します。
+単体版の`src/index.ts`も同じfactoryを使い、登録は1回です。
+
+編集機能やruntime serviceを追加するownerは、補助処理にも同じmember用hostを渡し、
+instanceごとに1回初期化して既存のdispose処理を維持します。moduleのトップレベルで
+serviceを起動しません。`src/runtime-api.ts`の構造的な型をコピーして採用でき、
+template packageへのruntime依存は不要です。
+
+`pnpm run build:module`はbundlerを使わずTypeScriptで変換するため、module graphと
+`import ... from 'yaml'`等の依存importを保持します。後続の統合ビルドで互換な依存を
+1組へ解決できます。今回のtemplate変更だけで既存の単体JS間の共有やsb3-toolchainの
+module方式が有効になるわけではありません。後続は
+[sb3-toolchain #65](https://github.com/kubohiroya/sb3-toolchain/issues/65)で追跡します。
+
+`pnpm run check:module`は実packageをpackし、新規consumerへinstallしてimport時の
+副作用・公開型・単体JSとの動作一致を検証します。既存のpackage内の深いpathも維持します。
+単体方式への切戻しは従来どおり`dist/example-extension.js`を読み込みます。
+保存済みID・opcode・起動フラグ・データ形式は変更しません。
+
 ## 互換性
 
 ブロック編集は任意の追加機能です。Templateはデータ編集のサンプルブロック・専用Schema・専用公開APIを標準搭載しません。必要な拡張だけが[導入ガイド](docs/block-editors.ja.md)に従って追加してください。撤去した旧APIへの影響は[移行文書](docs/template-examples-migration.ja.md)を参照してください。
@@ -99,7 +140,7 @@ canonical READMEは`README.md`です。日本語ドキュメントは`README.ja.
 pnpm run check
 ```
 
-このcheckは型検査、lint、test、生成README検証、`dist/`再現性、repository policy検証、npm package dry-runを実行します。
+このcheckは型検査、lint、test、生成README検証、`dist/`と`lib-module/`の再現性、実packageのmodule consumer検証、repository policy検証、npm package dry-runを実行します。
 
 ## リリース
 
@@ -110,7 +151,7 @@ pnpm run check
 npm pack --dry-run --ignore-scripts
 ```
 
-release artifactには`dist/example-extension.js`、`dist/extension-manifest.json`、`README.md`、`README.ja.md`、`LICENSE`を含めます。
+release artifactには`dist/example-extension.js`、`dist/extension-manifest.json`、`lib-module/`、`README.md`、`README.ja.md`、`LICENSE`を含めます。
 
 ## ライセンス
 

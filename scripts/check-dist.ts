@@ -6,7 +6,7 @@ const execFileAsync = promisify(execFile);
 const repositoryRoot = fileURLToPath(new URL('..', import.meta.url));
 const {stdout} = await execFileAsync(
   'git',
-  ['status', '--short', '--untracked-files=all', '--', 'dist'],
+  ['status', '--short', '--untracked-files=all', '--', 'dist', 'lib-module'],
   {cwd: repositoryRoot}
 );
 

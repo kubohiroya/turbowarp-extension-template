@@ -123,6 +123,30 @@ renderer境界、`release()`／`releaseAll()`を説明します。
 完全なmethod referenceは
 [`docs/composition-api.md`](docs/composition-api.md)へ分けます。
 
+## 統合ビルド用module API
+
+`pnpm run build:module`は依存を内包しないESMと型を`lib-module/`へ生成し、
+packageの`./bundle-module`から公開します。
+
+```ts
+import {bundleModuleMetadata, createExtension, type ScratchApi}
+  from '@kubohiroya/<package>/bundle-module';
+
+function createMember(memberScratch: ScratchApi) {
+  return createExtension(memberScratch);
+}
+```
+
+import時にhost参照・instance生成・登録・listener接続を行いません。
+クラスと補助処理にはmember用hostを渡し、global `Scratch`を参照しません。
+factoryは登録せず新しいinstanceを返します。hostはmetadata（`formatVersion: 1`・元の
+`id`・`unsandboxed`）を生成前に検査し、登録とdisposeを管理します。
+単体entryも同じfactoryを利用します。yaml等のimportを統合builder用に保持し、
+切戻し用のclassic成果物も残します。実packageと公開型を`pnpm run check:module`で検証します。
+
+統合builderによる入口の契約への明示対応が必要で、importだけで単体JS間の依存が
+自動共有されるわけではありません。
+
 ## 連携
 
 | 利用側 | 関係 |
