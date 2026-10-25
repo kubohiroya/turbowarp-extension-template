@@ -1,5 +1,7 @@
 # TurboWarp-Extension-Template
 
+<img src="assets/block-icon.svg" alt="" width="48" height="48">
+
 [日本語](README.ja.md)
 
 A reusable TypeScript template for developing, testing, building, and releasing TurboWarp extensions with Vite.
