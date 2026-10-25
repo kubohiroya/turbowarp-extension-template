@@ -33,7 +33,7 @@
     "Keep LICENSE as the full Mozilla Public License 2.0 text unless policy records an exception.",
     "Keep README.md as the canonical English entrypoint and README.ja.md for Japanese content.",
     "Open both READMEs with the product H1, the committed block icon, the language switcher, and one paragraph of prose; the family package list reads that paragraph as the summary in that language.",
-    "Commit assets/block-icon.svg with the same drawing as blockIconURI in src/config.ts, keep it free of script, foreignObject, event handlers and javascript: URLs, and ship assets/ in the npm package.",
+    "Commit assets/block-icon.svg with the same drawing as blockIconURI in src/config.ts, keep it free of script, foreignObject, event handlers and javascript: URLs, and carry it in the npm package through package.json files.",
     "Load the shared TurboWarp Plus header in docs/index.html and let the page follow the reader's colour scheme.",
     "Run pnpm run check before publishing generated artifacts.",
     "Enable an unset GitHub Pages site through the API; publish complete block documentation with stable opcode anchors and connect getInfo().docsURI; verify the live content and deployment commit."
