@@ -186,8 +186,10 @@ function checkFamilyConventions() {
     }
   }
 
-  if (!packageMetadata.files?.includes('assets/')) {
-    errors.push('package.json files must include assets/ so the block icon ships with the package');
+  if (!filesCarry(packageMetadata.files, policy.blockIcon)) {
+    errors.push(
+      `package.json files must carry ${policy.blockIcon} so the block icon ships with the package`
+    );
   }
 
   if (!blockIcon.trimStart().startsWith('<svg')) {
@@ -305,6 +307,25 @@ async function checkPackContents() {
     errors.push(`npm pack must include ${policy.blockIcon}`);
   }
   await access('pnpm-lock.yaml');
+}
+
+/**
+ * Whether `package.json`'s `files` carries this path into the tarball.
+ *
+ * npm reads an entry as the file itself or as a directory whose contents all ship, so an icon at
+ * `assets/block-icon.svg` is carried by `assets/` and by `assets/block-icon.svg` alike. Which one
+ * a repository names is its own business: `assets/` is the convention and stays correct, but a
+ * repository that keeps something large beside the icon -- model weights it already ships from
+ * somewhere else, say -- has a reason to name the file instead of doubling its tarball.
+ *
+ * What the policy is actually after is that the icon ships, which is why this asks whether the
+ * entry covers it rather than which entry it is. `npm pack` below is what proves it did.
+ */
+function filesCarry(entries: string[] | undefined, target: string): boolean {
+  return (entries ?? []).some((entry) => {
+    const directory = entry.replace(/\/+$/u, '');
+    return directory === target || target.startsWith(`${directory}/`);
+  });
 }
 
 function extractConfigValue(key: string): string {
