@@ -2,7 +2,7 @@
 
 <img src="assets/block-icon.svg" alt="" width="48" height="48">
 
-[日本語](README.ja.md)
+English | [日本語](README.ja.md)
 
 A reusable TypeScript template for developing, testing, building, and releasing TurboWarp extensions with Vite.
 
@@ -53,6 +53,87 @@ For continuous rebuilding during development:
 ```bash
 pnpm run dev
 ```
+
+## TurboWarp Plus conventions
+
+Repositories in the [TurboWarp Plus family](https://kubohiroya.github.io/turbowarp-plus-packages/)
+are read by the family dashboard as well as by people, so the opening of each
+README and the handling of the block icon are the same everywhere.
+
+### README
+
+Both READMEs open the same way:
+
+```markdown
+# TurboWarp-<Extension-Name>
+
+<img src="assets/block-icon.svg" alt="" width="48" height="48">
+
+English | [日本語](README.ja.md)
+
+<One paragraph saying what the extension does.>
+```
+
+- The canonical English file is `README.md` and the Japanese one is `README.ja.md`. Do not create `README_ja.md`.
+- The language switcher names both languages and links only to the other one: `English | [日本語](README.ja.md)` in `README.md`, and `[English](README.md) | 日本語` in `README.ja.md`.
+- The first paragraph under the H1 is the package summary, written in that file's own language. The dashboard shows it in the matching column and skips the icon and the switcher above it. Keep it prose: a badge row, a list or a table in that position leaves the package with no summary to show.
+- Do not open the Japanese paragraph with `@kubohiroya/<package> は、`. The dashboard row already carries the package name, and the dashboard strips that opening.
+- A repository with no `README.ja.md` is listed with its English summary in both languages, so write the Japanese paragraph even when the rest of the Japanese README stays short.
+
+### Block icon
+
+- `assets/block-icon.svg` is committed and shows the same drawing as `blockIconURI` in `src/config.ts`. `pnpm run repo:check` decodes the URI and compares the two.
+- `blockIconURI` stays a self-contained `data:image/svg+xml;base64,...` URI, because the extension loads as a single file. GitHub does not render a `data:` URI in `<img src>` and the dashboard reads the committed file, which is why both exist.
+- The file is a plain drawing. The dashboard inlines it so that it takes the reader's colour scheme, and it refuses `<script>`, `<foreignObject>`, event-handler attributes and `javascript:` URLs instead of rewriting them.
+- `package.json` `files` includes `assets/`, so the icon also renders in the README on npm.
+
+### Published documentation
+
+`docs/index.html` carries the shared family header:
+
+```html
+<script type="module"
+        src="https://kubohiroya.github.io/turbowarp-plus-site-header/dist/auto.js"></script>
+```
+
+It inserts itself in a shadow root, so the page's own stylesheet and the header
+cannot reach each other, and a change to the header arrives without editing this
+repository again. The page also declares `color-scheme: light dark` and follows
+the reader's preference: the dashboard screenshots every site in both schemes,
+and a light-only page reads as a hole in a dark table.
+
+## Checklist for a new extension
+
+`pnpm run check` decides everything a check can decide. These are the ones it
+cannot, and they are easier to settle before the first release than after.
+
+**Identity, before anyone saves a project**
+
+- [ ] `extensionConfig.id` is the final extension ID. Every saved project stores it, so changing it later needs a documented migration rather than a new build.
+- [ ] Opcodes, argument IDs and argument types read the way they should stay. They are stored in projects too, and `dist/extension-manifest.json` records them as the API contract.
+- [ ] The product name hyphenates every word (`TurboWarp-Asset-Manager`), and the README H1, `repo-policy.json` `productName`, `src/config.ts` `name` and the npm package name agree.
+- [ ] `src/config.ts` `slug` gives the bundle name you want users to download; it appears in the README, on the CDN and in every install instruction.
+
+**Blocks**
+
+- [ ] Blocks live only in `src/block-definitions.json`. The README reference and the manifest are generated from it; hand-edited copies drift.
+- [ ] User-visible text goes through `Scratch.translate()`, while identifiers and stored values stay language-independent.
+- [ ] Each block returns a valid value or fails predictably, including on project stop, project reload and invalid input. Document those cases in the README.
+- [ ] `unsandboxed` is `true` only when a browser API actually requires it, and the README says what requires it.
+
+**Documentation and icon**
+
+- [ ] The first paragraph of each README is the summary the dashboard will show, in that file's language.
+- [ ] The block icon is a recognizable mark for this extension, not the template's three coloured blocks, and `assets/block-icon.svg` and `blockIconURI` carry that same drawing.
+- [ ] GitHub Pages is enabled through the API, `docs/index.html` documents every registered block with stable `#block-<opcode>` anchors, and `docsURI` points at the live URL. See [the required procedure](docs/github-pages-setup.ja.md).
+- [ ] `repo-policy.json` records this repository's own values, and any genuine difference is an explicit exception rather than a weakened check.
+
+**Before publishing**
+
+- [ ] `dist/` is committed and reproducible, so users install the extension without Node.js.
+- [ ] Version-pinned install examples in both READMEs match `package.json`.
+- [ ] `npm pack --dry-run` contains the bundle, the manifest, both READMEs, `LICENSE` and `assets/`, and nothing unreviewed.
+- [ ] The repository is listed in [`catalog.yaml`](https://github.com/kubohiroya/turbowarp-plus-packages/blob/main/catalog.yaml) of the family dashboard, with `npm: false` when it is deliberately not an npm package.
 
 ## Block reference
 
@@ -135,8 +216,6 @@ or saved data change.
 ## Compatibility
 
 Block-editor integration is optional. This template does not ship data-editing sample blocks, schemas, or a dedicated editor API. See the [integration guide](docs/block-editors.md) and the [breaking-change migration notes](docs/template-examples-migration.ja.md).
-
-The canonical README is `README.md`. Japanese documentation uses `README.ja.md`; new repositories should not create `README_ja.md`.
 
 Repository-level differences belong in `repo-policy.json`. Use policy exceptions for upstream forks, mixed-license content, legacy package names, or third-party bundles instead of weakening checks silently.
 

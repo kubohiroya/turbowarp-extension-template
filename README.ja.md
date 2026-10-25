@@ -2,7 +2,7 @@
 
 <img src="assets/block-icon.svg" alt="" width="48" height="48">
 
-[English](README.md)
+[English](README.md) | 日本語
 
 ViteでTurboWarp拡張機能を開発、テスト、ビルド、リリースするための再利用可能なTypeScriptテンプレートです。
 
@@ -53,6 +53,87 @@ pnpm install --frozen-lockfile
 ```bash
 pnpm run dev
 ```
+
+## TurboWarp Plus 共通の約束事
+
+[TurboWarp Plus ファミリー](https://kubohiroya.github.io/turbowarp-plus-packages/)の
+リポジトリは、人だけでなくファミリーのダッシュボードからも読まれます。そのため
+READMEの冒頭とブロックアイコンの扱いは、どのリポジトリでも同じ形にします。
+
+### README
+
+英語版・日本語版のどちらも、冒頭は次の形です。
+
+```markdown
+# TurboWarp-<Extension-Name>
+
+<img src="assets/block-icon.svg" alt="" width="48" height="48">
+
+English | [日本語](README.ja.md)
+
+<この機能拡張が何をするかを1段落で書く。>
+```
+
+- 正本の英語ファイルは`README.md`、日本語は`README.ja.md`です。`README_ja.md`は作成しません。
+- 言語切り替え行は両言語を並べ、他方だけをリンクにします。`README.md`では`English | [日本語](README.ja.md)`、`README.ja.md`では`[English](README.md) | 日本語`です。
+- H1直下の最初の段落が、そのファイルの言語で書いたパッケージの説明文です。ダッシュボードはこれを対応する言語の列に表示し、その上のアイコン行と切り替え行は読み飛ばします。ここは散文にします。バッジ行・箇条書き・表を置くと、そのパッケージには表示できる説明文が無くなります。
+- 日本語の段落を`@kubohiroya/<package> は、`で始めません。ダッシュボードの行にはすでにパッケージ名があり、その書き出しは落とされます。
+- `README.ja.md`が無いリポジトリは、両言語とも英語の説明文で一覧に出ます。日本語版の残りが短くても、この段落だけは書きます。
+
+### ブロックアイコン
+
+- `assets/block-icon.svg`をコミットし、`src/config.ts`の`blockIconURI`と同じ図柄にします。`pnpm run repo:check`がURIをデコードして両者を比較します。
+- `blockIconURI`は自己完結した`data:image/svg+xml;base64,...`のままにします。機能拡張は単一ファイルとして読み込まれるためです。GitHubは`<img src>`の`data:`URIを描画せず、ダッシュボードはコミットされたファイルを読みます。両方が必要な理由はこれです。
+- ファイルは純粋な図形だけにします。ダッシュボードは読者の配色に追従させるためにSVGをインライン展開し、`<script>`・`<foreignObject>`・イベントハンドラ属性・`javascript:`URLは書き換えずに拒否します。
+- `package.json`の`files`に`assets/`を含めます。npm上のREADMEでもアイコンが表示されます。
+
+### 公開ドキュメント
+
+`docs/index.html`はファミリー共通ヘッダーを読み込みます。
+
+```html
+<script type="module"
+        src="https://kubohiroya.github.io/turbowarp-plus-site-header/dist/auto.js"></script>
+```
+
+ヘッダーはshadow root内へ自分を挿入するため、ページ側のスタイルシートと互いに
+干渉しません。ヘッダーの変更は、このリポジトリを再び編集しなくても反映されます。
+ページは`color-scheme: light dark`を宣言し、読者の設定に追従させます。
+ダッシュボードは各サイトをライトとダークの両方で撮影するため、ライト専用の
+ページは暗い表の中で穴のように見えます。
+
+## 機能拡張をつくるときのチェックリスト
+
+検査で決められることは`pnpm run check`が決めます。以下は検査では決められず、
+最初のリリース後よりも前に片付けたほうが楽な項目です。
+
+**識別子（誰かがプロジェクトを保存する前に決める）**
+
+- [ ] `extensionConfig.id`は最終的な拡張IDになっている。保存された全プロジェクトがこのIDを記録するため、後からの変更にはビルドのやり直しではなくmigrationの明示が必要です。
+- [ ] opcode・引数ID・引数型が、そのまま維持できる名前になっている。これらもプロジェクトに保存され、`dist/extension-manifest.json`がAPI契約として記録します。
+- [ ] 製品名は全ての構成語をハイフンで連結している（`TurboWarp-Asset-Manager`）。READMEのH1、`repo-policy.json`の`productName`、`src/config.ts`の`name`、npmパッケージ名が一致している。
+- [ ] `src/config.ts`の`slug`が、利用者にダウンロードさせたいバンドル名になっている。README・CDN・あらゆるインストール手順に現れます。
+
+**ブロック**
+
+- [ ] ブロックの定義は`src/block-definitions.json`だけにある。READMEのブロック参照とmanifestはそこから生成され、手書きの写しは必ずずれます。
+- [ ] 利用者に見える文字列は`Scratch.translate()`を通し、識別子と保存値は言語に依存させない。
+- [ ] 各ブロックが有効な値を返すか、予測可能な形で失敗する。プロジェクト停止時・再読込時・無効な入力時の動作を含め、READMEに書く。
+- [ ] `unsandboxed`を`true`にするのは、実際にbrowser APIがそれを要求する場合だけ。何が要求しているのかをREADMEに書く。
+
+**ドキュメントとアイコン**
+
+- [ ] 各READMEの最初の段落が、そのファイルの言語で書かれた、ダッシュボードに出る説明文になっている。
+- [ ] ブロックアイコンがこの機能拡張を表す図柄になっている（テンプレートの3色ブロックのままにしない）。`assets/block-icon.svg`と`blockIconURI`が同じ図柄である。
+- [ ] GitHub PagesをAPIで有効化し、`docs/index.html`が全登録ブロックを`#block-<opcode>`の固定アンカー付きで説明し、`docsURI`が実URLを指している。[必須手順](docs/github-pages-setup.ja.md)を参照。
+- [ ] `repo-policy.json`がこのリポジトリ自身の値を記録している。実際の差異は検査を弱めるのではなく、明示的な例外として表現する。
+
+**公開前**
+
+- [ ] `dist/`をコミットし、再現可能にしている。利用者はNode.jsなしで機能拡張を読み込めます。
+- [ ] 両READMEのversion固定インストール例が`package.json`と一致している。
+- [ ] `npm pack --dry-run`の内容にバンドル・manifest・両README・`LICENSE`・`assets/`が含まれ、未検証のファイルが入っていない。
+- [ ] ファミリーのダッシュボードの[`catalog.yaml`](https://github.com/kubohiroya/turbowarp-plus-packages/blob/main/catalog.yaml)にリポジトリを登録した。npmパッケージにしないリポジトリは`npm: false`にする。
 
 ## ブロック参照
 
@@ -127,8 +208,6 @@ module方式が有効になるわけではありません。後続は
 ## 互換性
 
 ブロック編集は任意の追加機能です。Templateはデータ編集のサンプルブロック・専用Schema・専用公開APIを標準搭載しません。必要な拡張だけが[導入ガイド](docs/block-editors.ja.md)に従って追加してください。撤去した旧APIへの影響は[移行文書](docs/template-examples-migration.ja.md)を参照してください。
-
-canonical READMEは`README.md`です。日本語ドキュメントは`README.ja.md`を使います。新規リポジトリでは`README_ja.md`を作成しません。
 
 リポジトリ固有の差分は`repo-policy.json`に記録します。upstream fork、mixed-license content、legacy package name、third-party bundleは、検査を弱めるのではなくpolicy例外として表現します。
 
