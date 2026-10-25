@@ -7,7 +7,7 @@
 (function (Scratch) {
   'use strict';
 
-  //#region src/config.ts
+  // src/config.ts
   var extensionConfig = {
   	id: "kubohiroyaexampleextension",
   	slug: "example-extension",
@@ -32,8 +32,7 @@
   		} }
   	}]
   };
-  //#endregion
-  //#region src/extension.ts
+  // src/extension.ts
   var blockDefinitions = block_definitions_default.blocks;
   var ExampleExtension = class {
   	constructor(scratch) {
@@ -75,10 +74,8 @@
   function createExtension(scratch) {
   	return new ExampleExtension(scratch);
   }
-  //#endregion
-  //#region src/index.ts
+  // src/index.ts
   if (extensionConfig.unsandboxed && !Scratch.extensions.unsandboxed) throw new Error(`${extensionConfig.name} must run unsandboxed.`);
   Scratch.extensions.register(createExtension(Scratch));
-  //#endregion
 
 })(Scratch);
