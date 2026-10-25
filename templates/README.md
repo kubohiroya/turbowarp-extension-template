@@ -1,8 +1,14 @@
 # TurboWarp-<Extension-Name>
 
-[English](README.md) | [日本語](README.ja.md)
+<img src="assets/block-icon.svg" alt="" width="48" height="48">
+
+English | [日本語](README.ja.md)
 
 A TurboWarp extension that <one-sentence purpose>.
+
+Keep this first paragraph as one paragraph of prose. The TurboWarp Plus
+dashboard takes it as this package's English summary, skipping the icon and the
+language switcher above it, and `README.ja.md` supplies the Japanese one.
 
 **User guide:** [English](<PAGES_URL>/)
 
@@ -19,8 +25,11 @@ Keep this section about outcomes, not implementation files.
 This extension publishes its English user documentation with GitHub Pages.
 
 - `docsURI` points to the English GitHub Pages documentation: `<PAGES_URL>/`.
-- `blockIconURI` is a self-contained SVG encoded as `data:image/svg+xml;base64,...`.
+- `blockIconURI` is a self-contained SVG encoded as `data:image/svg+xml;base64,...`, because the extension loads as a single file.
+- `assets/block-icon.svg` is the same drawing committed as a file. GitHub does not render a `data:` URI in `<img src>`, and the family dashboard reads the committed file, so the icon under the title and the icon in the package list both come from it. `pnpm run repo:check` compares the file with `blockIconURI`.
+- Keep the file a plain drawing and keep `assets/` in `package.json` `files`. The dashboard inlines the SVG so that it takes the reader's colour scheme, and refuses `<script>`, `<foreignObject>`, event-handler attributes and `javascript:` URLs.
 - The block icon should be a simple, recognizable symbol that represents this extension and improves block readability. Do not use a generic placeholder icon in a released extension.
+- `docs/index.html` carries the shared family header: `<script type="module" src="https://kubohiroya.github.io/turbowarp-plus-site-header/dist/auto.js"></script>`. It inserts itself in a shadow root, and the page follows the reader's colour scheme with `color-scheme: light dark`.
 
 ## Requirements and safety
 
@@ -232,3 +241,7 @@ prepare and publish documentation covering every registered block, and point
 Verify the actual published URL, content, links, and deployment commit; Pages
 configuration alone is insufficient. Perform remote changes only within explicit
 authorization. See [the required procedure](docs/github-pages-setup.ja.md).
+
+Before the first release, work through the template's
+[checklist for a new extension](https://github.com/kubohiroya/turbowarp-extension-template#checklist-for-a-new-extension)
+and delete this section together with the other template notes above.

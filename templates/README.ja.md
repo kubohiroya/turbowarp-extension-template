@@ -1,8 +1,14 @@
 # TurboWarp-<Extension-Name>
 
-[English](README.md) | [日本語](README.ja.md)
+<img src="assets/block-icon.svg" alt="" width="48" height="48">
+
+[English](README.md) | 日本語
 
 <何をするかを一文で説明>ためのTurboWarp機能拡張です。
+
+この最初の段落は1段落の散文のままにします。TurboWarp Plusの
+ダッシュボードはここをこのパッケージの日本語の説明文として読み、上にある
+アイコン行と言語切り替え行は読み飛ばします。英語の説明文は`README.md`から取ります。
 
 **利用ガイド:** [English](<PAGES_URL>/)
 
@@ -19,8 +25,11 @@
 この機能拡張は、英語版の利用者向けドキュメントをGitHub Pagesで公開します。
 
 - `docsURI` はGitHub Pages上の英語版ドキュメント `<PAGES_URL>/` を指します。
-- `blockIconURI` は `data:image/svg+xml;base64,...` 形式の自己完結したSVGとします。
+- `blockIconURI` は `data:image/svg+xml;base64,...` 形式の自己完結したSVGとします。機能拡張は単一ファイルとして読み込まれるためです。
+- `assets/block-icon.svg` は同じ図柄をファイルとしてコミットしたものです。GitHubは`<img src>`の`data:`URIを描画せず、ファミリーのダッシュボードはコミットされたファイルを読みます。READMEのタイトル直下のアイコンとパッケージ一覧のアイコンは、どちらもこのファイルから来ます。`pnpm run repo:check`がこのファイルと`blockIconURI`を比較します。
+- ファイルは純粋な図形だけにし、`package.json`の`files`に`assets/`を含めます。ダッシュボードは読者の配色に追従させるためSVGをインライン展開し、`<script>`・`<foreignObject>`・イベントハンドラ属性・`javascript:`URLを拒否します。
 - ブロックアイコンは機能拡張の内容を直感的に表す、単純で識別しやすい図柄にします。公開版では汎用の仮アイコンをそのまま使用しません。
+- `docs/index.html`はファミリー共通ヘッダー`<script type="module" src="https://kubohiroya.github.io/turbowarp-plus-site-header/dist/auto.js"></script>`を読み込みます。ヘッダーはshadow root内へ自分を挿入します。ページは`color-scheme: light dark`で読者の配色に追従させます。
 
 ## 動作条件と安全上の注意
 
@@ -214,3 +223,6 @@ third-party componentを含む場合は
 その公開文書に結びつけます。設定だけで完了とせず、実URL・本文・リンク・
 公開commitまで確認します。外部操作は対象・操作への明示承認の範囲で実施します。
 [必須手順](docs/github-pages-setup.ja.md)を参照してください。
+
+最初のリリース前に、テンプレートの[機能拡張をつくるときのチェックリスト](https://github.com/kubohiroya/turbowarp-extension-template/blob/main/README.ja.md#機能拡張をつくるときのチェックリスト)を
+確認し、このsectionと上のテンプレート向けの注記をまとめて削除します。
