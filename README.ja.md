@@ -25,7 +25,7 @@ pnpm add --save-exact @kubohiroya/turbowarp-extension-template@0.6.0
 
 ## 要件と安全性
 
-- Node.js 22以上
+- Node.js 24以上
 - Corepack経由のpnpm
 - `unsandboxed: true`を設定した拡張機能ではTurboWarpのunsandboxed extension option
 
@@ -34,6 +34,7 @@ pnpm add --save-exact @kubohiroya/turbowarp-extension-template@0.6.0
 ## インストール
 
 ```bash
+npm install --global corepack@latest
 corepack enable
 pnpm install --frozen-lockfile
 ```

@@ -25,7 +25,7 @@ pnpm add --save-exact @kubohiroya/turbowarp-extension-template@0.6.0
 
 ## Requirements and safety
 
-- Node.js 22 or newer;
+- Node.js 24 or newer;
 - pnpm through Corepack;
 - TurboWarp's unsandboxed extension option only when your extension metadata sets `unsandboxed: true`.
 
@@ -34,6 +34,7 @@ Only load generated extension code that you trust. Unsandboxed extensions run wi
 ## Installation
 
 ```bash
+npm install --global corepack@latest
 corepack enable
 pnpm install --frozen-lockfile
 ```
