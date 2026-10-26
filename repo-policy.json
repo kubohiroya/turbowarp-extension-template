@@ -14,7 +14,7 @@
   "blockIcon": "assets/block-icon.svg",
   "sharedSiteHeader": "https://kubohiroya.github.io/turbowarp-plus-site-header/dist/auto.js",
   "node": {
-    "minimum": "22.18.0"
+    "minimum": "24"
   },
   "packageManager": "pnpm",
   "requiredFiles": [
