@@ -13,7 +13,7 @@ Create a repository from this template, replace the package and extension metada
 The template package is version-pinned when it is used as a reference:
 
 ```bash
-pnpm add --save-exact @kubohiroya/turbowarp-extension-template@0.5.0
+pnpm add --save-exact @kubohiroya/turbowarp-extension-template@0.6.0
 ```
 
 ## What it does
