@@ -23,6 +23,33 @@ pnpm add --save-exact @kubohiroya/turbowarp-extension-template@0.7.0
 - generates the README block reference from `src/block-definitions.json`;
 - verifies source, documentation, generated `dist/` output, repository policy, and npm package contents in one check.
 
+## Runnable sample
+
+[**Open Hello World in TurboWarp Editor**](https://turbowarp.org/editor?project_url=https%3A%2F%2Fkubohiroya.github.io%2Fturbowarp-extension-template%2Fsamples%2Fhello-world.sb3) · [Download the SB3](https://kubohiroya.github.io/turbowarp-extension-template/samples/hello-world.sb3)
+
+Allow the custom extension to load and click the green flag. The `Greeting`
+monitor displays the result of `hello [world]`: **Hello, world!**.
+Change the name in the block and run again.
+This sandbox-compatible sample fetches the extension JavaScript from GitHub Pages.
+
+Every extension created from this template should include a minimal runnable demo
+of its own blocks as `samples/<meaningful-name>.sb3`, with Editor and download links
+in both READMEs and the Pages guide. Replace this greeting with the extension's
+actual behavior. Keep editable sources in `samples/<name>/` and record the Pages
+URL, extension identity, sandbox requirement, and expected result in
+`samples/manifest.json`.
+
+```bash
+pnpm run samples:build  # Regenerate committed SB3 files after source or bundle changes
+pnpm run samples:check  # Verify archives, block references, opcodes and sample tooling
+pnpm run pages:build    # Stage docs, dist and SB3 files under _site/ for deployment
+```
+
+For unsandboxed extensions, set `extension.unsandboxed` to `true` in the sample
+manifest. The builder embeds the committed JS so TurboWarp can offer its usual
+unsandboxed consent checkbox. Sandbox-compatible extensions use the Pages JS URL.
+See [sample maintenance and migration](samples/README.md).
+
 ## Requirements and safety
 
 - Node.js 24 or newer;

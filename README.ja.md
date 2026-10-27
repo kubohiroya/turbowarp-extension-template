@@ -23,6 +23,31 @@ pnpm add --save-exact @kubohiroya/turbowarp-extension-template@0.7.0
 - `src/block-definitions.json`からREADMEのブロック参照を生成します。
 - source、document、生成済み`dist/`、repository policy、npm package内容を一括検査します。
 
+## 実行できるサンプル
+
+[**TurboWarp EditorでHello Worldを開く**](https://turbowarp.org/editor?project_url=https%3A%2F%2Fkubohiroya.github.io%2Fturbowarp-extension-template%2Fsamples%2Fhello-world.sb3) · [SB3をダウンロード](https://kubohiroya.github.io/turbowarp-extension-template/samples/hello-world.sb3)
+
+機能拡張の読み込みを許可して緑の旗を押すと、`hello [world]`の結果を
+`Greeting`変数に`Hello, world!`と表示します。
+ブロックの名前を変更して再実行できます。
+このサンプルはsandbox互換で、拡張JSをGitHub Pagesから取得します。
+
+このテンプレートから作る拡張には、実際の提供ブロックを使った最小デモを
+`samples/<内容を表す名前>.sb3`として添付します。日英READMEとPagesガイドに
+Editorで開くリンク・ダウンロード・実行手順・期待結果を記載し、挨拶のサンプルは
+その拡張の機能を実証する内容に置き換えます。
+
+```bash
+pnpm run samples:build  # 元データ・拡張JSの更新後にSB3を再生成
+pnpm run samples:check  # 生成差分・ブロック参照・opcodeとツールの検証
+pnpm run pages:build    # docs・dist・SB3を_site/へ集約
+```
+
+`samples/manifest.json`にPages URL・拡張ID・JSパス・sandbox条件・期待結果を設定し、
+`samples/<name>/`に編集可能な元データを保存します。サンドボックスなしで動く拡張は
+`extension.unsandboxed: true`とし、コミット済みJSをSB3へ同梱して通常の同意画面を
+表示します。[適用手順と保守方法](samples/README.md)を参照してください。
+
 ## 要件と安全性
 
 - Node.js 24以上

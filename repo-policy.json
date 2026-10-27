@@ -36,6 +36,7 @@
     "Commit assets/block-icon.svg with the same drawing as blockIconURI in src/config.ts, keep it free of script, foreignObject, event handlers and javascript: URLs, and carry it in the npm package through package.json files.",
     "Load the shared TurboWarp Plus header in docs/index.html and let the page follow the reader's colour scheme.",
     "Run pnpm run check before publishing generated artifacts.",
-    "Enable an unset GitHub Pages site through the API; publish complete block documentation with stable opcode anchors and connect getInfo().docsURI; verify the live content and deployment commit."
+    "Enable an unset GitHub Pages site through the API; publish complete block documentation with stable opcode anchors and connect getInfo().docsURI; verify the live content and deployment commit.",
+    "Provide a minimal samples/<meaningful-name>.sb3 using the extension blocks, maintain editable source and samples/manifest.json, run samples:build and samples:check, and link the Pages-hosted SB3 from both READMEs through TurboWarp Editor project_url. Set extension.unsandboxed explicitly; embed the tested bundle when unsandboxed consent is required. Deploy the _site artifact prepared by pages:build."
   ]
 }

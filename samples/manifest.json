@@ -1,0 +1,17 @@
+{
+  "baseURL": "https://kubohiroya.github.io/turbowarp-extension-template/",
+  "extension": {
+    "id": "kubohiroyaexampleextension",
+    "bundle": "dist/example-extension.js",
+    "unsandboxed": false
+  },
+  "samples": [
+    {
+      "name": "hello-world",
+      "title": "Hello from an extension block",
+      "expected": {
+        "greeting": "Hello, world!"
+      }
+    }
+  ]
+}

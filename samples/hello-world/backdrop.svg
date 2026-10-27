@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="360" viewBox="0 0 480 360">
+<rect width="480" height="360" fill="#f1f5f9"/>
+<g font-family="sans-serif" fill="#172b4d">
+<text x="32" y="50" font-size="28" font-weight="bold">Hello, extension!</text>
+<text x="32" y="88" font-size="17">1. Allow the custom extension to load.</text>
+<text x="32" y="118" font-size="17">2. Click the green flag.</text>
+<text x="32" y="148" font-size="17">3. Read the extension result below.</text>
+<text x="32" y="250" font-size="16">Expected: Hello, world!</text>
+<text x="32" y="282" font-size="14">Try a different name in the hello block.</text>
+<text x="32" y="318" font-size="14">Edit the name in the hello block and run again.</text>
+</g></svg>
