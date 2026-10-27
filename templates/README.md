@@ -87,6 +87,24 @@ Do not maintain `<version>` manually unless CI checks it against `package.json`.
 <Minimal TurboWarp block flow>
 ```
 
+## Runnable samples
+
+| Sample | Open in TurboWarp Editor | Download | Expected result |
+|---|---|---|---|
+| <Sample description> | [Open](https://turbowarp.org/editor?project_url=<URL_ENCODED_PAGES_URL>%2Fsamples%2F<sample-name>.sb3) | [<sample-name>.sb3](<PAGES_URL>/samples/<sample-name>.sb3) | <Visible result after the green flag> |
+
+Allow the extension to load, then <required permission/gesture> and click the green flag.
+State any camera, companion extension, network, or hardware requirements here.
+Remove permissions that the sample does not need.
+
+Maintain editable `samples/<sample-name>/project.json` and assets, configure
+`samples/manifest.json`, and commit the generated `samples/<sample-name>.sb3`.
+Use the actual blocks of this extension; replace the template's greeting demo.
+Run `pnpm run samples:build` after source/bundle changes and `pnpm run samples:check`
+before committing. `pnpm run pages:build` stages docs, dist and samples in `_site/`.
+For unsandboxed extensions, set `extension.unsandboxed: true` to embed the tested
+bundle and show TurboWarp's normal consent checkbox. See [maintenance](samples/README.md).
+
 ## Block reference
 
 The block reference is generated from

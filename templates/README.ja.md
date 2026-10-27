@@ -87,6 +87,23 @@ https://cdn.jsdelivr.net/npm/@kubohiroya/<package>@<version>/dist/<file>.js
 <最小のTurboWarp block flow>
 ```
 
+## 実行できるサンプル
+
+| サンプル | TurboWarp Editorで開く | ダウンロード | 期待結果 |
+|---|---|---|---|
+| <デモの内容> | [開く](https://turbowarp.org/editor?project_url=<URL_ENCODED_PAGES_URL>%2Fsamples%2F<sample-name>.sb3) | [<sample-name>.sb3](<PAGES_URL>/samples/<sample-name>.sb3) | <緑の旗の後に画面で確認する結果> |
+
+拡張の読み込みを許可し、<必要な権限・ユーザー操作>を行ってから緑の旗を押します。
+必要なカメラ・関連拡張・通信・機器がある場合はここへ記載し、不要な権限は要求しません。
+
+`samples/<sample-name>/project.json`と素材を保守し、`samples/manifest.json`を設定して、
+生成した`samples/<sample-name>.sb3`もコミットします。挨拶のサンプルは、この拡張の
+実際の提供ブロックで機能を確認できるデモへ置き換えます。元データ・拡張JSの変更後は
+`pnpm run samples:build`、コミット前は`pnpm run samples:check`を実行します。
+`pnpm run pages:build`はdocs・dist・SB3を`_site/`へ集約します。
+サンドボックスなしの拡張は`extension.unsandboxed: true`でJSを同梱し、通常の同意画面を
+表示します。[保守方法](samples/README.md)も参照してください。
+
 ## ブロックリファレンス
 
 block referenceは
