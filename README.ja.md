@@ -13,7 +13,7 @@ ViteでTurboWarp拡張機能を開発、テスト、ビルド、リリースす�
 参照用にtemplate packageを使う場合はversionを固定します。
 
 ```bash
-pnpm add --save-exact @kubohiroya/turbowarp-extension-template@0.7.0
+pnpm add --save-exact @kubohiroya/turbowarp-extension-template@0.8.0
 ```
 
 ## できること
