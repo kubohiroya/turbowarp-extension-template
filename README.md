@@ -13,7 +13,7 @@ Create a repository from this template, replace the package and extension metada
 The template package is version-pinned when it is used as a reference:
 
 ```bash
-pnpm add --save-exact @kubohiroya/turbowarp-extension-template@0.9.0
+pnpm add --save-exact @kubohiroya/turbowarp-extension-template@0.9.1
 ```
 
 ## What it does
@@ -274,3 +274,7 @@ Release artifacts include `dist/example-extension.js`, `dist/extension-manifest.
 ## License
 
 SPDX-License-Identifier: MPL-2.0
+
+## Declaring resource use
+
+Before publishing, review `package.json` → `turbowarpExtension.resourceDeclaration`. This greeting template declares an empty resource list. Replace it when adding camera, microphone, network, Bluetooth, USB, persistent browser storage, selected-file access or audio output. Declare shared/indirect use too. State conditional paths, purposes and network data direction/content in English and Japanese. Keep companion app and CLI behaviour separate. Do not leave `resources: []` after adding resource use. Validate with `readPackageResourceDeclaration` from `@kubohiroya/turbowarp-extension-manifest/resources` (0.6.0 or later). The same declaration is displayed in the Plus dashboard, add screen and project-open confirmation; it does not grant browser permissions. See [the contract](https://github.com/kubohiroya/turbowarp-extension-manifest#resource-declarations).
