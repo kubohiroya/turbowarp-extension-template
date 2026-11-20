@@ -13,7 +13,7 @@ ViteでTurboWarp拡張機能を開発、テスト、ビルド、リリースす�
 参照用にtemplate packageを使う場合はversionを固定します。
 
 ```bash
-pnpm add --save-exact @kubohiroya/turbowarp-extension-template@0.9.0
+pnpm add --save-exact @kubohiroya/turbowarp-extension-template@0.9.1
 ```
 
 ## できること
@@ -263,3 +263,7 @@ release artifactには`dist/example-extension.js`、`dist/extension-manifest.jso
 ## ライセンス
 
 SPDX-License-Identifier: MPL-2.0
+
+## リソース利用の宣言
+
+公開前に `package.json` の `turbowarpExtension.resourceDeclaration` を確認してください。挨拶だけの雛形は空配列です。カメラ・マイク・ネットワーク・Bluetooth・USB・ブラウザ内の永続保存・選択したファイル・音声出力を加えるときは、共有・間接利用も含めて更新し、空配列のままにしないでください。用途、利用条件、通信方向・内容を日英で記録し、同梱CLIや別アプリの動作とは分けます。`@kubohiroya/turbowarp-extension-manifest/resources`（0.6.0以降）の `readPackageResourceDeclaration` で検証できます。同じ宣言が追加画面・Plusダッシュボード・作品を開くときの確認に表示されます。ブラウザの許可を付与するものではありません。[共通契約](https://github.com/kubohiroya/turbowarp-extension-manifest#リソース利用の宣言)も参照してください。

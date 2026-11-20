@@ -264,3 +264,7 @@ authorization. See [the required procedure](docs/github-pages-setup.ja.md).
 Before the first release, work through the template's
 [checklist for a new extension](https://github.com/kubohiroya/turbowarp-extension-template#checklist-for-a-new-extension)
 and delete this section together with the other template notes above.
+
+## Declaring resource use
+
+Before publishing, review `package.json` → `turbowarpExtension.resourceDeclaration`. This greeting template declares an empty resource list. Replace it when adding camera, microphone, network, Bluetooth, USB, persistent browser storage, selected-file access or audio output. Declare shared/indirect use too. State conditional paths, purposes and network data direction/content in English and Japanese. Keep companion app and CLI behaviour separate. Do not leave `resources: []` after adding resource use. Validate with `readPackageResourceDeclaration` from `@kubohiroya/turbowarp-extension-manifest/resources` (0.6.0 or later). The same declaration is displayed in the Plus dashboard, add screen and project-open confirmation; it does not grant browser permissions. See [the contract](https://github.com/kubohiroya/turbowarp-extension-manifest#resource-declarations).
