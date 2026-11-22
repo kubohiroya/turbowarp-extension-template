@@ -105,7 +105,7 @@ Schemaの共有とconsumer固有の入力条件を区別し、7検証profileをm
 | [turbowarp-http-server-cloudflare](blocks.ja.md#turbowarp-http-server-cloudflare) | 9 | 22 | 9 | 0 | 0 |
 | [turbowarp-http-server-jotai](blocks.ja.md#turbowarp-http-server-jotai) | 7 | 8 | 5 | 0 | 2 |
 | [turbowarp-http-server-react](blocks.ja.md#turbowarp-http-server-react) | 4 | 8 | 3 | 0 | 1 |
-| [turbowarp-jsqr](blocks.ja.md#turbowarp-jsqr) | 3 | 5 | 2 | 0 | 1 |
+| [turbowarp-zxing](blocks.ja.md#turbowarp-zxing) | 3 | 5 | 2 | 0 | 1 |
 | [turbowarp-kvs](blocks.ja.md#turbowarp-kvs) | 5 | 10 | 5 | 0 | 0 |
 | [turbowarp-markdown](blocks.ja.md#turbowarp-markdown) | 19 | 21 | 17 | 0 | 2 |
 | [turbowarp-named-data](blocks.ja.md#turbowarp-named-data) | 1 | 0 | 0 | 0 | 1 |
@@ -247,7 +247,7 @@ Gは段階1のref/形式判定、段階2のsource保持、段階4のliteral内�
 | 2 固定フォーム | B・Gの保存部分、先行する診断・固定項目等 | ownerのraw read/encodeとpure検証をsession単位でbindingし、ROS/bare/wrapper/空source/variantを保持。保存前は最新contextで再検証。読込・変更・保存・再編集が成功。invalidを拒否し、Cancel・変更なし保存で値や履歴を変えない。追加プロパティ・旧版・文字列契約を維持。A-Frameの未編集値はString化/正規化しない。内部候補を含むフォームの完成は段階4に依存 |
 | 3 固定選択と条件分岐 | C、固定enum・数値・色・menu | 表示ラベルと保存値が対応。既存hatとalias/fallbackを維持。型・空値・リセット・複数引数の保存を検証。Unsupportedな形状を拒否 |
 | 4 名前の候補 | D・E、通知・style・action等 | 未実行定義と参照の固定値を候補化。Bubbleの有効capability、peerのrole、配置reference/point、camera/profile、再帰nodeを区別。親引数の依存にD/E/Gを含む。79の内部適用規則と131箇所を照合。候補外・外部由来・前方参照を保持。取得だけで実行/登録しない |
-| 5 Scratch名の登録 | F、async-input/jsqr/webusb-pasori/runtime-expression | 新規broadcast名と引数を原子的に保存。Cancelで名簿を変更しない。Undo/Redoで両方を復元。衝突・途中失敗・同名再利用を確認 |
+| 5 Scratch名の登録 | F、async-input/zxing/webusb-pasori/runtime-expression | 新規broadcast名と引数を原子的に保存。Cancelで名簿を変更しない。Undo/Redoで両方を復元。衝突・途中失敗・同名再利用を確認 |
 | 6 資源と環境と配列 | G・H、camera/VRM/voice/assets等 | 未接続・候補消失・遅い応答でも下書き保持。環境を勝手に起動しない。反復可能配列の重複・順序・個数対応と、setLoadingCostumesの一意/先頭順をそれぞれ保持。a,a,bは論理リストa,bで2番目b、b,aへの並べ替えも有効。変更なしsourceは保持 |
 | 7 展開と統合 | 各対象の前段依存 | 全①項目の対象テスト、登録/再初期化/解除、API不在を確認。代表例で実GUIのSave/Cancel/Undo/Redo、JSON/YAMLの.sb3保存・別画面再読込・再編集、flag OFFの通常実行を確認 |
 

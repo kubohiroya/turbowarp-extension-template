@@ -270,7 +270,7 @@ Scratch broadcast名。範囲: `project`。
 - 読取方法: 専用の読取portを所有側へ追加する。既存公開read APIがある場合だけ再利用する。
 - 新規操作: `project-broadcast-transaction`。 定義・参照ブロックの固定値と、取得可能な所有側の読取情報を候補化。実行・登録・fetchしない。
 - 固定値の収集箇所 `turbowarp-async-input`: `listenForKeyAndBroadcast.MESSAGE`, `listenForTouchAndBroadcast.MESSAGE`, `listenForActorTouchAndBroadcast.MESSAGE`。
-- 固定値の収集箇所 `turbowarp-jsqr`: `waitForQrTextSetRuntimeVarAndBroadcast.MESSAGE`。
+- 固定値の収集箇所 `turbowarp-zxing`: `waitForQrTextSetRuntimeVarAndBroadcast.MESSAGE`。
 - 固定値の収集箇所 `turbowarp-runtime-expression`: `registerConditionalBroadcast.MESSAGE_ON_TRUE`, `registerConditionalBroadcast.MESSAGE_ON_FALSE`。
 - 固定値の収集箇所 `turbowarp-webusb-pasori`: `waitForNfcIdmSetRuntimeVarAndBroadcast.MESSAGE`。
 
@@ -300,7 +300,7 @@ Temporary Variablesのruntime変数名。範囲: `runtime`。
 - 読取方法: 専用の読取portを所有側へ追加する。既存公開read APIがある場合だけ再利用する。
 - 新規操作: `literal-only`。 定義・参照ブロックの固定値と、取得可能な所有側の読取情報を候補化。実行・登録・fetchしない。
 - 固定値の収集箇所 `turbowarp-async-input`: `listenForKey.RUNTIME_VAR`, `listenForKeyAndBroadcast.RUNTIME_VAR`, `listenForTouch.RUNTIME_VAR`, `listenForTouchAndBroadcast.RUNTIME_VAR`, `listenForPose.RUNTIME_VAR`, `listenForActorTouchAndBroadcast.RUNTIME_VAR`。
-- 固定値の収集箇所 `turbowarp-jsqr`: `waitForQrTextSetRuntimeVar.RUNTIME_VAR`, `waitForQrTextSetRuntimeVarAndBroadcast.RUNTIME_VAR`。
+- 固定値の収集箇所 `turbowarp-zxing`: `waitForQrTextSetRuntimeVar.RUNTIME_VAR`, `waitForQrTextSetRuntimeVarAndBroadcast.RUNTIME_VAR`。
 - 固定値の収集箇所 `turbowarp-webusb-pasori`: `waitForNfcIdmSetRuntimeVar.RUNTIME_VAR`, `waitForNfcIdmSetRuntimeVarAndBroadcast.RUNTIME_VAR`。
 
 ### pose-class
@@ -485,7 +485,7 @@ ARターゲットID。範囲: `ar instance`。
 - 固定値の収集箇所 `turbowarp-ar`: `createARScene.CAMERA_ID`。
 - 固定値の収集箇所 `turbowarp-camera-calibration`: `startCameraCalibration.CAMERA_ID`, `addCameraCalibrationSample.CAMERA_ID`, `startAutomaticCameraCalibration.CAMERA_ID`, `stopAutomaticCameraCalibration.CAMERA_ID`, `automaticCameraCalibration.CAMERA_ID`, `cameraCalibrationGuidance.CAMERA_ID`, `cameraCalibrationNovelty.CAMERA_ID`, `cameraCalibrationTiltDirection.CAMERA_ID`, `cameraCalibrationProgress.CAMERA_ID`, `solveCameraCalibration.CAMERA_ID`, `cancelCameraCalibration.CAMERA_ID`, `cleanupCameraCalibration.CAMERA_ID`, `publishCameraCalibration.CAMERA_ID`, `measureCameraBoardPose.CAMERA_ID`, `importCameraCalibration.CAMERA_ID`, `cameraCalibrationJsonValid.CAMERA_ID`, `cameraCalibrationReady.CAMERA_ID`, `cameraCalibrationState.CAMERA_ID`, `cameraCalibrationSampleCount.CAMERA_ID`, `cameraCalibrationSampleQuality.CAMERA_ID`, `cameraCalibrationReprojectionError.CAMERA_ID`, `cameraCalibrationPoseSpread.CAMERA_ID`, `cameraCalibrationHoldoutErrorPx.CAMERA_ID`, `cameraCalibrationHoldoutSampleCount.CAMERA_ID`, `cameraCalibrationErrorCode.CAMERA_ID`, `cameraCalibrationError.CAMERA_ID`, `cameraCalibrationJson.CAMERA_ID`, `cameraBoardPoseJson.CAMERA_ID`。
 - 固定値の収集箇所 `turbowarp-camera-source`: `startSharedCamera.CAMERA_ID`, `startRequestedSharedCamera.CAMERA_ID`, `startSharedCameraFromCameraButton.CAMERA_ID`, `hideCameraButton.CAMERA_ID`, `stopSharedCamera.CAMERA_ID`, `isCameraRunning.CAMERA_ID`, `cameraErrorCode.CAMERA_ID`, `cameraError.CAMERA_ID`, `cameraDeviceIdReporter.CAMERA_ID`, `showCameraPreview.CAMERA_ID`, `hideCameraPreview.CAMERA_ID`, `cameraFrameWidth.CAMERA_ID`, `cameraFrameHeight.CAMERA_ID`, `cameraFrameRate.CAMERA_ID`, `registerCameraProfileAs.CAMERA_ID`, `forgetCameraProfile.CAMERA_ID`, `cameraProfileRegistered.CAMERA_ID`, `cameraProfileJson.CAMERA_ID`, `cameraProfileYaml.CAMERA_ID`, `cameraProfileCompatibility.CAMERA_ID`, `cameraProfileCompatibilityDetail.CAMERA_ID`, `cameraProfileAdaptation.CAMERA_ID`, `cameraProfileIntrinsicsJson.CAMERA_ID`, `cameraConditionsJson.CAMERA_ID`, `cameraConditionsGeneration.CAMERA_ID`, `saveCameraProfile.CAMERA_ID`, `restoreStoredCameraProfile.CAMERA_ID`, `restoreStoredCameraProfileForDevice.CAMERA_ID`, `bindCameraProfileToDevice.CAMERA_ID`, `cameraProfileOnDevice.CAMERA_ID`, `storedCameraProfileResult.CAMERA_ID`, `storedCameraProfileDetail.CAMERA_ID`。
-- 固定値の収集箇所 `turbowarp-jsqr`: `waitForQrTextSetRuntimeVar.CAMERA_ID`, `waitForQrTextSetRuntimeVarAndBroadcast.CAMERA_ID`。
+- 固定値の収集箇所 `turbowarp-zxing`: `waitForQrTextSetRuntimeVar.CAMERA_ID`, `waitForQrTextSetRuntimeVarAndBroadcast.CAMERA_ID`。
 - 固定値の収集箇所 `turbowarp-realtime-motion-capture`: `startWebGpuMoveNetMultiPose.CAMERA_ID`, `startPoseCamera.CAMERA_ID`, `inferPoseCameraAtFrameTime.CAMERA_ID`, `stopPoseCamera.CAMERA_ID`, `poseCameraFrame2D.CAMERA_ID`, `poseCameraStatusJson.CAMERA_ID`, `startCameraCalibration.CAMERA_ID`, `startFrameSyncDecoder.CAMERA_ID`。
 - 固定値の収集箇所 `turbowarp-time-space-sync`: `startOpticalTimeDecoder.CAMERA_ID`, `setCameraModel.CAMERA_ID`, `cameraModelJson.CAMERA_ID`, `placementReprojectionRms.CAMERA_ID`。
 - 固定値の収集箇所 `turbowarp-webrtc-qrcode-pairing`: `scanPairingQrFromCamera.CAMERA_ID`。

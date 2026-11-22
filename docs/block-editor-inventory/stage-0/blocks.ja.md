@@ -522,15 +522,15 @@
 | `reactIslandHtml` | ① | `COMPONENT`: 既存候補＋新規入力 ①; `MOUNT_ID`: 文字列入力 ①; `PROPS_JSON`: 汎用JSONツリー＋ソース ① | [turbowarp-http-server-react/src/block-definitions.json:26](https://github.com/kubohiroya/turbowarp-react-islands/blob/ac278da8a1b3e53d3d2473275fb88b9df392f7aa/src/block-definitions.json#L26) | A,B,D,E,G | 4 | getInfo条件に従う |
 | `componentRegistryJson` | 対象外 | 引数なし | [turbowarp-http-server-react/src/block-definitions.json:37](https://github.com/kubohiroya/turbowarp-react-islands/blob/ac278da8a1b3e53d3d2473275fb88b9df392f7aa/src/block-definitions.json#L37) | — | — | getInfo条件に従う |
 
-## turbowarp-jsqr
+## turbowarp-zxing
 
-派生拡張。extension ID: `kubohiroyajsqr`。3ブロック。登録と公開条件: [turbowarp-jsqr/src/extension.ts:80](https://github.com/kubohiroya/turbowarp-jsqr/blob/3b23a024c165ab9a46ea1667df0f719cc2d2557a/src/extension.ts#L80)。
+派生拡張。extension ID: `kubohiroyazxing`。3ブロック。登録と公開条件: [turbowarp-zxing/src/extension.ts:80](https://github.com/kubohiroya/turbowarp-zxing/blob/3b23a024c165ab9a46ea1667df0f719cc2d2557a/src/extension.ts#L80)。
 
 | opcode | 対象 | 引数とUI | 正本 | 依存 | 段階 | 公開条件 |
 |---|---|---|---|---|---|---|
-| `waitForQrTextSetRuntimeVar` | ① | `CAMERA_ID`: 既存候補＋新規入力 ①; `RUNTIME_VAR`: 既存候補＋新規入力 ① | [turbowarp-jsqr/src/block-definitions.json:5](https://github.com/kubohiroya/turbowarp-jsqr/blob/3b23a024c165ab9a46ea1667df0f719cc2d2557a/src/block-definitions.json#L5) | A,B,D,E | 4 | getInfo条件に従う |
-| `waitForQrTextSetRuntimeVarAndBroadcast` | ① | `CAMERA_ID`: 既存候補＋新規入力 ①; `RUNTIME_VAR`: 既存候補＋新規入力 ①; `MESSAGE`: 既存候補＋新規入力 ① | [turbowarp-jsqr/src/block-definitions.json:15](https://github.com/kubohiroya/turbowarp-jsqr/blob/3b23a024c165ab9a46ea1667df0f719cc2d2557a/src/block-definitions.json#L15) | A,B,D,E,F | 5 | getInfo条件に従う |
-| `lastQrTextReporter` | 対象外 | 引数なし | [turbowarp-jsqr/src/block-definitions.json:26](https://github.com/kubohiroya/turbowarp-jsqr/blob/3b23a024c165ab9a46ea1667df0f719cc2d2557a/src/block-definitions.json#L26) | — | — | getInfo条件に従う |
+| `waitForQrTextSetRuntimeVar` | ① | `CAMERA_ID`: 既存候補＋新規入力 ①; `RUNTIME_VAR`: 既存候補＋新規入力 ① | [turbowarp-zxing/src/block-definitions.json:5](https://github.com/kubohiroya/turbowarp-zxing/blob/3b23a024c165ab9a46ea1667df0f719cc2d2557a/src/block-definitions.json#L5) | A,B,D,E | 4 | getInfo条件に従う |
+| `waitForQrTextSetRuntimeVarAndBroadcast` | ① | `CAMERA_ID`: 既存候補＋新規入力 ①; `RUNTIME_VAR`: 既存候補＋新規入力 ①; `MESSAGE`: 既存候補＋新規入力 ① | [turbowarp-zxing/src/block-definitions.json:15](https://github.com/kubohiroya/turbowarp-zxing/blob/3b23a024c165ab9a46ea1667df0f719cc2d2557a/src/block-definitions.json#L15) | A,B,D,E,F | 5 | getInfo条件に従う |
+| `lastQrTextReporter` | 対象外 | 引数なし | [turbowarp-zxing/src/block-definitions.json:26](https://github.com/kubohiroya/turbowarp-zxing/blob/3b23a024c165ab9a46ea1667df0f719cc2d2557a/src/block-definitions.json#L26) | — | — | getInfo条件に従う |
 
 ## turbowarp-kvs
 

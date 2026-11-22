@@ -1233,7 +1233,7 @@
           "role": "reference-or-free-name"
         },
         {
-          "repository": "turbowarp-jsqr",
+          "repository": "turbowarp-zxing",
           "opcode": "waitForQrTextSetRuntimeVarAndBroadcast",
           "argument": "MESSAGE",
           "role": "reference-or-free-name"
@@ -1386,13 +1386,13 @@
           "role": "reference-or-free-name"
         },
         {
-          "repository": "turbowarp-jsqr",
+          "repository": "turbowarp-zxing",
           "opcode": "waitForQrTextSetRuntimeVar",
           "argument": "RUNTIME_VAR",
           "role": "reference-or-free-name"
         },
         {
-          "repository": "turbowarp-jsqr",
+          "repository": "turbowarp-zxing",
           "opcode": "waitForQrTextSetRuntimeVarAndBroadcast",
           "argument": "RUNTIME_VAR",
           "role": "reference-or-free-name"
@@ -3323,13 +3323,13 @@
           "role": "reference-or-free-name"
         },
         {
-          "repository": "turbowarp-jsqr",
+          "repository": "turbowarp-zxing",
           "opcode": "waitForQrTextSetRuntimeVar",
           "argument": "CAMERA_ID",
           "role": "reference-or-free-name"
         },
         {
-          "repository": "turbowarp-jsqr",
+          "repository": "turbowarp-zxing",
           "opcode": "waitForQrTextSetRuntimeVarAndBroadcast",
           "argument": "CAMERA_ID",
           "role": "reference-or-free-name"
@@ -41301,18 +41301,18 @@
       ]
     },
     {
-      "repository": "turbowarp-jsqr",
+      "repository": "turbowarp-zxing",
       "role": "derived-extension",
-      "package": "@kubohiroya/turbowarp-jsqr",
+      "package": "@kubohiroya/turbowarp-zxing",
       "version": "0.4.0",
-      "extension_id": "kubohiroyajsqr",
-      "origin": "git@github.com:kubohiroya/turbowarp-jsqr.git",
+      "extension_id": "kubohiroyazxing",
+      "origin": "git@github.com:kubohiroya/turbowarp-zxing.git",
       "head": "3b23a024c165ab9a46ea1667df0f719cc2d2557a",
       "branch": "main",
       "local_changes_at_capture": [],
       "dependency_packages": {},
       "get_info": {
-        "path": "turbowarp-jsqr/src/extension.ts",
+        "path": "turbowarp-zxing/src/extension.ts",
         "symbol": "getInfo",
         "line": 80
       },
@@ -41320,12 +41320,12 @@
       "blocks": [
         {
           "opcode": "waitForQrTextSetRuntimeVar",
-          "full_opcode": "kubohiroyajsqr_waitForQrTextSetRuntimeVar",
+          "full_opcode": "kubohiroyazxing_waitForQrTextSetRuntimeVar",
           "block_type": "COMMAND",
           "text": "wait for QR code on camera [CAMERA_ID] set runtime var [RUNTIME_VAR] to text",
           "description": "Waits until a QR code is detected on the named camera and stores its text in a runtime variable.",
           "source": {
-            "path": "turbowarp-jsqr/src/block-definitions.json",
+            "path": "turbowarp-zxing/src/block-definitions.json",
             "line": 5
           },
           "definition_origin": "json",
@@ -41347,19 +41347,19 @@
                 "status": "new-fixed",
                 "authority": [
                   {
-                    "path": "turbowarp-jsqr/src/block-definitions.json",
+                    "path": "turbowarp-zxing/src/block-definitions.json",
                     "line": 5,
                     "pointer": "/blocks/0/arguments/CAMERA_ID",
                     "artifact_role": "canonical-contract-source"
                   },
                   {
-                    "path": "turbowarp-jsqr/src/extension.ts",
+                    "path": "turbowarp-zxing/src/extension.ts",
                     "symbol": "waitForQrTextSetRuntimeVar",
                     "line": 92,
                     "artifact_role": "canonical-contract-source"
                   }
                 ],
-                "planned_location": "turbowarp-jsqr/schemas/block-editor-arguments.schema.json#/$defs/waitForQrTextSetRuntimeVar/properties/CAMERA_ID",
+                "planned_location": "turbowarp-zxing/schemas/block-editor-arguments.schema.json#/$defs/waitForQrTextSetRuntimeVar/properties/CAMERA_ID",
                 "model": "string"
               },
               "candidate_sources": [
@@ -41389,19 +41389,19 @@
                 "status": "new-fixed",
                 "authority": [
                   {
-                    "path": "turbowarp-jsqr/src/block-definitions.json",
+                    "path": "turbowarp-zxing/src/block-definitions.json",
                     "line": 5,
                     "pointer": "/blocks/0/arguments/RUNTIME_VAR",
                     "artifact_role": "canonical-contract-source"
                   },
                   {
-                    "path": "turbowarp-jsqr/src/extension.ts",
+                    "path": "turbowarp-zxing/src/extension.ts",
                     "symbol": "waitForQrTextSetRuntimeVar",
                     "line": 92,
                     "artifact_role": "canonical-contract-source"
                   }
                 ],
-                "planned_location": "turbowarp-jsqr/schemas/block-editor-arguments.schema.json#/$defs/waitForQrTextSetRuntimeVar/properties/RUNTIME_VAR",
+                "planned_location": "turbowarp-zxing/schemas/block-editor-arguments.schema.json#/$defs/waitForQrTextSetRuntimeVar/properties/RUNTIME_VAR",
                 "model": "string"
               },
               "candidate_sources": [
@@ -41432,12 +41432,12 @@
         },
         {
           "opcode": "waitForQrTextSetRuntimeVarAndBroadcast",
-          "full_opcode": "kubohiroyajsqr_waitForQrTextSetRuntimeVarAndBroadcast",
+          "full_opcode": "kubohiroyazxing_waitForQrTextSetRuntimeVarAndBroadcast",
           "block_type": "COMMAND",
           "text": "wait for QR code on camera [CAMERA_ID] set runtime var [RUNTIME_VAR] to text and broadcast [MESSAGE]",
           "description": "Waits until a QR code is detected on the named camera, stores its text, and broadcasts a message.",
           "source": {
-            "path": "turbowarp-jsqr/src/block-definitions.json",
+            "path": "turbowarp-zxing/src/block-definitions.json",
             "line": 15
           },
           "definition_origin": "json",
@@ -41459,19 +41459,19 @@
                 "status": "new-fixed",
                 "authority": [
                   {
-                    "path": "turbowarp-jsqr/src/block-definitions.json",
+                    "path": "turbowarp-zxing/src/block-definitions.json",
                     "line": 15,
                     "pointer": "/blocks/1/arguments/CAMERA_ID",
                     "artifact_role": "canonical-contract-source"
                   },
                   {
-                    "path": "turbowarp-jsqr/src/extension.ts",
+                    "path": "turbowarp-zxing/src/extension.ts",
                     "symbol": "waitForQrTextSetRuntimeVarAndBroadcast",
                     "line": 99,
                     "artifact_role": "canonical-contract-source"
                   }
                 ],
-                "planned_location": "turbowarp-jsqr/schemas/block-editor-arguments.schema.json#/$defs/waitForQrTextSetRuntimeVarAndBroadcast/properties/CAMERA_ID",
+                "planned_location": "turbowarp-zxing/schemas/block-editor-arguments.schema.json#/$defs/waitForQrTextSetRuntimeVarAndBroadcast/properties/CAMERA_ID",
                 "model": "string"
               },
               "candidate_sources": [
@@ -41501,19 +41501,19 @@
                 "status": "new-fixed",
                 "authority": [
                   {
-                    "path": "turbowarp-jsqr/src/block-definitions.json",
+                    "path": "turbowarp-zxing/src/block-definitions.json",
                     "line": 15,
                     "pointer": "/blocks/1/arguments/RUNTIME_VAR",
                     "artifact_role": "canonical-contract-source"
                   },
                   {
-                    "path": "turbowarp-jsqr/src/extension.ts",
+                    "path": "turbowarp-zxing/src/extension.ts",
                     "symbol": "waitForQrTextSetRuntimeVarAndBroadcast",
                     "line": 99,
                     "artifact_role": "canonical-contract-source"
                   }
                 ],
-                "planned_location": "turbowarp-jsqr/schemas/block-editor-arguments.schema.json#/$defs/waitForQrTextSetRuntimeVarAndBroadcast/properties/RUNTIME_VAR",
+                "planned_location": "turbowarp-zxing/schemas/block-editor-arguments.schema.json#/$defs/waitForQrTextSetRuntimeVarAndBroadcast/properties/RUNTIME_VAR",
                 "model": "string"
               },
               "candidate_sources": [
@@ -41545,19 +41545,19 @@
                 "status": "new-fixed",
                 "authority": [
                   {
-                    "path": "turbowarp-jsqr/src/block-definitions.json",
+                    "path": "turbowarp-zxing/src/block-definitions.json",
                     "line": 15,
                     "pointer": "/blocks/1/arguments/MESSAGE",
                     "artifact_role": "canonical-contract-source"
                   },
                   {
-                    "path": "turbowarp-jsqr/src/extension.ts",
+                    "path": "turbowarp-zxing/src/extension.ts",
                     "symbol": "waitForQrTextSetRuntimeVarAndBroadcast",
                     "line": 99,
                     "artifact_role": "canonical-contract-source"
                   }
                 ],
-                "planned_location": "turbowarp-jsqr/schemas/block-editor-arguments.schema.json#/$defs/waitForQrTextSetRuntimeVarAndBroadcast/properties/MESSAGE",
+                "planned_location": "turbowarp-zxing/schemas/block-editor-arguments.schema.json#/$defs/waitForQrTextSetRuntimeVarAndBroadcast/properties/MESSAGE",
                 "model": "string"
               },
               "candidate_sources": [
@@ -41588,12 +41588,12 @@
         },
         {
           "opcode": "lastQrTextReporter",
-          "full_opcode": "kubohiroyajsqr_lastQrTextReporter",
+          "full_opcode": "kubohiroyazxing_lastQrTextReporter",
           "block_type": "REPORTER",
           "text": "last QR text",
           "description": "Returns the most recent QR text detected by this extension.",
           "source": {
-            "path": "turbowarp-jsqr/src/block-definitions.json",
+            "path": "turbowarp-zxing/src/block-definitions.json",
             "line": 26
           },
           "definition_origin": "json",
@@ -74367,19 +74367,19 @@
       "sha256": "54f14244fee2d3e8b3688b4630c6e75a8ba954167e19eb37c2b78a0ae96b7471"
     },
     {
-      "path": "turbowarp-jsqr/package.json",
+      "path": "turbowarp-zxing/package.json",
       "sha256": "343f6a073338dccdace06369bb6baf0872e5d96aa0c7b6996eac918a5a39732d"
     },
     {
-      "path": "turbowarp-jsqr/src/block-definitions.json",
+      "path": "turbowarp-zxing/src/block-definitions.json",
       "sha256": "c22e925b0d499f0f7cb80921c0f5730b40f9b3851199a501ca5a7e0eeeeab412"
     },
     {
-      "path": "turbowarp-jsqr/src/config.ts",
+      "path": "turbowarp-zxing/src/config.ts",
       "sha256": "2ce311ef3a3747f1c66abb4ecbf03a86c78dfd29c3783af5e1939c5d713d72bb"
     },
     {
-      "path": "turbowarp-jsqr/src/extension.ts",
+      "path": "turbowarp-zxing/src/extension.ts",
       "sha256": "e71c25c6a48245ac83e7c126eb475f3bf72a0fc384dadf5010802950d1379294"
     },
     {
