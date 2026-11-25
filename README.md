@@ -13,13 +13,14 @@ Create a repository from this template, replace the package and extension metada
 The template package is version-pinned when it is used as a reference:
 
 ```bash
-pnpm add --save-exact @kubohiroya/turbowarp-extension-template@0.9.1
+pnpm add --save-exact @kubohiroya/turbowarp-extension-template@0.10.0
 ```
 
 ## What it does
 
 - builds a single TurboWarp-compatible JavaScript extension file;
 - emits a deterministic `dist/extension-manifest.json` API contract;
+- writes `dist/extension-development.json` after the JavaScript and API manifest are ready, with the extension ID and SHA-256 digests of both files. TurboWarp Plus Desktop uses it to pick up complete builds from a selected local development folder, including rebuilds from `pnpm dev`;
 - generates the README block reference from `src/block-definitions.json`;
 - verifies source, documentation, generated `dist/` output, repository policy, and npm package contents in one check.
 
