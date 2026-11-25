@@ -12,6 +12,8 @@ import packageMetadata from './package.json' with {type: 'json'};
 import definitions from './src/block-definitions.json' with {type: 'json'};
 import {extensionConfig} from './src/config.js';
 
+const root = fileURLToPath(new URL('.', import.meta.url));
+const projectSource = /^src\/(?:[\p{L}\p{M}\p{N}_-][\p{L}\p{M}\p{N}_. -]*\/)*[\p{L}\p{M}\p{N}_-][\p{L}\p{M}\p{N}_. -]*\.(?:[cm]?[jt]s|[jt]sx)$/iu;
 const bundleFile = `${extensionConfig.slug}.js`;
 const buildMetadata = [
   ['package.json', packageMetadata],
@@ -39,7 +41,19 @@ async function writeDescriptor(directory: string, file: string, descriptor: unkn
   }
 }
 
-export default defineConfig({
+export default defineConfig(({mode}) => ({
+  build: {
+    sourcemap: mode === 'development' ? 'hidden' : false,
+    rollupOptions: {
+      output: {
+        sourcemapExcludeSources: true,
+        sourcemapPathTransform(source, mapFile) {
+          const fromRoot = path.relative(root, path.resolve(path.dirname(mapFile), source)).split(path.sep).join('/');
+          return projectSource.test(fromRoot) ? fromRoot : '[external]';
+        }
+      }
+    }
+  },
   plugins: [
     turboWarpExtension({
       id: extensionConfig.id,
@@ -89,13 +103,18 @@ export default defineConfig({
             api
           });
           await writeDescriptor(directory, DISTRIBUTION_DESCRIPTOR, distribution);
+          const mapFile = bundle.file + '.map';
+          const map = written[mapFile];
+          const sourceMap = mode === 'development' && map?.type === 'asset' ?
+            {file: mapFile, sha256: createHash('sha256').update(map.source).digest('hex')} : undefined;
           await writeDescriptor(directory, 'extension-development.json', {
             formatVersion: 1, id: extensionConfig.id,
             bundle: {file: bundle.file, sha256: bundle.sha256},
-            api: {file: api.file, sha256: api.sha256}
+            api: {file: api.file, sha256: api.sha256},
+            ...(sourceMap ? {sourceMap} : {})
           });
         }
       }
     }
   ]
-});
+}));

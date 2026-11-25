@@ -13,7 +13,7 @@ ViteでTurboWarp拡張機能を開発、テスト、ビルド、リリースす�
 参照用にtemplate packageを使う場合はversionを固定します。
 
 ```bash
-pnpm add --save-exact @kubohiroya/turbowarp-extension-template@0.12.0
+pnpm add --save-exact @kubohiroya/turbowarp-extension-template@0.13.0
 ```
 
 ## できること
@@ -58,7 +58,7 @@ SHA-256 と一致したファイルを使います。
 拡張の設定は `src/extension-config.json` だけを編集します。TypeScript の設定入口はこの JSON を参照します。
 ホストの標準レシピには npm のインストールやリポジトリ側の設定コードの実行を要求しません。
 ソースから扱うには、宣言中の lockfile も揃ったリポジトリのスナップショットを使います。
-`pnpm dev` の実行中に設定・ブロック定義・package.json を変更した場合はビルドを再起動します。
+`pnpm dev` の実行中に設定・ブロック定義・package.json を変更した場合はビルドを再起動します。対応するビルドプラグインを使用している場合、開発ビルドは元のソース本文を含まないソースマップを生成し、ファイル名と SHA-256 を `extension-development.json` に記録します。通常の `pnpm build` は開発用ソースマップを生成しません。
 
 ## 要件と安全性
 
