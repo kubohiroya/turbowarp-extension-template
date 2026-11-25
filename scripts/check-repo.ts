@@ -1,6 +1,9 @@
 import {access, readFile} from 'node:fs/promises';
 import {execFile} from 'node:child_process';
 import {promisify} from 'node:util';
+import {
+  BUILD_PROFILE_FILENAME, parseExtensionBuildProfile, parseExtensionBuildSettings
+} from '@kubohiroya/turbowarp-extension-manifest/build-profile';
 
 interface PackageMetadata {
   name: string;
@@ -59,7 +62,9 @@ const policy = JSON.parse(await readFile('repo-policy.json', 'utf8')) as RepoPol
 const readme = await readFile(policy.canonicalReadme, 'utf8');
 const readmeJa = await readFile(policy.localizedReadmes.ja, 'utf8');
 const license = await readFile('LICENSE', 'utf8');
-const config = JSON.parse(await readFile('src/extension-config.json', 'utf8'));
+const buildProfile = parseExtensionBuildProfile(JSON.parse(await readFile(BUILD_PROFILE_FILENAME, 'utf8')));
+const config = parseExtensionBuildSettings(JSON.parse(await readFile(buildProfile.settings, 'utf8')));
+await Promise.all([buildProfile.entry, buildProfile.blocks, buildProfile.lockfile].map(file => access(file)));
 const blockIcon = await readFile(policy.blockIcon, 'utf8');
 const publishedDocs = await readFile('docs/index.html', 'utf8');
 
