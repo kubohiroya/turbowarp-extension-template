@@ -314,7 +314,7 @@ async function checkPackContents() {
     errors.push('npm pack must include the generated extension bundle');
   }
   for (const file of [
-    'dist/extension-development.json', 'dist/extension-manifest.json',
+    'dist/extension-development.json', 'dist/extension-manifest.json', 'dist/extension-package.json',
     'vite.config.ts', 'tsconfig.json', 'tsconfig.module.json', 'pnpm-workspace.yaml'
   ]) {
     if (!files.has(file)) errors.push(`npm pack must include ${file}`);

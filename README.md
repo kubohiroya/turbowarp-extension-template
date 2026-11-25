@@ -13,7 +13,7 @@ Create a repository from this template, replace the package and extension metada
 The template package is version-pinned when it is used as a reference:
 
 ```bash
-pnpm add --save-exact @kubohiroya/turbowarp-extension-template@0.10.0
+pnpm add --save-exact @kubohiroya/turbowarp-extension-template@0.11.0
 ```
 
 ## What it does
@@ -50,6 +50,11 @@ For unsandboxed extensions, set `extension.unsandboxed` to `true` in the sample
 manifest. The builder embeds the committed JS so TurboWarp can offer its usual
 unsandboxed consent checkbox. Sandbox-compatible extensions use the Pages JS URL.
 See [sample maintenance and migration](samples/README.md).
+
+The npm tarball and GitHub Release carry the same `dist/extension-package.json` and the
+JavaScript and API manifest referenced by it. Commit the generated distribution files after
+building and before tagging. Web Editor uses the immutable GitHub commit for browser-readable
+files and compares them with the SHA-256 digests reported for the Release assets.
 
 ## Requirements and safety
 

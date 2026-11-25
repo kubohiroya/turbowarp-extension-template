@@ -77,6 +77,8 @@ jobs:
           shopt -s nullglob
           for file in "$NPM_ARCHIVE" \
             dist/*.js \
+            dist/extension-package.json \
+            dist/extension-manifest.json \
             turbowarp-extension.zip; do
             want="sha256:$(sha256sum "$file" | cut -d' ' -f1)"
             have="$(printf '%s\n' "$existing" | awk -F'\t' -v n="$(basename "$file")" '$1 == n { print $2 }')"

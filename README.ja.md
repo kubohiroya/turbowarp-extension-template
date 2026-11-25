@@ -13,7 +13,7 @@ ViteでTurboWarp拡張機能を開発、テスト、ビルド、リリースす�
 参照用にtemplate packageを使う場合はversionを固定します。
 
 ```bash
-pnpm add --save-exact @kubohiroya/turbowarp-extension-template@0.10.0
+pnpm add --save-exact @kubohiroya/turbowarp-extension-template@0.11.0
 ```
 
 ## できること
@@ -48,6 +48,11 @@ pnpm run pages:build    # docs・dist・SB3を_site/へ集約
 `samples/<name>/`に編集可能な元データを保存します。サンドボックスなしで動く拡張は
 `extension.unsandboxed: true`とし、コミット済みJSをSB3へ同梱して通常の同意画面を
 表示します。[適用手順と保守方法](samples/README.md)を参照してください。
+
+npm tarball と GitHub Release に同じ `dist/extension-package.json` と、そこから参照する
+JavaScript・API manifest が入ります。タグを付ける前にビルド後の配布ファイルをコミットします。
+Web Editor は GitHub の確定コミットからブラウザーで取得し、Release の添付物が報告する
+SHA-256 と一致したファイルを使います。
 
 ## 要件と安全性
 
