@@ -61,7 +61,7 @@
     "node": ">=24"
   },
   "scripts": {
-    "dev": "vite build --watch",
+    "dev": "vite build --watch --mode development",
     "typecheck": "tsc --noEmit",
     "build": "vite build && pnpm run build:module",
     "build:module": "tsc -p tsconfig.module.json",
