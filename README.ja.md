@@ -13,7 +13,7 @@ ViteでTurboWarp拡張機能を開発、テスト、ビルド、リリースす�
 参照用にtemplate packageを使う場合はversionを固定します。
 
 ```bash
-pnpm add --save-exact @kubohiroya/turbowarp-extension-template@0.11.0
+pnpm add --save-exact @kubohiroya/turbowarp-extension-template@0.12.0
 ```
 
 ## できること
@@ -54,6 +54,12 @@ JavaScript・API manifest が入ります。タグを付ける前にビルド後
 Web Editor は GitHub の確定コミットからブラウザーで取得し、Release の添付物が報告する
 SHA-256 と一致したファイルを使います。
 
+ソースリポジトリの `extension-build.json` は、ホストが使う標準ビルドの入口と入力ファイルを宣言します。
+拡張の設定は `src/extension-config.json` だけを編集します。TypeScript の設定入口はこの JSON を参照します。
+ホストの標準レシピには npm のインストールやリポジトリ側の設定コードの実行を要求しません。
+ソースから扱うには、宣言中の lockfile も揃ったリポジトリのスナップショットを使います。
+`pnpm dev` の実行中に設定・ブロック定義・package.json を変更した場合はビルドを再起動します。
+
 ## 要件と安全性
 
 - Node.js 24以上
@@ -74,7 +80,7 @@ pnpm install --frozen-lockfile
 
 1. このテンプレートからリポジトリを作成します。
 2. `package.json` metadataと`repo-policy.json`を更新します。
-3. `src/config.ts`を編集します。
+3. `src/extension-config.json`を編集します。
 4. `src/block-definitions.json`にブロックを定義します。
 5. `src/extension.ts`に実行時の動作を実装します。
 6. `pnpm run docs`を実行します。
@@ -114,7 +120,7 @@ English | [日本語](README.ja.md)
 
 ### ブロックアイコン
 
-- `assets/block-icon.svg`をコミットし、`src/config.ts`の`blockIconURI`と同じ図柄にします。`pnpm run repo:check`がURIをデコードして両者を比較します。
+- `assets/block-icon.svg`をコミットし、`src/extension-config.json`の`blockIconURI`と同じ図柄にします。`pnpm run repo:check`がURIをデコードして両者を比較します。
 - `blockIconURI`は自己完結した`data:image/svg+xml;base64,...`のままにします。機能拡張は単一ファイルとして読み込まれるためです。GitHubは`<img src>`の`data:`URIを描画せず、ダッシュボードはコミットされたファイルを読みます。両方が必要な理由はこれです。
 - ファイルは純粋な図形だけにします。ダッシュボードは読者の配色に追従させるためにSVGをインライン展開し、`<script>`・`<foreignObject>`・イベントハンドラ属性・`javascript:`URLは書き換えずに拒否します。
 - `package.json`の`files`に`assets/`を含めます。npm上のREADMEでもアイコンが表示されます。
@@ -141,10 +147,10 @@ English | [日本語](README.ja.md)
 
 **識別子（誰かがプロジェクトを保存する前に決める）**
 
-- [ ] `extensionConfig.id`は最終的な拡張IDになっている。保存された全プロジェクトがこのIDを記録するため、後からの変更にはビルドのやり直しではなくmigrationの明示が必要です。
+- [ ] `src/extension-config.json` の `id`は最終的な拡張IDになっている。保存された全プロジェクトがこのIDを記録するため、後からの変更にはビルドのやり直しではなくmigrationの明示が必要です。
 - [ ] opcode・引数ID・引数型が、そのまま維持できる名前になっている。これらもプロジェクトに保存され、`dist/extension-manifest.json`がAPI契約として記録します。
-- [ ] 製品名は全ての構成語をハイフンで連結している（`TurboWarp-Asset-Manager`）。READMEのH1、`repo-policy.json`の`productName`、`src/config.ts`の`name`、npmパッケージ名が一致している。
-- [ ] `src/config.ts`の`slug`が、利用者にダウンロードさせたいバンドル名になっている。README・CDN・あらゆるインストール手順に現れます。
+- [ ] 製品名は全ての構成語をハイフンで連結している（`TurboWarp-Asset-Manager`）。READMEのH1、`repo-policy.json`の`productName`、`src/extension-config.json`の`name`、npmパッケージ名が一致している。
+- [ ] `src/extension-config.json`の`slug`が、利用者にダウンロードさせたいバンドル名になっている。README・CDN・あらゆるインストール手順に現れます。
 
 **ブロック**
 

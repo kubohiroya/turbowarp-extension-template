@@ -15,6 +15,9 @@ const metadata = JSON.parse(await readFile(new URL('../package.json', import.met
 const distribution = parseExtensionDistribution(JSON.parse(await readFile(new URL(DISTRIBUTION_DESCRIPTOR, dist), 'utf8')));
 deepStrictEqual([distribution.package, distribution.version, distribution.license, distribution.resources],
   [metadata.name, metadata.version, metadata.license, readPackageResourceDeclaration(metadata)]);
+const settings = JSON.parse(await readFile(new URL('../src/extension-config.json', import.meta.url), 'utf8'));
+deepStrictEqual([distribution.id, distribution.name, distribution.description, distribution.license, distribution.execution],
+  [settings.id, settings.name, settings.description, settings.license, settings.unsandboxed ? 'unsandboxed' : 'sandboxed']);
 const [descriptor, files, manifest] = await Promise.all([
   readFile(new URL('extension-development.json', dist), 'utf8'),
   readdir(dist),
@@ -23,6 +26,7 @@ const [descriptor, files, manifest] = await Promise.all([
 const bundles = files.filter(file => file.endsWith('.js'));
 const [bundleFile] = bundles;
 ok(bundleFile && bundles.length === 1, 'Expected one extension bundle');
+deepStrictEqual(bundleFile, `${settings.slug}.js`);
 const bundleBytes = await readFile(new URL(bundleFile, dist));
 assertDistributionApi(distribution, JSON.parse(manifest.toString('utf8')));
 const sha256 = (content: Buffer) => createHash('sha256').update(content).digest('hex');

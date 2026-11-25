@@ -8,7 +8,7 @@
   'use strict';
 
 // src/config.ts
-var extensionConfig = {
+var extensionConfig = Object.freeze({
 	id: "kubohiroyaexampleextension",
 	slug: "example-extension",
 	name: "TurboWarp-Example-Extension",
@@ -18,7 +18,7 @@ var extensionConfig = {
 	unsandboxed: false,
 	docsURI: "https://kubohiroya.github.io/turbowarp-extension-template/",
 	blockIconURI: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0OCA0OCI+PHJlY3QgeD0iNCIgeT0iOCIgd2lkdGg9IjE4IiBoZWlnaHQ9IjE0IiByeD0iMyIgZmlsbD0iIzRDOTdGRiIvPjxyZWN0IHg9IjI2IiB5PSI4IiB3aWR0aD0iMTgiIGhlaWdodD0iMTQiIHJ4PSIzIiBmaWxsPSIjNTlDMDU5Ii8+PHJlY3QgeD0iMTUiIHk9IjI2IiB3aWR0aD0iMTgiIGhlaWdodD0iMTQiIHJ4PSIzIiBmaWxsPSIjRkZBQjE5Ii8+PC9zdmc+"
-};
+});
 var block_definitions_default = {
 	extensionName: "TurboWarp-Example-Extension",
 	blocks: [{

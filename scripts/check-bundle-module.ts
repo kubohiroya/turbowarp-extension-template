@@ -9,6 +9,8 @@ import {promisify} from 'node:util';
 const run = promisify(execFile);
 const root = fileURLToPath(new URL('..', import.meta.url));
 const metadata = JSON.parse(await readFile(new URL('../package.json', import.meta.url), 'utf8'));
+const settings = JSON.parse(await readFile(new URL('../src/extension-config.json', import.meta.url), 'utf8'));
+const standalone = `${metadata.name}/dist/${settings.slug}.js`;
 const temporary = await mkdtemp(path.join(tmpdir(), 'turbowarp-bundle-module-'));
 
 try {
@@ -43,7 +45,7 @@ assert.equal(instance.getInfo().id, bundleModuleMetadata.id);
 assert.equal(instance.hello({NAME: 'TurboWarp'}), 'Hello, TurboWarp!');
 assert.equal(bundleModuleMetadata.unsandboxed, 'not-needed');
 const require = createRequire(import.meta.url);
-const classic = readFileSync(require.resolve('${metadata.name}/dist/example-extension.js'), 'utf8');
+const classic = readFileSync(require.resolve(${JSON.stringify(standalone)}), 'utf8');
 runInNewContext(classic, {Scratch: scratch});
 assert.equal(registrations.length, 1);
 assert.equal(JSON.stringify(registrations[0].getInfo()), JSON.stringify(instance.getInfo()));

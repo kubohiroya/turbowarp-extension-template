@@ -59,7 +59,7 @@ const policy = JSON.parse(await readFile('repo-policy.json', 'utf8')) as RepoPol
 const readme = await readFile(policy.canonicalReadme, 'utf8');
 const readmeJa = await readFile(policy.localizedReadmes.ja, 'utf8');
 const license = await readFile('LICENSE', 'utf8');
-const config = await readFile('src/config.ts', 'utf8');
+const config = JSON.parse(await readFile('src/extension-config.json', 'utf8'));
 const blockIcon = await readFile(policy.blockIcon, 'utf8');
 const publishedDocs = await readFile('docs/index.html', 'utf8');
 
@@ -214,7 +214,7 @@ function checkFamilyConventions() {
     );
   }
   if (blockIcon.trim() !== decodeBlockIconURI()) {
-    errors.push(`${policy.blockIcon} must show the same drawing as blockIconURI in src/config.ts`);
+    errors.push(`${policy.blockIcon} must show the same drawing as blockIconURI in src/extension-config.json`);
   }
 
   if (!publishedDocs.includes(policy.sharedSiteHeader)) {
@@ -237,9 +237,9 @@ function opening(markdown: string): string {
 
 /** The SVG that `blockIconURI` carries, so the file and the block can be compared. */
 function decodeBlockIconURI(): string {
-  const match = config.match(/'data:image\/svg\+xml;base64,([A-Za-z0-9+/=]+)'/u);
+  const match = /^data:image\/svg\+xml;base64,([A-Za-z0-9+/]+={0,2})$/u.exec(config.blockIconURI);
   if (!match?.[1]) {
-    errors.push('src/config.ts blockIconURI must be a self-contained data:image/svg+xml;base64 URI');
+    errors.push('src/extension-config.json blockIconURI must be a self-contained data:image/svg+xml;base64 URI');
     return '';
   }
   return Buffer.from(match[1], 'base64').toString('utf8').trim();
@@ -286,13 +286,13 @@ function checkLicense() {
   if (!license.includes('Exhibit A - Source Code Form License Notice')) {
     errors.push('LICENSE must include the MPL-2.0 Exhibit A text');
   }
-  if (!config.includes("license: 'MPL-2.0'")) {
-    errors.push('src/config.ts must expose MPL-2.0 bundle metadata');
+  if (config.license !== 'MPL-2.0') {
+    errors.push('src/extension-config.json must expose MPL-2.0 bundle metadata');
   }
 }
 
 function checkGeneratedArtifacts() {
-  const expectedBundle = `dist/${extractConfigValue('slug')}.js`;
+  const expectedBundle = `dist/${config.slug}.js`;
   if (!packageMetadata.files?.includes('dist/')) errors.push('package.json files must include dist/');
   if (!readme.includes(expectedBundle)) errors.push(`README.md must document ${expectedBundle}`);
 }
@@ -310,11 +310,12 @@ async function checkPackContents() {
   for (const file of policy.requiredFiles) {
     if (!files.has(file)) errors.push(`npm pack must include ${file}`);
   }
-  if (!files.has('dist/example-extension.js')) {
+  if (!files.has(`dist/${config.slug}.js`)) {
     errors.push('npm pack must include the generated extension bundle');
   }
   for (const file of [
     'dist/extension-development.json', 'dist/extension-manifest.json', 'dist/extension-package.json',
+    'extension-build.json', 'src/extension-config.json', 'lib-module/extension-config.json',
     'vite.config.ts', 'tsconfig.json', 'tsconfig.module.json', 'pnpm-workspace.yaml'
   ]) {
     if (!files.has(file)) errors.push(`npm pack must include ${file}`);
@@ -342,10 +343,4 @@ function filesCarry(entries: string[] | undefined, target: string): boolean {
     const directory = entry.replace(/\/+$/u, '');
     return directory === target || target.startsWith(`${directory}/`);
   });
-}
-
-function extractConfigValue(key: string): string {
-  const match = config.match(new RegExp(`${key}: '([^']+)'`));
-  if (!match?.[1]) throw new Error(`src/config.ts must define ${key}`);
-  return match[1];
 }

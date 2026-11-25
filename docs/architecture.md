@@ -6,7 +6,7 @@
 
 The template separates runtime behavior from build infrastructure:
 
-- `src/config.ts` defines extension metadata, and `src/block-definitions.json`
+- `src/extension-config.json` defines extension metadata, and `src/block-definitions.json`
   defines canonical blocks and reference text.
 - `src/extension.ts` implements runtime behavior using an injected host;
   `src/bundle-module.ts` exposes its factory and static entry metadata.
@@ -36,7 +36,7 @@ src/index.ts + src/extension.ts
   -> vite-plugin-turbowarp-extension
   -> dist/<extension>.js
 
-src/config.ts + src/block-definitions.json
+src/extension-config.json + src/block-definitions.json
   -> extension-api-manifest Vite plugin
   -> dist/extension-manifest.json
 

@@ -1,6 +1,8 @@
 import {defineConfig} from 'vite';
+import {isDeepStrictEqual} from 'node:util';
+import {fileURLToPath} from 'node:url';
 import {createHash, randomUUID} from 'node:crypto';
-import {rename, rm, writeFile} from 'node:fs/promises';
+import {readFile, rename, rm, writeFile} from 'node:fs/promises';
 import path from 'node:path';
 import {API_MANIFEST, DISTRIBUTION_DESCRIPTOR, parseExtensionDistribution} from '@kubohiroya/turbowarp-extension-manifest/distribution';
 import {readPackageResourceDeclaration} from '@kubohiroya/turbowarp-extension-manifest/resources';
@@ -11,6 +13,21 @@ import definitions from './src/block-definitions.json' with {type: 'json'};
 import {extensionConfig} from './src/config.js';
 
 const bundleFile = `${extensionConfig.slug}.js`;
+const buildMetadata = [
+  ['package.json', packageMetadata],
+  ['src/extension-config.json', extensionConfig],
+  ['src/block-definitions.json', definitions]
+] as const;
+
+async function verifyBuildMetadata() {
+  for (const [file, expected] of buildMetadata) {
+    const current = JSON.parse(await readFile(new URL(file, import.meta.url), 'utf8'));
+    if (!isDeepStrictEqual(current, expected)) {
+      throw new Error(`Build metadata changed in ${file}. Restart the build to use the new metadata.`);
+    }
+  }
+}
+
 async function writeDescriptor(directory: string, file: string, descriptor: unknown) {
   const destination = path.join(directory, file);
   const temporary = `${destination}.${randomUUID()}.tmp`;
@@ -38,10 +55,17 @@ export default defineConfig({
     }),
     {
       name: 'turbowarp-development-descriptor',
+      async buildStart() {
+        for (const [file] of buildMetadata) {
+          this.addWatchFile(fileURLToPath(new URL(file, import.meta.url)));
+        }
+        await verifyBuildMetadata();
+      },
       writeBundle: {
         order: 'post',
         sequential: true,
         async handler(output, written) {
+          await verifyBuildMetadata();
           const directory = output.dir ?? (output.file ? path.dirname(output.file) : undefined);
           if (directory === undefined) throw new Error('Missing extension output directory');
           const artifact = (file: string) => {
