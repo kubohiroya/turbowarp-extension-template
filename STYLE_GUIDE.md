@@ -16,7 +16,7 @@
 Use PascalCase for classes and interfaces and camelCase for functions and variables.
 Follow nearby code for constants. Preserve saved-project identifiers when refactoring.
 
-Keep metadata in `src/config.ts`, canonical blocks in `src/block-definitions.json`,
+Keep metadata in `src/extension-config.json`, canonical blocks in `src/block-definitions.json`,
 and runtime behavior in `src/extension.ts`. The same block definitions drive the
 README reference and extension manifest; avoid hand-maintained copies.
 

@@ -6,7 +6,7 @@
 
 このテンプレートは実行時の動作とビルド基盤を分離します。
 
-- `src/config.ts`は拡張機能metadata、`src/block-definitions.json`はブロック定義と参照文面の正本です。
+- `src/extension-config.json`は拡張機能metadata、`src/block-definitions.json`はブロック定義と参照文面の正本です。
 - `src/extension.ts`は注入されたhostを使う実行時の動作、`src/bundle-module.ts`はfactoryと静的metadataを担当します。`src/runtime-api.ts`はhostの構造的な型を公開し、`src/globals.d.ts`は単体版の`src/index.ts`が登録時に使うglobal Scratchを宣言します。
 - ブロック編集のサンプルとテストは共通エディタが所有し、Templateには編集依存・Schema・登録・専用公開APIを搭載しません。対応する編集APIがなくても通常実行を維持します。
 - `vite.config.ts`はJavaScript出力を拡張機能プラグインへ、API metadataをmanifestプラグインへ委譲します。
@@ -25,7 +25,7 @@ src/index.ts + src/extension.ts
   -> vite-plugin-turbowarp-extension
   -> dist/<extension>.js
 
-src/config.ts + src/block-definitions.json
+src/extension-config.json + src/block-definitions.json
   -> extension-api-manifest Viteプラグイン
   -> dist/extension-manifest.json
 

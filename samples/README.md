@@ -37,7 +37,7 @@ node scripts/prepare-pages.mjs         # pnpm run pages:build
 
 ## 新しい拡張へ適用する手順
 
-1. `src/config.ts`と`src/block-definitions.json`で拡張ID・slug・ブロックを確定します。
+1. `src/extension-config.json`と`src/block-definitions.json`で拡張ID・slug・ブロックを確定します。
 2. `samples/manifest.json`の`baseURL`・`extension.id`・`extension.bundle`・
    `extension.unsandboxed`を実際の値に合わせます。IDは生成済みJSのヘッダーとも検査します。
 3. `hello-world`ディレクトリを内容に合う名前に変更し、実際の拡張ブロックを使う

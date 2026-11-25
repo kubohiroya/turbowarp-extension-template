@@ -13,7 +13,7 @@ Create a repository from this template, replace the package and extension metada
 The template package is version-pinned when it is used as a reference:
 
 ```bash
-pnpm add --save-exact @kubohiroya/turbowarp-extension-template@0.11.0
+pnpm add --save-exact @kubohiroya/turbowarp-extension-template@0.12.0
 ```
 
 ## What it does
@@ -56,6 +56,12 @@ JavaScript and API manifest referenced by it. Commit the generated distribution 
 building and before tagging. Web Editor uses the immutable GitHub commit for browser-readable
 files and compares them with the SHA-256 digests reported for the Release assets.
 
+The source repository's `extension-build.json` declares the entry and fixed inputs for a
+host-owned build. Edit extension metadata in `src/extension-config.json`, which the
+TypeScript configuration entry reads directly. The standard profile requests no npm install
+or publisher-owned build configuration. Use a source snapshot that also contains the declared
+lockfile. Restart `pnpm dev` after editing metadata, block definitions or package.json.
+
 ## Requirements and safety
 
 - Node.js 24 or newer;
@@ -76,7 +82,7 @@ pnpm install --frozen-lockfile
 
 1. Create a repository from this template.
 2. Update `package.json` metadata and `repo-policy.json`.
-3. Edit `src/config.ts`.
+3. Edit `src/extension-config.json`.
 4. Define blocks in `src/block-definitions.json`.
 5. Implement runtime behavior in `src/extension.ts`.
 6. Run `pnpm run docs`.
@@ -116,7 +122,7 @@ English | [日本語](README.ja.md)
 
 ### Block icon
 
-- `assets/block-icon.svg` is committed and shows the same drawing as `blockIconURI` in `src/config.ts`. `pnpm run repo:check` decodes the URI and compares the two.
+- `assets/block-icon.svg` is committed and shows the same drawing as `blockIconURI` in `src/extension-config.json`. `pnpm run repo:check` decodes the URI and compares the two.
 - `blockIconURI` stays a self-contained `data:image/svg+xml;base64,...` URI, because the extension loads as a single file. GitHub does not render a `data:` URI in `<img src>` and the dashboard reads the committed file, which is why both exist.
 - The file is a plain drawing. The dashboard inlines it so that it takes the reader's colour scheme, and it refuses `<script>`, `<foreignObject>`, event-handler attributes and `javascript:` URLs instead of rewriting them.
 - `package.json` `files` includes `assets/`, so the icon also renders in the README on npm.
@@ -143,10 +149,10 @@ cannot, and they are easier to settle before the first release than after.
 
 **Identity, before anyone saves a project**
 
-- [ ] `extensionConfig.id` is the final extension ID. Every saved project stores it, so changing it later needs a documented migration rather than a new build.
+- [ ] `id` in `src/extension-config.json` is the final extension ID. Every saved project stores it, so changing it later needs a documented migration rather than a new build.
 - [ ] Opcodes, argument IDs and argument types read the way they should stay. They are stored in projects too, and `dist/extension-manifest.json` records them as the API contract.
-- [ ] The product name hyphenates every word (`TurboWarp-Asset-Manager`), and the README H1, `repo-policy.json` `productName`, `src/config.ts` `name` and the npm package name agree.
-- [ ] `src/config.ts` `slug` gives the bundle name you want users to download; it appears in the README, on the CDN and in every install instruction.
+- [ ] The product name hyphenates every word (`TurboWarp-Asset-Manager`), and the README H1, `repo-policy.json` `productName`, `src/extension-config.json` `name` and the npm package name agree.
+- [ ] `src/extension-config.json` `slug` gives the bundle name you want users to download; it appears in the README, on the CDN and in every install instruction.
 
 **Blocks**
 

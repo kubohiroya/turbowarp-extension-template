@@ -4,7 +4,7 @@
    generated artifacts that remain checked in and reproducible.
 2. **Build infrastructure is separate from runtime behavior.** Vite and its plugins
    own bundling, wrapping, and manifest generation; extension code owns block behavior.
-3. **Each definition has one source of truth.** `src/config.ts` owns extension metadata
+3. **Each definition has one source of truth.** `src/extension-config.json` owns extension metadata
    and `src/block-definitions.json` owns the canonical block contract and reference text.
 4. **Saved-project compatibility is explicit.** Extension IDs, opcodes, argument IDs
    and types, block types, and menu references are compatibility contracts. Document
