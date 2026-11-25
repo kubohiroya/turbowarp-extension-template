@@ -13,13 +13,14 @@ ViteでTurboWarp拡張機能を開発、テスト、ビルド、リリースす�
 参照用にtemplate packageを使う場合はversionを固定します。
 
 ```bash
-pnpm add --save-exact @kubohiroya/turbowarp-extension-template@0.9.1
+pnpm add --save-exact @kubohiroya/turbowarp-extension-template@0.10.0
 ```
 
 ## できること
 
 - TurboWarp互換の単一JavaScript拡張ファイルをビルドします。
 - 決定的な`dist/extension-manifest.json` API契約を出力します。
+- JavaScriptとAPI manifestの出力後に、拡張IDと両ファイルのSHA-256を記録した`dist/extension-development.json`を確定します。TurboWarp Plus Desktopはこの情報を使い、選択したローカル開発フォルダーから`pnpm dev`による再ビルドも含めて完成した成果物を取り込みます。
 - `src/block-definitions.json`からREADMEのブロック参照を生成します。
 - source、document、生成済み`dist/`、repository policy、npm package内容を一括検査します。
 

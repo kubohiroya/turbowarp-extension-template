@@ -11,3 +11,4 @@ coverage/
 
 # Staged GitHub Pages artifact.
 _site/
+dist/extension-development.json
