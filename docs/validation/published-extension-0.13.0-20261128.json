@@ -1,0 +1,46 @@
+[
+  {
+    "reference": "@kubohiroya/turbowarp-extension-template@0.13.0",
+    "source": {
+      "provider": "npm",
+      "package": "@kubohiroya/turbowarp-extension-template",
+      "version": "0.13.0",
+      "integrity": "sha512-bkEUFhs4q2UY1ETrkFdE3dkLlv8BHtyVflSe+mRZ29vbeaKb809diVCvZYsoAwx4y4h7xH3fVI7Y6zKxLQ9xIA=="
+    },
+    "id": "kubohiroyaexampleextension",
+    "version": "0.13.0",
+    "sha256": "cc751fb838f60c523b6003b7a960a9b0cafb68146f7f64912951da1e2b630de3"
+  },
+  {
+    "reference": "https://github.com/kubohiroya/turbowarp-extension-template/releases/tag/v0.13.0",
+    "source": {
+      "provider": "github",
+      "repository": "kubohiroya/turbowarp-extension-template",
+      "tag": "v0.13.0",
+      "commit": "b4cd60ecf9f2a3094dc446bf1b99dabaeb89517a",
+      "releaseID": 458061951,
+      "descriptorSHA256": "0049aaaaef1812fc717b93b533d3a6ada1eba49601b6c6979f3bd1e393885261",
+      "assets": {
+        "descriptor": {
+          "id": 791405265,
+          "name": "extension-package.json",
+          "sha256": "0049aaaaef1812fc717b93b533d3a6ada1eba49601b6c6979f3bd1e393885261"
+        },
+        "bundle": {
+          "id": 791405220,
+          "name": "example-extension.js",
+          "sha256": "cc751fb838f60c523b6003b7a960a9b0cafb68146f7f64912951da1e2b630de3"
+        },
+        "api": {
+          "id": 791405333,
+          "name": "extension-manifest.json",
+          "sha256": "0e1dae3ad294b491feeb1f3ca7b8b9fa60e1eb794547e1040b3f39d8ce905b0d"
+        }
+      }
+    },
+    "sourceURL": "https://raw.githubusercontent.com/kubohiroya/turbowarp-extension-template/b4cd60ecf9f2a3094dc446bf1b99dabaeb89517a/dist/example-extension.js",
+    "id": "kubohiroyaexampleextension",
+    "version": "0.13.0",
+    "sha256": "cc751fb838f60c523b6003b7a960a9b0cafb68146f7f64912951da1e2b630de3"
+  }
+]
