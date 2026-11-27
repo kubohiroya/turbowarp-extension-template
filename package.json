@@ -1,6 +1,6 @@
 {
   "name": "@kubohiroya/turbowarp-extension-template",
-  "version": "0.13.1",
+  "version": "0.13.2",
   "description": "A reusable TypeScript template for developing TurboWarp extensions with Vite.",
   "author": {
     "name": "Hiroya Kubo",
