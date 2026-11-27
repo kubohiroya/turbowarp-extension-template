@@ -52,7 +52,9 @@ unsandboxed consent checkbox. Sandbox-compatible extensions use the Pages JS URL
 See [sample maintenance and migration](samples/README.md).
 
 The npm tarball and GitHub Release carry the same `dist/extension-package.json` and the
-JavaScript and API manifest referenced by it. Commit the generated distribution files after
+JavaScript and API manifest referenced by it, together with `LICENSE` and the resource
+declaration. `pnpm run check:distribution` compares the repository with the actual npm
+tarball and Release ZIP. Commit the generated distribution files after
 building and before tagging. Web Editor uses the immutable GitHub commit for browser-readable
 files and compares them with the SHA-256 digests reported for the Release assets.
 
@@ -61,6 +63,12 @@ host-owned build. Edit extension metadata in `src/extension-config.json`, which 
 TypeScript configuration entry reads directly. The standard profile requests no npm install
 or publisher-owned build configuration. Use a source snapshot that also contains the declared
 lockfile. Restart `pnpm dev` after editing metadata, block definitions or package.json.
+Development builds also record a source map without source text or absolute paths in
+`extension-development.json`; production builds omit it. See the
+[distribution and development contract](docs/distribution.md).
+
+Extensions created from this template can use any author and npm scope. Registration in the
+TurboWarp Plus catalog and a fork relationship are optional and are not installation requirements.
 
 ## Requirements and safety
 
@@ -173,7 +181,7 @@ cannot, and they are easier to settle before the first release than after.
 - [ ] `dist/` is committed and reproducible, so users install the extension without Node.js.
 - [ ] Version-pinned install examples in both READMEs match `package.json`.
 - [ ] `npm pack --dry-run` contains the bundle, the manifest, both READMEs, `LICENSE` and `assets/`, and nothing unreviewed.
-- [ ] The repository is listed in [`catalog.yaml`](https://github.com/kubohiroya/turbowarp-plus-packages/blob/main/catalog.yaml) of the family dashboard, with `npm: false` when it is deliberately not an npm package.
+- [ ] If this extension should appear on the family dashboard, optionally list it in [`catalog.yaml`](https://github.com/kubohiroya/turbowarp-plus-packages/blob/main/catalog.yaml), with `npm: false` when it is deliberately not an npm package. Independent extensions do not need this registration.
 
 ## Block reference
 
