@@ -22,6 +22,13 @@ the JS entry from the package name. Resources originate in `package.json` under
 `turbowarpExtension.resourceDeclaration` and are embedded unchanged in the descriptor.
 Edit metadata in `src/extension-config.json` and blocks in `src/block-definitions.json`.
 
+Manifest 0.9.0's `createExtensionDistribution` generates the descriptor from canonical inputs and
+final bytes. Repository, npm and Release checks share `verifyExtensionDistribution` and
+`assertDistributionPackage`; `assertDistributionSettings` checks the self-build settings.
+Validation never executes extension JS. A matching hash still fails with `API_MISMATCH` when the
+API structure, required fields, unique IDs or menu references are invalid. Size, hash and canonical
+metadata mismatches also use the shared structured diagnostics.
+
 The ZIP also keeps an identical root-level JS entry for existing download instructions.
 Individual Release assets include the JS, descriptor, API manifest, LICENSE and npm tarball.
 The ZIP excludes development completion records, source maps and unrelated working files.

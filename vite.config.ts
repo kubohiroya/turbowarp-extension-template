@@ -4,8 +4,7 @@ import {fileURLToPath} from 'node:url';
 import {createHash, randomUUID} from 'node:crypto';
 import {readFile, rename, rm, writeFile} from 'node:fs/promises';
 import path from 'node:path';
-import {API_MANIFEST, DISTRIBUTION_DESCRIPTOR, parseExtensionDistribution} from '@kubohiroya/turbowarp-extension-manifest/distribution';
-import {readPackageResourceDeclaration} from '@kubohiroya/turbowarp-extension-manifest/resources';
+import {API_MANIFEST, DISTRIBUTION_DESCRIPTOR, createExtensionDistribution} from '@kubohiroya/turbowarp-extension-manifest/distribution';
 import {extensionManifestPlugin} from '@kubohiroya/turbowarp-extension-manifest';
 import {turboWarpExtension} from '@kubohiroya/vite-plugin-turbowarp-extension';
 import packageMetadata from './package.json' with {type: 'json'};
@@ -82,26 +81,15 @@ export default defineConfig(({mode}) => ({
           await verifyBuildMetadata();
           const directory = output.dir ?? (output.file ? path.dirname(output.file) : undefined);
           if (directory === undefined) throw new Error('Missing extension output directory');
-          const artifact = (file: string) => {
+          const artifactBytes = (file: string) => {
             const entry = written[file];
             if (!entry) throw new Error(`Missing development artifact ${file}`);
             const content = entry.type === 'chunk' ? entry.code : entry.source;
-            return {file, size: Buffer.byteLength(content), sha256: createHash('sha256').update(content).digest('hex')};
+            return typeof content === 'string' ? Buffer.from(content, 'utf8') : Buffer.from(content);
           };
-          const [bundle, api] = [artifact(bundleFile), artifact(API_MANIFEST)];
-          const distribution = parseExtensionDistribution({
-            formatVersion: 1,
-            id: extensionConfig.id,
-            package: packageMetadata.name,
-            version: packageMetadata.version,
-            name: extensionConfig.name,
-            description: extensionConfig.description,
-            license: extensionConfig.license,
-            execution: extensionConfig.unsandboxed ? 'unsandboxed' : 'sandboxed',
-            resources: readPackageResourceDeclaration(packageMetadata),
-            bundle,
-            api
-          });
+          const distribution = await createExtensionDistribution(packageMetadata, extensionConfig,
+            {file: bundleFile, bytes: artifactBytes(bundleFile)}, artifactBytes(API_MANIFEST));
+          const {bundle, api} = distribution;
           await writeDescriptor(directory, DISTRIBUTION_DESCRIPTOR, distribution);
           const mapFile = bundle.file + '.map';
           const map = written[mapFile];

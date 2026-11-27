@@ -58,3 +58,26 @@ src/config.ts に観測可能な副作用を追加した fixture は、ビルド
 この差分では Web/Desktop 製品画面の操作、公開済み版の新規導入、Desktop 上の自動反映から TS 位置への
 逆引きまでの製品統合検証は行っていません。これらを完了扱いにせず、Issue #56 の受け入れ項目として残します。
 公開操作も行っていません。切り戻しは本差分を revert して次版で配布し、利用側は従来の固定版を使用します。
+
+## Manifest 0.9.0 の共有 API への接続
+
+2026-11-28 JST、main `abbfb9e9` を基準として Manifest の固定依存を公開済み `0.9.0` に更新しました。
+他の依存の解決結果は変更せず、release-age 例外もこの正確な版だけを追加しました。
+Vite の descriptor 生成を `createExtensionDistribution` に、repo/npm/Release の検査を
+`verifyExtensionDistribution`・`assertDistributionPackage`・`assertDistributionSettings` に接続しました。
+source map と開発用完成通知は従来の契約を維持します。
+
+- 配布 14 件・API manifest 2 件・拡張/module 互換 8 件、計 24 件の対象テストが成功しました。
+  hash が整合する不完全な API と重複 opcode を `API_MISMATCH` で拒否すること、
+  切断した API の `SIZE_MISMATCH`、同サイズ改変の `HASH_MISMATCH`、
+  正本と不一致/欠落した resource 宣言の構造化診断、検査中に JS を実行しないことを確認しました。
+- 型検査と変更 TypeScript の lint、build、`check:distribution`、`check:module`、`repo:check` が成功しました。
+  実 npm tarball と Release ZIP の配布物は repo と byte 一致し、追跡済み `dist/` と `lib-module/` の差分はありません。
+- コピーした fixture の headless watch で初回・TS 更新後の完成通知、bundle/API/source map の hash、
+  map の相対パスとソース本文の非同梱を確認しました。構文エラー時は直前の完成通知が維持されました。
+
+検証環境は macOS、Node.js 26.7.0、pnpm 11.28.8、Vite 8.3.5、Manifest 0.9.0、
+Vite extension plugin 0.12.0 です。module/repo 検査で既定 npm cache の書き込みが sandbox に
+拒否されたため、一時 cache を指定して解消しました。キャッシュの所有権変更は行っていません。
+今回も Desktop 製品の操作・OS 隔離・公開後導入を確認したとは扱わず、Issue #56 の残項目を維持します。
+切り戻しは依存・lockfile・共有 API 接続を本差分の前へ戻し、既存配布物を上書きせず次版で配布します。

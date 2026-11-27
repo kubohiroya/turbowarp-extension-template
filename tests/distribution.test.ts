@@ -34,6 +34,15 @@ async function json(file: string, value: unknown) {
   await writeFile(path.join(root, file), JSON.stringify(value) + '\n');
 }
 
+async function replaceArtifact(file: string, bytes: Buffer) {
+  await writeFile(path.join(root, 'dist', file), bytes);
+  const descriptor = JSON.parse(await readFile(path.join(root, 'dist/extension-package.json'), 'utf8'));
+  descriptor[file === bundleFile ? 'bundle' : 'api'] = {
+    file, size: bytes.length, sha256: createHash('sha256').update(bytes).digest('hex')
+  };
+  await json('dist/extension-package.json', descriptor);
+}
+
 beforeEach(async () => {
   root = await mkdtemp(path.join(tmpdir(), 'template-distribution-test-'));
   await mkdir(path.join(root, 'dist'));
@@ -105,16 +114,38 @@ describe('distribution archives', () => {
     bytes[0] = 0;
     await writeFile(file, bytes);
     const archive = path.join(root, 'broken.zip');
-    await expect(prepareReleaseArchive(root, archive)).rejects.toThrow(/does not match its descriptor/u);
+    await expect(prepareReleaseArchive(root, archive)).rejects.toMatchObject({code: 'HASH_MISMATCH'});
     await expect(access(archive)).rejects.toThrow(/ENOENT/u);
   });
 
   it.each([
-    {...metadata, version: '9.9.9'},
-    {...metadata, turbowarpExtension: {resourceDeclaration: {schemaVersion: 1, resources: []}}},
-    {...metadata, turbowarpExtension: undefined}
-  ])('rejects inconsistent version or resource declarations %#', async changed => {
+    [{...metadata, version: '9.9.9'}, 'PACKAGE_MISMATCH'],
+    [{...metadata, turbowarpExtension: {resourceDeclaration: {schemaVersion: 1, resources: []}}}, 'PACKAGE_MISMATCH'],
+    [{...metadata, turbowarpExtension: undefined}, 'INVALID_RESOURCES']
+  ])('rejects inconsistent version or resource declarations %#', async (changed, code) => {
     await json('package.json', changed);
-    await expect(readDistribution(root)).rejects.toThrow(/must match package.json/u);
+    await expect(readDistribution(root)).rejects.toMatchObject({code});
+  });
+
+  it.each(['missing menus', 'duplicate opcode'])('rejects hash-consistent API with %s', async kind => {
+    const api = JSON.parse(await readFile(path.join(root, 'dist/extension-manifest.json'), 'utf8'));
+    if (kind === 'missing menus') delete api.menus;
+    else api.blocks.push(api.blocks[0]);
+    await replaceArtifact('extension-manifest.json', Buffer.from(JSON.stringify(api) + '\n'));
+    const archive = path.join(root, 'broken-api.zip');
+    await expect(prepareReleaseArchive(root, archive)).rejects.toMatchObject({code: 'API_MISMATCH'});
+    await expect(access(archive)).rejects.toThrow(/ENOENT/u);
+  });
+
+  it('rejects a truncated API before reading JSON', async () => {
+    const file = path.join(root, 'dist/extension-manifest.json');
+    const bytes = await readFile(file);
+    await writeFile(file, bytes.subarray(1));
+    await expect(readDistribution(root)).rejects.toMatchObject({code: 'SIZE_MISMATCH'});
+  });
+
+  it('validates an executable bundle as bytes without running it', async () => {
+    await replaceArtifact(bundleFile, Buffer.from('throw new Error("bundle executed");\n'));
+    expect((await readDistribution(root)).descriptor.id).toBe(id);
   });
 });
