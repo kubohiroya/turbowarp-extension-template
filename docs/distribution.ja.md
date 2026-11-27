@@ -20,6 +20,12 @@ package 名から JS の名前を推測しません。リソース宣言は `pac
 `turbowarpExtension.resourceDeclaration` を正本とし、descriptor に同じ内容を埋め込みます。
 設定は `src/extension-config.json`、ブロック定義は `src/block-definitions.json` を編集します。
 
+Manifest 0.9.0 の `createExtensionDistribution` で正本と最終バイト列から descriptor を生成します。
+repo・npm・Release の検査は同じ `verifyExtensionDistribution` と `assertDistributionPackage` を使い、
+自己ビルドの設定は `assertDistributionSettings` で照合します。検査時に拡張 JS を実行しません。
+hash が一致しても API の必須項目・opcode/menu/argument の重複・menu 参照が不正なら
+`API_MISMATCH` として拒否します。サイズ・hash・正本の不一致も共有の構造化診断を使います。
+
 Release ZIP は従来の利用手順のために同じ JS を ZIP 直下にも残します。
 Release の個別添付物には JS・descriptor・API manifest・LICENSE と npm tarball があります。
 開発用完成通知・ソースマップ・その他の作業ファイルは ZIP へコピーしません。

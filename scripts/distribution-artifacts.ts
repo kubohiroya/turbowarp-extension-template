@@ -1,11 +1,9 @@
 import {deepStrictEqual, ok} from 'node:assert/strict';
-import {createHash} from 'node:crypto';
 import {readFile} from 'node:fs/promises';
 import path from 'node:path';
 import {
-  DISTRIBUTION_DESCRIPTOR, assertDistributionApi, parseExtensionDistribution
+  DISTRIBUTION_DESCRIPTOR, assertDistributionPackage, parseExtensionDistribution, verifyExtensionDistribution
 } from '@kubohiroya/turbowarp-extension-manifest/distribution';
-import {readPackageResourceDeclaration} from '@kubohiroya/turbowarp-extension-manifest/resources';
 
 /** Read static distribution data without importing publisher configuration or code. */
 export async function readDistribution(root: string) {
@@ -21,20 +19,10 @@ export async function readDistribution(root: string) {
   const descriptor = parseExtensionDistribution(JSON.parse(
     (await read(`dist/${DISTRIBUTION_DESCRIPTOR}`)).toString('utf8')
   ));
-  deepStrictEqual(
-    [descriptor.package, descriptor.version, descriptor.license, descriptor.resources],
-    [metadata.name, metadata.version, metadata.license, readPackageResourceDeclaration(metadata)],
-    'Distribution metadata must match package.json'
-  );
-  for (const artifact of [descriptor.bundle, descriptor.api]) {
-    const bytes = await read(`dist/${artifact.file}`);
-    deepStrictEqual(
-      {size: bytes.length, sha256: createHash('sha256').update(bytes).digest('hex')},
-      {size: artifact.size, sha256: artifact.sha256},
-      `Distribution artifact does not match its descriptor: ${artifact.file}`
-    );
-  }
-  assertDistributionApi(descriptor, JSON.parse(files.get(`dist/${descriptor.api.file}`)!.toString('utf8')));
+  assertDistributionPackage(descriptor, metadata);
+  const bundle = await read(`dist/${descriptor.bundle.file}`);
+  const api = await read(`dist/${descriptor.api.file}`);
+  await verifyExtensionDistribution(descriptor, {bundle, api});
   return {descriptor, files};
 }
 
