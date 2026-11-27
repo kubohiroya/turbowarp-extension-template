@@ -52,9 +52,7 @@ jobs:
           file="$(node -p "const r = require(process.env.RUNNER_TEMP + '/pack.json'); (Array.isArray(r) ? r[0] : Object.values(r)[0]).filename")"
           echo "file=$RUNNER_TEMP/npm/$file" >> "$GITHUB_OUTPUT"
       - name: Create ZIP archive
-        run: |
-          cd dist
-          zip ../turbowarp-extension.zip *.js
+        run: pnpm run release:archive
       - name: Attach to the GitHub Release
         # An attachment that already exists must be byte-identical: a release driver may have
         # uploaded its locally verified archive first, and a differing CI build stops here,
@@ -79,6 +77,7 @@ jobs:
             dist/*.js \
             dist/extension-package.json \
             dist/extension-manifest.json \
+            LICENSE \
             turbowarp-extension.zip; do
             want="sha256:$(sha256sum "$file" | cut -d' ' -f1)"
             have="$(printf '%s\n' "$existing" | awk -F'\t' -v n="$(basename "$file")" '$1 == n { print $2 }')"

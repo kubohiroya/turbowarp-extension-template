@@ -43,7 +43,10 @@
     "samples/",
     "scripts/build-samples.mjs",
     "scripts/prepare-pages.mjs",
-    "scripts/verify-samples.mjs"
+    "scripts/verify-samples.mjs",
+    "scripts/check-distribution.ts",
+    "scripts/distribution-artifacts.ts",
+    "scripts/prepare-release.ts"
   ],
   "publishConfig": {
     "access": "public",
@@ -72,7 +75,9 @@
     "template:readme": "node scripts/apply-readme-template.ts",
     "repo:check": "node scripts/check-repo.ts",
     "pack:check": "npm pack --dry-run --ignore-scripts",
-    "check": "pnpm run typecheck && pnpm run lint && pnpm run test && pnpm run docs:check && pnpm run check:dist && pnpm run check:module && pnpm run repo:check && pnpm run pack:check && pnpm run samples:check",
+    "check": "pnpm run typecheck && pnpm run lint && pnpm run test && pnpm run docs:check && pnpm run check:dist && pnpm run check:module && pnpm run check:distribution && pnpm run repo:check && pnpm run pack:check && pnpm run samples:check",
+    "check:distribution": "node scripts/check-distribution.ts",
+    "release:archive": "node scripts/prepare-release.ts",
     "check:module": "node scripts/check-bundle-module.ts",
     "check:dist": "pnpm run build && node scripts/check-dist.ts",
     "samples:build": "node scripts/build-samples.mjs",

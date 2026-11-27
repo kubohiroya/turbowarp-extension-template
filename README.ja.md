@@ -50,7 +50,9 @@ pnpm run pages:build    # docs・dist・SB3を_site/へ集約
 表示します。[適用手順と保守方法](samples/README.md)を参照してください。
 
 npm tarball と GitHub Release に同じ `dist/extension-package.json` と、そこから参照する
-JavaScript・API manifest が入ります。タグを付ける前にビルド後の配布ファイルをコミットします。
+JavaScript・API manifest、`LICENSE`、リソース宣言が入ります。
+`pnpm run check:distribution` は実際の npm tarball と Release ZIP を展開し、リポジトリと照合します。
+タグを付ける前にビルド後の配布ファイルをコミットします。
 Web Editor は GitHub の確定コミットからブラウザーで取得し、Release の添付物が報告する
 SHA-256 と一致したファイルを使います。
 
@@ -59,6 +61,9 @@ SHA-256 と一致したファイルを使います。
 ホストの標準レシピには npm のインストールやリポジトリ側の設定コードの実行を要求しません。
 ソースから扱うには、宣言中の lockfile も揃ったリポジトリのスナップショットを使います。
 `pnpm dev` の実行中に設定・ブロック定義・package.json を変更した場合はビルドを再起動します。対応するビルドプラグインを使用している場合、開発ビルドは元のソース本文を含まないソースマップを生成し、ファイル名と SHA-256 を `extension-development.json` に記録します。通常の `pnpm build` は開発用ソースマップを生成しません。
+[配布・開発時の契約](docs/distribution.ja.md)に配置と完成ビルドの確認手順を記載しています。
+
+独自拡張の作者名・npm スコープは自由です。TurboWarp Plus のカタログ登録や fork 履歴は導入条件ではありません。
 
 ## 要件と安全性
 
@@ -171,7 +176,7 @@ English | [日本語](README.ja.md)
 - [ ] `dist/`をコミットし、再現可能にしている。利用者はNode.jsなしで機能拡張を読み込めます。
 - [ ] 両READMEのversion固定インストール例が`package.json`と一致している。
 - [ ] `npm pack --dry-run`の内容にバンドル・manifest・両README・`LICENSE`・`assets/`が含まれ、未検証のファイルが入っていない。
-- [ ] ファミリーのダッシュボードの[`catalog.yaml`](https://github.com/kubohiroya/turbowarp-plus-packages/blob/main/catalog.yaml)にリポジトリを登録した。npmパッケージにしないリポジトリは`npm: false`にする。
+- [ ] ファミリーのダッシュボードへ掲載したい場合のみ、任意で[`catalog.yaml`](https://github.com/kubohiroya/turbowarp-plus-packages/blob/main/catalog.yaml)へ登録する。npmパッケージにしない場合は`npm: false`にする。独自拡張の導入にこの登録は不要です。
 
 ## ブロック参照
 
